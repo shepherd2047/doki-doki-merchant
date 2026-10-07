@@ -1,0 +1,82 @@
+{
+ "back_button.png": {
+  "h": 131,
+  "source": "images/atlases/ui_atlas.sprites/back_button.tres",
+  "w": 256
+ },
+ "back_button_arrow.png": {
+  "h": 146,
+  "source": "images/atlases/compressed.sprites/back_button_arrow.tres",
+  "w": 174
+ },
+ "back_button_outline.png": {
+  "h": 137,
+  "source": "images/atlases/compressed.sprites/back_button_outline.tres",
+  "w": 259
+ },
+ "card_removal.png": {
+  "h": 592,
+  "source": "images/rooms/merchant_room/card_removal_00.png",
+  "w": 470
+ },
+ "card_removal_00.png": {
+  "h": 592,
+  "source": "images/rooms/merchant_room/card_removal_00.png",
+  "w": 470
+ },
+ "card_removal_01.png": {
+  "h": 592,
+  "source": "images/rooms/merchant_room/card_removal_01.png",
+  "w": 470
+ },
+ "card_removal_02.png": {
+  "h": 592,
+  "source": "images/rooms/merchant_room/card_removal_02.png",
+  "w": 470
+ },
+ "card_removal_04.png": {
+  "h": 592,
+  "source": "images/rooms/merchant_room/card_removal_04.png",
+  "w": 470
+ },
+ "card_removal_05.png": {
+  "h": 592,
+  "source": "images/rooms/merchant_room/card_removal_05.png",
+  "w": 470
+ },
+ "gold_coin.png": {
+  "h": 24,
+  "source": "images/packed/sprite_fonts/gold_icon.png",
+  "w": 24
+ },
+ "gold_coin_price.png": {
+  "h": 75,
+  "source": "images/atlases/ui_atlas.sprites/top_bar/top_bar_gold.tres (the coin next to merchant prices)",
+  "w": 81
+ },
+ "proceed_button.png": {
+  "h": 178,
+  "source": "images/atlases/ui_atlas.sprites/proceed_button.tres",
+  "w": 381
+ },
+ "proceed_button_outline.png": {
+  "h": 188,
+  "source": "images/atlases/compressed.sprites/proceed_button_outline.tres",
+  "w": 391
+ },
+ "sale_tag.png": {
+  "h": 148,
+  "source": "images/rooms/merchant_room/shop_sales_tag.png",
+  "w": 153
+ },
+ "shop_rug.png": {
+  "h": 1236,
+  "source": "images/rooms/merchant_room/shop_rug.png",
+  "w": 1920
+ },
+ "speech_bubble.png": {
+  "h": 285,
+  "source": "images/packed/vfx/speech_bubble3.png",
+  "w": 420
+ }
+}

@@ -1,0 +1,539 @@
+{
+ "banner_ancient.png": {
+  "h": 182,
+  "part": "name_banner",
+  "rarity": "ancient",
+  "w": 671
+ },
+ "banner_basic.png": {
+  "h": 145,
+  "note": "copy of banner_common.png: Basic rarity uses the common banner material in STS2",
+  "part": "name_banner",
+  "rarity": "basic",
+  "w": 653
+ },
+ "banner_common.png": {
+  "h": 145,
+  "note": "title ribbon across the top of the card, tinted by rarity",
+  "part": "name_banner",
+  "rarity": "common",
+  "w": 653
+ },
+ "banner_curse.png": {
+  "h": 145,
+  "note": "title ribbon across the top of the card, tinted by rarity",
+  "part": "name_banner",
+  "rarity": "curse",
+  "w": 653
+ },
+ "banner_event.png": {
+  "h": 145,
+  "note": "title ribbon across the top of the card, tinted by rarity",
+  "part": "name_banner",
+  "rarity": "event",
+  "w": 653
+ },
+ "banner_rare.png": {
+  "h": 145,
+  "note": "title ribbon across the top of the card, tinted by rarity",
+  "part": "name_banner",
+  "rarity": "rare",
+  "w": 653
+ },
+ "banner_raw.png": {
+  "h": 145,
+  "part": "name_banner",
+  "rarity": null,
+  "w": 653
+ },
+ "banner_status.png": {
+  "h": 145,
+  "note": "title ribbon across the top of the card, tinted by rarity",
+  "part": "name_banner",
+  "rarity": "status",
+  "w": 653
+ },
+ "banner_uncommon.png": {
+  "h": 145,
+  "note": "title ribbon across the top of the card, tinted by rarity",
+  "part": "name_banner",
+  "rarity": "uncommon",
+  "w": 653
+ },
+ "border_attack_basic.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   0.0,
+   0.85
+  ],
+  "kind": "attack",
+  "note": "copy of border_attack_common.png: Basic rarity uses the common banner material in STS2",
+  "part": "portrait_border",
+  "rarity": "basic",
+  "w": 551
+ },
+ "border_attack_common.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   0.0,
+   0.85
+  ],
+  "kind": "attack",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "common",
+  "w": 551
+ },
+ "border_attack_curse.png": {
+  "h": 420,
+  "hsv": [
+   0.27,
+   1.1,
+   0.9
+  ],
+  "kind": "attack",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "curse",
+  "w": 551
+ },
+ "border_attack_event.png": {
+  "h": 420,
+  "hsv": [
+   0.875,
+   0.85,
+   0.9
+  ],
+  "kind": "attack",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "event",
+  "w": 551
+ },
+ "border_attack_rare.png": {
+  "h": 420,
+  "hsv": [
+   0.563,
+   1.198,
+   1.14
+  ],
+  "kind": "attack",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "rare",
+  "w": 551
+ },
+ "border_attack_raw.png": {
+  "h": 420,
+  "kind": "attack",
+  "part": "portrait_border",
+  "rarity": null,
+  "w": 551
+ },
+ "border_attack_status.png": {
+  "h": 420,
+  "hsv": [
+   0.634,
+   0.35,
+   0.8
+  ],
+  "kind": "attack",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "status",
+  "w": 551
+ },
+ "border_attack_uncommon.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "kind": "attack",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "uncommon",
+  "w": 551
+ },
+ "border_power_basic.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   0.0,
+   0.85
+  ],
+  "kind": "power",
+  "note": "copy of border_power_common.png: Basic rarity uses the common banner material in STS2",
+  "part": "portrait_border",
+  "rarity": "basic",
+  "w": 551
+ },
+ "border_power_common.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   0.0,
+   0.85
+  ],
+  "kind": "power",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "common",
+  "w": 551
+ },
+ "border_power_curse.png": {
+  "h": 420,
+  "hsv": [
+   0.27,
+   1.1,
+   0.9
+  ],
+  "kind": "power",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "curse",
+  "w": 551
+ },
+ "border_power_event.png": {
+  "h": 420,
+  "hsv": [
+   0.875,
+   0.85,
+   0.9
+  ],
+  "kind": "power",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "event",
+  "w": 551
+ },
+ "border_power_rare.png": {
+  "h": 420,
+  "hsv": [
+   0.563,
+   1.198,
+   1.14
+  ],
+  "kind": "power",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "rare",
+  "w": 551
+ },
+ "border_power_raw.png": {
+  "h": 420,
+  "kind": "power",
+  "part": "portrait_border",
+  "rarity": null,
+  "w": 551
+ },
+ "border_power_status.png": {
+  "h": 420,
+  "hsv": [
+   0.634,
+   0.35,
+   0.8
+  ],
+  "kind": "power",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "status",
+  "w": 551
+ },
+ "border_power_uncommon.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "kind": "power",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "uncommon",
+  "w": 551
+ },
+ "border_skill_basic.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   0.0,
+   0.85
+  ],
+  "kind": "skill",
+  "note": "copy of border_skill_common.png: Basic rarity uses the common banner material in STS2",
+  "part": "portrait_border",
+  "rarity": "basic",
+  "w": 551
+ },
+ "border_skill_common.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   0.0,
+   0.85
+  ],
+  "kind": "skill",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "common",
+  "w": 551
+ },
+ "border_skill_curse.png": {
+  "h": 420,
+  "hsv": [
+   0.27,
+   1.1,
+   0.9
+  ],
+  "kind": "skill",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "curse",
+  "w": 551
+ },
+ "border_skill_event.png": {
+  "h": 420,
+  "hsv": [
+   0.875,
+   0.85,
+   0.9
+  ],
+  "kind": "skill",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "event",
+  "w": 551
+ },
+ "border_skill_rare.png": {
+  "h": 420,
+  "hsv": [
+   0.563,
+   1.198,
+   1.14
+  ],
+  "kind": "skill",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "rare",
+  "w": 551
+ },
+ "border_skill_raw.png": {
+  "h": 420,
+  "kind": "skill",
+  "part": "portrait_border",
+  "rarity": null,
+  "w": 551
+ },
+ "border_skill_status.png": {
+  "h": 420,
+  "hsv": [
+   0.634,
+   0.35,
+   0.8
+  ],
+  "kind": "skill",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "status",
+  "w": 551
+ },
+ "border_skill_uncommon.png": {
+  "h": 420,
+  "hsv": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "kind": "skill",
+  "note": "frame around the portrait art, tinted by rarity (basic/token use common)",
+  "part": "portrait_border",
+  "rarity": "uncommon",
+  "w": 551
+ },
+ "energy_colorless.png": {
+  "h": 71,
+  "note": "cost orb at the top-left corner; draw the cost number on it",
+  "part": "energy_orb",
+  "pool": "colorless",
+  "w": 71
+ },
+ "energy_ironclad.png": {
+  "h": 74,
+  "note": "cost orb at the top-left corner; draw the cost number on it",
+  "part": "energy_orb",
+  "pool": "ironclad",
+  "w": 74
+ },
+ "frame_ancient.png": {
+  "h": 862,
+  "kind": "ancient",
+  "part": "frame",
+  "w": 618
+ },
+ "frame_attack_colorless.png": {
+  "h": 844,
+  "hsv": [
+   1.0,
+   0.0,
+   1.2
+  ],
+  "kind": "attack",
+  "note": "card body frame, pre-tinted with the pool hsv material",
+  "part": "frame",
+  "pool": "colorless",
+  "w": 598
+ },
+ "frame_attack_ironclad.png": {
+  "h": 844,
+  "hsv": [
+   0.025,
+   0.85,
+   1.0
+  ],
+  "kind": "attack",
+  "note": "card body frame, pre-tinted with the pool hsv material",
+  "part": "frame",
+  "pool": "ironclad",
+  "w": 598
+ },
+ "frame_attack_raw.png": {
+  "h": 844,
+  "kind": "attack",
+  "note": "untinted atlas sprite; the game always applies a pool material",
+  "part": "frame",
+  "pool": null,
+  "w": 598
+ },
+ "frame_power_colorless.png": {
+  "h": 844,
+  "hsv": [
+   1.0,
+   0.0,
+   1.2
+  ],
+  "kind": "power",
+  "note": "card body frame, pre-tinted with the pool hsv material",
+  "part": "frame",
+  "pool": "colorless",
+  "w": 598
+ },
+ "frame_power_ironclad.png": {
+  "h": 844,
+  "hsv": [
+   0.025,
+   0.85,
+   1.0
+  ],
+  "kind": "power",
+  "note": "card body frame, pre-tinted with the pool hsv material",
+  "part": "frame",
+  "pool": "ironclad",
+  "w": 598
+ },
+ "frame_power_raw.png": {
+  "h": 844,
+  "kind": "power",
+  "note": "untinted atlas sprite; the game always applies a pool material",
+  "part": "frame",
+  "pool": null,
+  "w": 598
+ },
+ "frame_skill_colorless.png": {
+  "h": 844,
+  "hsv": [
+   1.0,
+   0.0,
+   1.2
+  ],
+  "kind": "skill",
+  "note": "card body frame, pre-tinted with the pool hsv material",
+  "part": "frame",
+  "pool": "colorless",
+  "w": 598
+ },
+ "frame_skill_ironclad.png": {
+  "h": 844,
+  "hsv": [
+   0.025,
+   0.85,
+   1.0
+  ],
+  "kind": "skill",
+  "note": "card body frame, pre-tinted with the pool hsv material",
+  "part": "frame",
+  "pool": "ironclad",
+  "w": 598
+ },
+ "frame_skill_raw.png": {
+  "h": 844,
+  "kind": "skill",
+  "note": "untinted atlas sprite; the game always applies a pool material",
+  "part": "frame",
+  "pool": null,
+  "w": 598
+ },
+ "plaque_basic.png": {
+  "h": 75,
+  "note": "copy of plaque_common.png: Basic rarity uses the common banner material in STS2",
+  "part": "type_plaque",
+  "rarity": "basic",
+  "w": 123
+ },
+ "plaque_common.png": {
+  "h": 75,
+  "note": "small plaque under the portrait holding the type text; horizontal 9-slice, margins 13/12 px",
+  "part": "type_plaque",
+  "rarity": "common",
+  "w": 123
+ },
+ "plaque_curse.png": {
+  "h": 75,
+  "note": "small plaque under the portrait holding the type text; horizontal 9-slice, margins 13/12 px",
+  "part": "type_plaque",
+  "rarity": "curse",
+  "w": 123
+ },
+ "plaque_event.png": {
+  "h": 75,
+  "note": "small plaque under the portrait holding the type text; horizontal 9-slice, margins 13/12 px",
+  "part": "type_plaque",
+  "rarity": "event",
+  "w": 123
+ },
+ "plaque_rare.png": {
+  "h": 75,
+  "note": "small plaque under the portrait holding the type text; horizontal 9-slice, margins 13/12 px",
+  "part": "type_plaque",
+  "rarity": "rare",
+  "w": 123
+ },
+ "plaque_raw.png": {
+  "h": 75,
+  "part": "type_plaque",
+  "rarity": null,
+  "w": 123
+ },
+ "plaque_status.png": {
+  "h": 75,
+  "note": "small plaque under the portrait holding the type text; horizontal 9-slice, margins 13/12 px",
+  "part": "type_plaque",
+  "rarity": "status",
+  "w": 123
+ },
+ "plaque_uncommon.png": {
+  "h": 75,
+  "note": "small plaque under the portrait holding the type text; horizontal 9-slice, margins 13/12 px",
+  "part": "type_plaque",
+  "rarity": "uncommon",
+  "w": 123
+ },
+ "unplayable.png": {
+  "h": 102,
+  "part": "unplayable_icon",
+  "w": 102
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "character": "ironclad",
+ "cards": {
+  "StrikeIronclad": {
+   "id": "StrikeIronclad",
+   "locKey": "STRIKE_IRONCLAD",
+   "name": "Strike",
+   "type": "Attack",
+   "cost": 1,
+   "rarity": "Basic",
+   "art": "strike_ironclad",
+   "target": "AnyEnemy",
+   "description": "Deal 6 damage.",
+   "vars": {
+    "Damage": 6
+   }
+  },
+  "DefendIronclad": {
+   "id": "DefendIronclad",
+   "locKey": "DEFEND_IRONCLAD",
+   "name": "Defend",
+   "type": "Skill",
+   "cost": 1,
+   "rarity": "Basic",
+   "art": "defend_ironclad",
+   "target": "Self",
+   "description": "Gain 5 [gold]Block[/gold].",
+   "vars": {
+    "Block": 5
+   }
+  },
+  "Bash": {
+   "id": "Bash",
+   "locKey": "BASH",
+   "name": "Bash",
+   "type": "Attack",
+   "cost": 2,
+   "rarity": "Basic",
+   "art": "bash",
+   "target": "AnyEnemy",
+   "description": "Deal 8 damage.\nApply 2 [gold]Vulnerable[/gold].",
+   "vars": {
+    "Damage": 8,
+    "Vulnerable": 2
+   }
+  }
+ },
+ "deck": [
+  "StrikeIronclad",
+  "StrikeIronclad",
+  "StrikeIronclad",
+  "StrikeIronclad",
+  "StrikeIronclad",
+  "DefendIronclad",
+  "DefendIronclad",
+  "DefendIronclad",
+  "DefendIronclad",
+  "Bash"
+ ]
+}

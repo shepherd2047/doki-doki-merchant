@@ -1,0 +1,92 @@
+{
+ "sts2_merchant_act1_v2": {
+  "bank": "act1_a1",
+  "file": "sts2_merchant_act1_v2.mp3",
+  "loop": false,
+  "seconds": 112.17
+ },
+ "sts2_sfx_vo_merchant_dissapointment_v1_rr1": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_dissapointment_v1_rr1.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_dissapointment_v1_rr2": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_dissapointment_v1_rr2.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_dissapointment_v1_rr3": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_dissapointment_v1_rr3.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_laughter_v1_rr1": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_laughter_v1_rr1.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_laughter_v1_rr2": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_laughter_v1_rr2.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_passive_v1_rr1": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_passive_v1_rr1.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_passive_v1_rr2": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_passive_v1_rr2.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_thank_yous_v1_rr1": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_thank_yous_v1_rr1.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_thank_yous_v1_rr2": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_thank_yous_v1_rr2.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_thank_yous_v1_rr3": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_thank_yous_v1_rr3.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_welcome_v1_rr1": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_welcome_v1_rr1.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_welcome_v1_rr2": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_welcome_v1_rr2.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_welcome_v1_rr3": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_welcome_v1_rr3.mp3",
+  "loop": false,
+  "seconds": 1.75
+ },
+ "sts2_sfx_vo_merchant_welcome_v1_rr4": {
+  "bank": "sfx",
+  "file": "sts2_sfx_vo_merchant_welcome_v1_rr4.mp3",
+  "loop": false,
+  "seconds": 1.75
+ }
+}

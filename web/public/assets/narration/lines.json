@@ -1,0 +1,62 @@
+{
+  "shop1": {
+    "text": "Okay babe, this is it. His tent is right past this little monster. Go get your man!",
+    "ms": 5277
+  },
+  "shop2": {
+    "text": "Floor thirteen already? Don't pretend you're climbing for the relics. We both know who you're climbing for.",
+    "ms": 5303
+  },
+  "shop3": {
+    "text": "Act two, and he moved his tent up here too? Girl... that is not a coincidence.",
+    "ms": 5224
+  },
+  "shop4": {
+    "text": "Okay, listen. This is his last shop before the top. If you don't make him yours now... you never will.",
+    "ms": 5538
+  },
+  "bonus": {
+    "text": "Wait. He set up another tent?! He couldn't let you go! One more chance, babe. Don't blow it.",
+    "ms": 6113
+  },
+  "good": {
+    "text": "Oh my god. They're leaving the Spire together. Hand in hand. I'm not crying. You're crying.",
+    "ms": 6374
+  },
+  "friends": {
+    "text": "He called you a good customer. Customer. Oh babe... I'm so sorry. Ice cream?",
+    "ms": 5721
+  },
+  "fight": {
+    "text": "You lowballed him three times?! Babe, that's not flirting. That's a declaration of war.",
+    "ms": 8202
+  },
+  "up3": {
+    "text": "Ooh, he called you a regular! That's basically a pet name for him.",
+    "ms": 3788
+  },
+  "up4": {
+    "text": "He blushed. Babe, I saw it! Under the hood. He blushed!",
+    "ms": 4336
+  },
+  "up5": {
+    "text": "Darling?! He is so in love with you!",
+    "ms": 2534
+  },
+  "down": {
+    "text": "Oof. Babe. Why would you say that to him?",
+    "ms": 2900
+  },
+  "lowball2": {
+    "text": "Okay, that's two lowballs in a row. One more and he's gonna snap. I'm serious.",
+    "ms": 4519
+  },
+  "secret": {
+    "text": "Wait. He's hiding a secret card just for you? That is so romantic.",
+    "ms": 4859
+  },
+  "capped": {
+    "text": "Slow down, Romeo. He needs time. Try again next floor.",
+    "ms": 4336
+  }
+}

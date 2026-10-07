@@ -32,9 +32,8 @@ const params = new URLSearchParams(location.search);
 const seed = Number(params.get("seed")) || Math.floor(Math.random() * 1e9);
 const player = { gold: 300, potionSlots: 3, potions: [], deck: [], relics: [] };
 let items = rollShop(catalog, seed);
-// His feelings survive between visits (localStorage); ?reset forgets, ?affection=75 is the demo shortcut.
-if (params.has("reset")) meta.store.set("affection", null);
-const affection = new Affection(params.has("affection") ? Number(params.get("affection")) : meta.store.get("affection", 20));
+// A reload is a new run: his feelings start from scratch (they carry over between the shops of a run). ?affection=75 is the demo shortcut.
+const affection = new Affection(params.has("affection") ? Number(params.get("affection")) : 20);
 let haggle = new Haggle(items, player, makeRng(seed ^ 0x5eed), affection);
 const stats = { bought: 0, fullPrice: 0, spent: 0, everRegular: false, saved: 0, boughtThisVisit: 0 };
 // A run is the Merchant's shops on the way up the Spire, as in the original: two in Act 1, one in Act 2,
@@ -401,13 +400,12 @@ function say(text) {
 }
 // ---------------------------------------------------------------- chat log (retractable, above the type bar)
 // Everything said in the shop, kept across reloads (localStorage) and savable as a text file.
-const chat = meta.store.get("chatlog") ?? [];
+const chat = []; // this run's conversation (a reload is a new run)
 function record(who, text) {
   text = String(text ?? "").trim();
   if (!text) return;
   chat.push({ who, text, at: Date.now() });
   if (chat.length > 400) chat.splice(0, chat.length - 400);
-  meta.store.set("chatlog", chat);
   addChatRow(chat.at(-1));
 }
 function addChatRow({ who, text }) {
@@ -462,7 +460,6 @@ function flushGame() {
 }
 
 affection.onChange((ev) => {
-  meta.store.set("affection", ev.value);
   meta.heartPop(ev.delta);
   if (ev.levelUp || ev.levelDown) {
     meta.levelFlash(ev.levelUp, ev.level);

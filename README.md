@@ -28,7 +28,7 @@ npm run dev                   # game on http://localhost:5173
 
 Use Chrome for voice (mic permission). Typing works everywhere.
 
-**Demo presets:** `?reset` for a fresh run, `?nointro` to skip the trailer, `?affection=75` for the secret card after two purchases, `?affection=100` for Darling, `?bonus` to force the bonus shop, `?fight` to go straight to the fight.
+**Demo presets:** `?nointro` to skip the trailer, `?affection=75` for the secret card after two purchases, `?affection=100` for Darling, `?bonus` to force the bonus shop, `?fight` to go straight to the fight.
 
 ## Layout
 

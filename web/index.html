@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doki Doki Merchant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="viewport">
+      <div id="stage">
+        <img id="bg" src="/assets/merchant_bg.png" alt="" />
+        <img id="merchant" src="/assets/merchant_2x.png" alt="The Merchant" />
+        <div id="affection"><div class="hearts"></div><div class="aff-bar"><i></i></div><div class="aff-level"></div></div>
+
+        <div id="hud">
+          <span class="gold"><img src="/assets/ui/gold_coin_price.png" alt="" /><b id="gold">0</b></span>
+          <span id="potion-belt"></span>
+          <span id="deck-count"></span>
+          <span id="saved"></span>
+          <span id="visit"></span>
+        </div>
+
+        <div id="backstop"></div>
+        <div id="rug"><img src="/assets/ui/shop_rug_full.png" alt="" /></div>
+        <div id="goods"></div>
+
+        <div id="detail" class="hidden"></div>
+
+        <div id="you" class="hidden"><span class="you-name">You</span><span id="you-text"></span></div>
+        <div id="bubble">
+          <div class="nameplate">The Merchant ♥</div>
+          <div id="bubble-text"></div>
+        </div>
+
+        <div id="call">
+          <button id="leave" class="danger">Leave the shop</button>
+          <div id="leave-menu" class="hidden">
+            <button id="climb">▲ Climb on <small>(come back next floor)</small></button>
+            <button id="endrun" class="danger">End the run</button>
+          </div>
+        </div>
+
+        <!-- microphone: tap to call the Merchant, tap again to hang up -->
+        <div id="mic" class="idle">
+          <button id="talk" aria-label="Talk to the Merchant">
+            <span class="ring"></span><span class="ring r2"></span>
+            <svg class="ico-mic" viewBox="0 0 24 24"><rect x="8.5" y="2.5" width="7" height="12" rx="3.5"/><path d="M5 11.5a7 7 0 0 0 14 0M12 18.5v3M8.5 21.5h7"/></svg>
+            <svg class="ico-off" viewBox="0 0 24 24"><rect x="8.5" y="2.5" width="7" height="12" rx="3.5"/><path d="M5 11.5a7 7 0 0 0 14 0M12 18.5v3M8.5 21.5h7M3.5 3.5l17 17"/></svg>
+            <span class="wave"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="spin"></span>
+          </button>
+          <div id="status">Tap to talk</div>
+        </div>
+        <div id="chatlog" class="closed">
+          <button id="chatlog-tab" type="button"><span class="cl-arrow">▲</span> Chat log <b id="chatlog-count">0</b></button>
+          <div id="chatlog-body"><div id="chatlog-list"></div><button id="chatlog-save" type="button" title="Save the log as a text file">Save .txt</button></div>
+        </div>
+        <form id="type-bar" autocomplete="off"><input id="type-input" placeholder="…or type to the Merchant" maxlength="300" /><button type="submit">Say it ♥</button></form>
+        <div id="log" class="hidden"></div>
+        <div id="toasts"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

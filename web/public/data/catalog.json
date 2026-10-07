@@ -1,0 +1,4554 @@
+{
+ "cards": [
+  {
+   "id": "Aggression",
+   "locKey": "AGGRESSION",
+   "art": "aggression",
+   "artPath": "images/packed/card_portraits/ironclad/aggression.png",
+   "name": "Aggression",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "At the start of your turn, put a random Attack from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold] and [gold]Upgrade[/gold] it.",
+   "vars": {},
+   "upgraded": {
+    "name": "Aggression+",
+    "description": "[gold]Innate[/gold].\nAt the start of your turn, put a random Attack from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold] and [gold]Upgrade[/gold] it.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Anger",
+   "locKey": "ANGER",
+   "art": "anger",
+   "artPath": "images/packed/card_portraits/ironclad/anger.png",
+   "name": "Anger",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 0,
+   "keywords": [],
+   "description": "Deal 6 damage.\nAdd a copy of this card into your [gold]Discard Pile[/gold].",
+   "vars": {
+    "Damage": 6.0
+   },
+   "upgraded": {
+    "name": "Anger+",
+    "description": "Deal [green]8[/green] damage.\nAdd a copy of this card into your [gold]Discard Pile[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Armaments",
+   "locKey": "ARMAMENTS",
+   "art": "armaments",
+   "artPath": "images/packed/card_portraits/ironclad/armaments.png",
+   "name": "Armaments",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 5 [gold]Block[/gold].\n[gold]Upgrade[/gold] a card in your [gold]Hand[/gold].",
+   "vars": {
+    "Block": 5.0
+   },
+   "upgraded": {
+    "name": "Armaments+",
+    "description": "Gain 5 [gold]Block[/gold].\n[gold]Upgrade[/gold] ALL cards in your [gold]Hand[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "AshenStrike",
+   "locKey": "ASHEN_STRIKE",
+   "art": "ashen_strike",
+   "artPath": "images/packed/card_portraits/ironclad/ashen_strike.png",
+   "name": "Ashen Strike",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 6 damage.\nDeals 3 additional damage for each card in your [gold]Exhaust Pile[/gold].",
+   "vars": {
+    "CalculationBase": 6.0,
+    "ExtraDamage": 3.0,
+    "CalculatedDamage": 6.0,
+    "CalculatedBlock": 6.0,
+    "CalculatedHits": 6.0,
+    "CalculatedCards": 6.0
+   },
+   "upgraded": {
+    "name": "Ashen Strike+",
+    "description": "Deal 6 damage.\nDeals [green]4[/green] additional damage for each card in your [gold]Exhaust Pile[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Barricade",
+   "locKey": "BARRICADE",
+   "art": "barricade",
+   "artPath": "images/packed/card_portraits/ironclad/barricade.png",
+   "name": "Barricade",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "[gold]Block[/gold] is not removed at the start of your turn.",
+   "vars": {},
+   "upgraded": {
+    "name": "Barricade+",
+    "description": "[gold]Block[/gold] is not removed at the start of your turn.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "BattleTrance",
+   "locKey": "BATTLE_TRANCE",
+   "art": "battle_trance",
+   "artPath": "images/packed/card_portraits/ironclad/battle_trance.png",
+   "name": "Battle Trance",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Draw 3 cards.\nYou cannot draw additional cards this turn.",
+   "vars": {
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Battle Trance+",
+    "description": "Draw [green]4[/green] cards.\nYou cannot draw additional cards this turn.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "BloodWall",
+   "locKey": "BLOOD_WALL",
+   "art": "blood_wall",
+   "artPath": "images/packed/card_portraits/ironclad/blood_wall.png",
+   "name": "Blood Wall",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 2,
+   "keywords": [],
+   "description": "Lose 2 HP.\nGain 16 [gold]Block[/gold].",
+   "vars": {
+    "HpLoss": 2.0,
+    "Block": 16.0
+   },
+   "upgraded": {
+    "name": "Blood Wall+",
+    "description": "Lose 2 HP.\nGain [green]20[/green] [gold]Block[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Bloodletting",
+   "locKey": "BLOODLETTING",
+   "art": "bloodletting",
+   "artPath": "images/packed/card_portraits/ironclad/bloodletting.png",
+   "name": "Bloodletting",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Lose 3 HP.\nGain [icon:energy][icon:energy].",
+   "vars": {
+    "HpLoss": 3.0,
+    "Energy": 2.0
+   },
+   "upgraded": {
+    "name": "Bloodletting+",
+    "description": "Lose 3 HP.\nGain [icon:energy][icon:energy][icon:energy].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Bludgeon",
+   "locKey": "BLUDGEON",
+   "art": "bludgeon",
+   "artPath": "images/packed/card_portraits/ironclad/bludgeon.png",
+   "name": "Bludgeon",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 3,
+   "keywords": [],
+   "description": "Deal 32 damage.",
+   "vars": {
+    "Damage": 32.0
+   },
+   "upgraded": {
+    "name": "Bludgeon+",
+    "description": "Deal [green]42[/green] damage.",
+    "cost": 3
+   }
+  },
+  {
+   "id": "BodySlam",
+   "locKey": "BODY_SLAM",
+   "art": "body_slam",
+   "artPath": "images/packed/card_portraits/ironclad/body_slam.png",
+   "name": "Body Slam",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal damage equal to your [gold]Block[/gold].",
+   "vars": {
+    "CalculationBase": 0.0,
+    "ExtraDamage": 1.0,
+    "CalculatedDamage": 0.0,
+    "CalculatedBlock": 0.0,
+    "CalculatedHits": 0.0,
+    "CalculatedCards": 0.0
+   },
+   "upgraded": {
+    "name": "Body Slam+",
+    "description": "Deal damage equal to your [gold]Block[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Brand",
+   "locKey": "BRAND",
+   "art": "brand",
+   "artPath": "images/packed/card_portraits/ironclad/brand.png",
+   "name": "Brand",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [],
+   "description": "Lose 1 HP.\n[gold]Exhaust[/gold] 1 card.\nGain 1 [gold]Strength[/gold].",
+   "vars": {
+    "HpLoss": 1.0,
+    "StrengthPower": 1.0
+   },
+   "upgraded": {
+    "name": "Brand+",
+    "description": "Lose 1 HP.\n[gold]Exhaust[/gold] 1 card.\nGain [green]2[/green] [gold]Strength[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Breakthrough",
+   "locKey": "BREAKTHROUGH",
+   "art": "breakthrough",
+   "artPath": "images/packed/card_portraits/ironclad/breakthrough.png",
+   "name": "Breakthrough",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Lose 1 HP.\nDeal 9 damage to ALL enemies.",
+   "vars": {
+    "Damage": 9.0,
+    "HpLoss": 1.0
+   },
+   "upgraded": {
+    "name": "Breakthrough+",
+    "description": "Lose 1 HP.\nDeal [green]13[/green] damage to ALL enemies.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Bully",
+   "locKey": "BULLY",
+   "art": "bully",
+   "artPath": "images/packed/card_portraits/ironclad/bully.png",
+   "name": "Bully",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Deal 4 damage.\nDeals 2 additional damage for each [gold]Vulnerable[/gold] on the enemy.",
+   "vars": {
+    "CalculationBase": 4.0,
+    "ExtraDamage": 2.0,
+    "CalculatedDamage": 4.0,
+    "CalculatedBlock": 4.0,
+    "CalculatedHits": 4.0,
+    "CalculatedCards": 4.0
+   },
+   "upgraded": {
+    "name": "Bully+",
+    "description": "Deal 4 damage.\nDeals [green]3[/green] additional damage for each [gold]Vulnerable[/gold] on the enemy.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "BurningPact",
+   "locKey": "BURNING_PACT",
+   "art": "burning_pact",
+   "artPath": "images/packed/card_portraits/ironclad/burning_pact.png",
+   "name": "Burning Pact",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "[gold]Exhaust[/gold] 1 card.\nDraw 2 cards.",
+   "vars": {
+    "Cards": 2.0
+   },
+   "upgraded": {
+    "name": "Burning Pact+",
+    "description": "[gold]Exhaust[/gold] 1 card.\nDraw [green]3[/green] cards.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Cascade",
+   "locKey": "CASCADE",
+   "art": "cascade",
+   "artPath": "images/packed/card_portraits/ironclad/cascade.png",
+   "name": "Cascade",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": "X",
+   "keywords": [],
+   "description": "Play the top X cards of your [gold]Draw Pile[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Cascade+",
+    "description": "Play the top X+1 cards of your [gold]Draw Pile[/gold].",
+    "cost": "X"
+   }
+  },
+  {
+   "id": "Cinder",
+   "locKey": "CINDER",
+   "art": "cinder",
+   "artPath": "images/packed/card_portraits/ironclad/cinder.png",
+   "name": "Cinder",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 18 damage.\n[gold]Exhaust[/gold] 1 card at random.",
+   "vars": {
+    "Damage": 18.0
+   },
+   "upgraded": {
+    "name": "Cinder+",
+    "description": "Deal [green]24[/green] damage.\n[gold]Exhaust[/gold] 1 card at random.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Colossus",
+   "locKey": "COLOSSUS",
+   "art": "colossus",
+   "artPath": "images/packed/card_portraits/ironclad/colossus.png",
+   "name": "Colossus",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 4 [gold]Block[/gold].\nYou receive 50% less damage from [gold]Vulnerable[/gold] enemies this turn.",
+   "vars": {
+    "Block": 4.0,
+    "Colossus": 1.0
+   },
+   "upgraded": {
+    "name": "Colossus+",
+    "description": "Gain [green]7[/green] [gold]Block[/gold].\nYou receive 50% less damage from [gold]Vulnerable[/gold] enemies this turn.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Conflagration",
+   "locKey": "CONFLAGRATION",
+   "art": "conflagration",
+   "artPath": "images/packed/card_portraits/ironclad/conflagration.png",
+   "name": "Conflagration",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 2 damage to ALL enemies 4 times.",
+   "vars": {
+    "Damage": 2.0,
+    "Repeat": 4.0
+   },
+   "upgraded": {
+    "name": "Conflagration+",
+    "description": "Deal 2 damage to ALL enemies [green]5[/green] times.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "CrimsonMantle",
+   "locKey": "CRIMSON_MANTLE",
+   "art": "crimson_mantle",
+   "artPath": "images/packed/card_portraits/ironclad/crimson_mantle.png",
+   "name": "Crimson Mantle",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "At the start of your turn, lose 1 HP and gain 7 [gold]Block[/gold].",
+   "vars": {
+    "CrimsonMantlePower": 7.0
+   },
+   "upgraded": {
+    "name": "Crimson Mantle+",
+    "description": "At the start of your turn, lose 1 HP and gain [green]10[/green] [gold]Block[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Cruelty",
+   "locKey": "CRUELTY",
+   "art": "cruelty",
+   "artPath": "images/packed/card_portraits/ironclad/cruelty.png",
+   "name": "Cruelty",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "[gold]Vulnerable[/gold] enemies take an additional 25% damage.",
+   "vars": {
+    "CrueltyPower": 25.0
+   },
+   "upgraded": {
+    "name": "Cruelty+",
+    "description": "[gold]Vulnerable[/gold] enemies take an additional [green]50[/green]% damage.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "DarkEmbrace",
+   "locKey": "DARK_EMBRACE",
+   "art": "dark_embrace",
+   "artPath": "images/packed/card_portraits/ironclad/dark_embrace.png",
+   "name": "Dark Embrace",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "Whenever a card is [gold]Exhausted[/gold],\ndraw 1 card.",
+   "vars": {},
+   "upgraded": {
+    "name": "Dark Embrace+",
+    "description": "Whenever a card is [gold]Exhausted[/gold],\ndraw 1 card.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "DemonForm",
+   "locKey": "DEMON_FORM",
+   "art": "demon_form",
+   "artPath": "images/packed/card_portraits/ironclad/demon_form.png",
+   "name": "Demon Form",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "At the start of your turn, gain 3 [gold]Strength[/gold].",
+   "vars": {
+    "StrengthPower": 3.0
+   },
+   "upgraded": {
+    "name": "Demon Form+",
+    "description": "At the start of your turn, gain [green]4[/green] [gold]Strength[/gold].",
+    "cost": 3
+   }
+  },
+  {
+   "id": "Dismantle",
+   "locKey": "DISMANTLE",
+   "art": "dismantle",
+   "artPath": "images/packed/card_portraits/ironclad/dismantle.png",
+   "name": "Dismantle",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 8 damage.\nIf the enemy is [gold]Vulnerable[/gold], hits twice.",
+   "vars": {
+    "Damage": 8.0
+   },
+   "upgraded": {
+    "name": "Dismantle+",
+    "description": "Deal [green]10[/green] damage.\nIf the enemy is [gold]Vulnerable[/gold], hits twice.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Dominate",
+   "locKey": "DOMINATE",
+   "art": "dominate",
+   "artPath": "images/packed/card_portraits/ironclad/dominate.png",
+   "name": "Dominate",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Apply 1 [gold]Vulnerable[/gold].\nGain 1 [gold]Strength[/gold] for each [gold]Vulnerable[/gold] on the enemy.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "VulnerablePower": 1.0,
+    "StrengthPerVulnerable": 1.0
+   },
+   "upgraded": {
+    "name": "Dominate+",
+    "description": "Apply [green]2[/green] [gold]Vulnerable[/gold].\nGain 1 [gold]Strength[/gold] for each [gold]Vulnerable[/gold] on the enemy.\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "DrumOfBattle",
+   "locKey": "DRUM_OF_BATTLE",
+   "art": "drum_of_battle",
+   "artPath": "images/packed/card_portraits/ironclad/drum_of_battle.png",
+   "name": "Drum of Battle",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Draw 2 cards.\nWhen this card is [gold]Exhausted[/gold], gain [icon:energy][icon:energy].",
+   "vars": {
+    "Cards": 2.0,
+    "Energy": 2.0
+   },
+   "upgraded": {
+    "name": "Drum of Battle+",
+    "description": "Draw 2 cards.\nWhen this card is [gold]Exhausted[/gold], gain [icon:energy][icon:energy][icon:energy].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "EvilEye",
+   "locKey": "EVIL_EYE",
+   "art": "evil_eye",
+   "artPath": "images/packed/card_portraits/ironclad/evil_eye.png",
+   "name": "Evil Eye",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 8 [gold]Block[/gold].\nGain another 8 [gold]Block[/gold] if you have [gold]Exhausted[/gold] a card this turn.",
+   "vars": {
+    "Block": 8.0
+   },
+   "upgraded": {
+    "name": "Evil Eye+",
+    "description": "Gain [green]11[/green] [gold]Block[/gold].\nGain another [green]11[/green] [gold]Block[/gold] if you have [gold]Exhausted[/gold] a card this turn.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "ExpectAFight",
+   "locKey": "EXPECT_A_FIGHT",
+   "art": "expect_a_fight",
+   "artPath": "images/packed/card_portraits/ironclad/expect_a_fight.png",
+   "name": "Expect a Fight",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 3,
+   "keywords": [],
+   "description": "Gain 15 [gold]Block[/gold].\nGains 5 additional [gold]Block[/gold] for each [gold]Strength[/gold] you have.",
+   "vars": {
+    "CalculationBase": 15.0,
+    "CalculationExtra": 5.0,
+    "CalculatedBlock": 15.0,
+    "CalculatedDamage": 15.0,
+    "CalculatedHits": 15.0,
+    "CalculatedCards": 15.0
+   },
+   "upgraded": {
+    "name": "Expect a Fight+",
+    "description": "Gain [green]16[/green] [gold]Block[/gold].\nGains [green]8[/green] additional [gold]Block[/gold] for each [gold]Strength[/gold] you have.",
+    "cost": 3
+   }
+  },
+  {
+   "id": "Feed",
+   "locKey": "FEED",
+   "art": "feed",
+   "artPath": "images/packed/card_portraits/ironclad/feed.png",
+   "name": "Feed",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Deal 10 damage.\nIf [gold]Fatal[/gold], raise your Max HP by 3.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Damage": 10.0,
+    "MaxHp": 3.0
+   },
+   "upgraded": {
+    "name": "Feed+",
+    "description": "Deal [green]12[/green] damage.\nIf [gold]Fatal[/gold], raise your Max HP by [green]4[/green].\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "FeelNoPain",
+   "locKey": "FEEL_NO_PAIN",
+   "art": "feel_no_pain",
+   "artPath": "images/packed/card_portraits/ironclad/feel_no_pain.png",
+   "name": "Feel No Pain",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Whenever a card is [gold]Exhausted[/gold], gain 3 [gold]Block[/gold].",
+   "vars": {
+    "Power": 3.0
+   },
+   "upgraded": {
+    "name": "Feel No Pain+",
+    "description": "Whenever a card is [gold]Exhausted[/gold], gain [green]4[/green] [gold]Block[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "FiendFire",
+   "locKey": "FIEND_FIRE",
+   "art": "fiend_fire",
+   "artPath": "images/packed/card_portraits/ironclad/fiend_fire.png",
+   "name": "Fiend Fire",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "[gold]Exhaust[/gold] your [gold]Hand[/gold].\nDeal 7 damage for each card [gold]Exhausted[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Damage": 7.0
+   },
+   "upgraded": {
+    "name": "Fiend Fire+",
+    "description": "[gold]Exhaust[/gold] your [gold]Hand[/gold].\nDeal [green]10[/green] damage for each card [gold]Exhausted[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "FightMe",
+   "locKey": "FIGHT_ME",
+   "art": "fight_me",
+   "artPath": "images/packed/card_portraits/ironclad/fight_me.png",
+   "name": "Fight Me!",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 5 damage twice.\nGain 3 [gold]Strength[/gold].\nThe enemy gains 1 [gold]Strength[/gold].",
+   "vars": {
+    "Damage": 5.0,
+    "Repeat": 2.0,
+    "StrengthPower": 3.0,
+    "EnemyStrength": 1.0
+   },
+   "upgraded": {
+    "name": "Fight Me!+",
+    "description": "Deal [green]6[/green] damage twice.\nGain [green]4[/green] [gold]Strength[/gold].\nThe enemy gains 1 [gold]Strength[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "FlameBarrier",
+   "locKey": "FLAME_BARRIER",
+   "art": "flame_barrier",
+   "artPath": "images/packed/card_portraits/ironclad/flame_barrier.png",
+   "name": "Flame Barrier",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "Gain 12 [gold]Block[/gold].\nWhenever you are attacked this turn, deal 4 damage back.",
+   "vars": {
+    "Block": 12.0,
+    "DamageBack": 4.0
+   },
+   "upgraded": {
+    "name": "Flame Barrier+",
+    "description": "Gain [green]16[/green] [gold]Block[/gold].\nWhenever you are attacked this turn, deal [green]6[/green] damage back.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "ForgottenRitual",
+   "locKey": "FORGOTTEN_RITUAL",
+   "art": "forgotten_ritual",
+   "artPath": "images/packed/card_portraits/ironclad/forgotten_ritual.png",
+   "name": "Forgotten Ritual",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Gain [icon:energy][icon:energy][icon:energy].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Energy": 3.0
+   },
+   "upgraded": {
+    "name": "Forgotten Ritual+",
+    "description": "Gain 4[icon:energy].\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Havoc",
+   "locKey": "HAVOC",
+   "art": "havoc",
+   "artPath": "images/packed/card_portraits/ironclad/havoc.png",
+   "name": "Havoc",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Play the top card of your [gold]Draw Pile[/gold] and [gold]Exhaust[/gold] it.",
+   "vars": {},
+   "upgraded": {
+    "name": "Havoc+",
+    "description": "Play the top card of your [gold]Draw Pile[/gold] and [gold]Exhaust[/gold] it.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Headbutt",
+   "locKey": "HEADBUTT",
+   "art": "headbutt",
+   "artPath": "images/packed/card_portraits/ironclad/headbutt.png",
+   "name": "Headbutt",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 9 damage.\nPut a card from your [gold]Discard Pile[/gold] on top of your [gold]Draw Pile[/gold].",
+   "vars": {
+    "Damage": 9.0
+   },
+   "upgraded": {
+    "name": "Headbutt+",
+    "description": "Deal [green]12[/green] damage.\nPut a card from your [gold]Discard Pile[/gold] on top of your [gold]Draw Pile[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Hellraiser",
+   "locKey": "HELLRAISER",
+   "art": "hellraiser",
+   "artPath": "images/packed/card_portraits/ironclad/hellraiser.png",
+   "name": "Hellraiser",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "Whenever you draw a card containing “Strike”, it is played against a random enemy.",
+   "vars": {},
+   "upgraded": {
+    "name": "Hellraiser+",
+    "description": "Whenever you draw a card containing “Strike”, it is played against a random enemy.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Hemokinesis",
+   "locKey": "HEMOKINESIS",
+   "art": "hemokinesis",
+   "artPath": "images/packed/card_portraits/ironclad/hemokinesis.png",
+   "name": "Hemokinesis",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Lose 2 HP.\nDeal 15 damage.",
+   "vars": {
+    "HpLoss": 2.0,
+    "Damage": 15.0
+   },
+   "upgraded": {
+    "name": "Hemokinesis+",
+    "description": "Lose 2 HP.\nDeal [green]20[/green] damage.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "HowlFromBeyond",
+   "locKey": "HOWL_FROM_BEYOND",
+   "art": "howl_from_beyond",
+   "artPath": "images/packed/card_portraits/ironclad/howl_from_beyond.png",
+   "name": "Howl from Beyond",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 3,
+   "keywords": [],
+   "description": "Deal 18 damage to ALL enemies.\nAt the end of your turn, if this is in your [gold]Exhaust Pile[/gold], play it.",
+   "vars": {
+    "Damage": 18.0
+   },
+   "upgraded": {
+    "name": "Howl from Beyond+",
+    "description": "Deal [green]24[/green] damage to ALL enemies.\nAt the end of your turn, if this is in your [gold]Exhaust Pile[/gold], play it.",
+    "cost": 3
+   }
+  },
+  {
+   "id": "Impervious",
+   "locKey": "IMPERVIOUS",
+   "art": "impervious",
+   "artPath": "images/packed/card_portraits/ironclad/impervious.png",
+   "name": "Impervious",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Gain 30 [gold]Block[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Block": 30.0
+   },
+   "upgraded": {
+    "name": "Impervious+",
+    "description": "Gain [green]40[/green] [gold]Block[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "InfernalBlade",
+   "locKey": "INFERNAL_BLADE",
+   "art": "infernal_blade",
+   "artPath": "images/packed/card_portraits/ironclad/infernal_blade.png",
+   "name": "Infernal Blade",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Add a random Attack into your [gold]Hand[/gold]. It's free to play this turn.\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Infernal Blade+",
+    "description": "Add a random Attack into your [gold]Hand[/gold]. It's free to play this turn.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Inferno",
+   "locKey": "INFERNO",
+   "art": "inferno",
+   "artPath": "images/packed/card_portraits/ironclad/inferno.png",
+   "name": "Inferno",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "At the start of your turn, lose 1 HP.\nWhenever you lose HP on your turn, deal 6 damage to ALL enemies.",
+   "vars": {
+    "InfernoPower": 6.0
+   },
+   "upgraded": {
+    "name": "Inferno+",
+    "description": "At the start of your turn, lose 1 HP.\nWhenever you lose HP on your turn, deal [green]9[/green] damage to ALL enemies.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Inflame",
+   "locKey": "INFLAME",
+   "art": "inflame",
+   "artPath": "images/packed/card_portraits/ironclad/inflame.png",
+   "name": "Inflame",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 2 [gold]Strength[/gold].",
+   "vars": {
+    "StrengthPower": 2.0
+   },
+   "upgraded": {
+    "name": "Inflame+",
+    "description": "Gain [green]3[/green] [gold]Strength[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "IronWave",
+   "locKey": "IRON_WAVE",
+   "art": "iron_wave",
+   "artPath": "images/packed/card_portraits/ironclad/iron_wave.png",
+   "name": "Iron Wave",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 5 [gold]Block[/gold].\nDeal 5 damage.",
+   "vars": {
+    "Damage": 5.0,
+    "Block": 5.0
+   },
+   "upgraded": {
+    "name": "Iron Wave+",
+    "description": "Gain [green]7[/green] [gold]Block[/gold].\nDeal [green]7[/green] damage.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Juggernaut",
+   "locKey": "JUGGERNAUT",
+   "art": "juggernaut",
+   "artPath": "images/packed/card_portraits/ironclad/juggernaut.png",
+   "name": "Juggernaut",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "Whenever you gain [gold]Block[/gold], deal 6 damage to a random enemy.",
+   "vars": {
+    "JuggernautPower": 6.0
+   },
+   "upgraded": {
+    "name": "Juggernaut+",
+    "description": "Whenever you gain [gold]Block[/gold], deal [green]8[/green] damage to a random enemy.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Juggling",
+   "locKey": "JUGGLING",
+   "art": "juggling",
+   "artPath": "images/packed/card_portraits/ironclad/juggling.png",
+   "name": "Juggling",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Add a copy of the third [gold]Attack[/gold] you play each turn into your [gold]Hand[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Juggling+",
+    "description": "[gold]Innate[/gold].\nAdd a copy of the third [gold]Attack[/gold] you play each turn into your [gold]Hand[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Mangle",
+   "locKey": "MANGLE",
+   "art": "mangle",
+   "artPath": "images/packed/card_portraits/ironclad/mangle.png",
+   "name": "Mangle",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "Deal 20 damage.\nEnemy loses 10 [gold]Strength[/gold] this turn.",
+   "vars": {
+    "Damage": 20.0,
+    "StrengthLoss": 10.0
+   },
+   "upgraded": {
+    "name": "Mangle+",
+    "description": "Deal [green]26[/green] damage.\nEnemy loses [green]15[/green] [gold]Strength[/gold] this turn.",
+    "cost": 3
+   }
+  },
+  {
+   "id": "MoltenFist",
+   "locKey": "MOLTEN_FIST",
+   "art": "molten_fist",
+   "artPath": "images/packed/card_portraits/ironclad/molten_fist.png",
+   "name": "Molten Fist",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Deal 10 damage.\nDouble the enemy's [gold]Vulnerable[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Damage": 10.0
+   },
+   "upgraded": {
+    "name": "Molten Fist+",
+    "description": "Deal [green]14[/green] damage.\nDouble the enemy's [gold]Vulnerable[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "NotYet",
+   "locKey": "NOT_YET",
+   "art": "not_yet",
+   "artPath": "images/packed/card_portraits/ironclad/not_yet.png",
+   "name": "Not Yet",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Heal 10 HP.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Heal": 10.0
+   },
+   "upgraded": {
+    "name": "Not Yet+",
+    "description": "Heal [green]13[/green] HP.\n[gold]Exhaust[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Offering",
+   "locKey": "OFFERING",
+   "art": "offering",
+   "artPath": "images/packed/card_portraits/ironclad/offering.png",
+   "name": "Offering",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Lose 6 HP.\nGain [icon:energy][icon:energy].\nDraw 3 cards.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "HpLoss": 6.0,
+    "Energy": 2.0,
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Offering+",
+    "description": "Lose 6 HP.\nGain [icon:energy][icon:energy].\nDraw [green]5[/green] cards.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "OneTwoPunch",
+   "locKey": "ONE_TWO_PUNCH",
+   "art": "one_two_punch",
+   "artPath": "images/packed/card_portraits/ironclad/one_two_punch.png",
+   "name": "One-Two Punch",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "This turn, your next Attack is played an extra time.",
+   "vars": {
+    "Attacks": 1.0
+   },
+   "upgraded": {
+    "name": "One-Two Punch+",
+    "description": "This turn, your next [green]2[/green] Attacks are played an extra time.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "PactsEnd",
+   "locKey": "PACTS_END",
+   "art": "pacts_end",
+   "artPath": "images/packed/card_portraits/ironclad/pacts_end.png",
+   "name": "Pact's End",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [],
+   "description": "If you have 3 or more cards in your [gold]Exhaust Pile[/gold],\ndeal 18 damage to ALL enemies.",
+   "vars": {
+    "Damage": 18.0,
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Pact's End+",
+    "description": "If you have 3 or more cards in your [gold]Exhaust Pile[/gold],\ndeal [green]24[/green] damage to ALL enemies.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "PerfectedStrike",
+   "locKey": "PERFECTED_STRIKE",
+   "art": "perfected_strike",
+   "artPath": "images/packed/card_portraits/ironclad/perfected_strike.png",
+   "name": "Perfected Strike",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 6 damage.\nDeals 2 additional damage for ALL your cards containing “Strike”.",
+   "vars": {
+    "CalculationBase": 6.0,
+    "ExtraDamage": 2.0,
+    "CalculatedDamage": 6.0,
+    "CalculatedBlock": 6.0,
+    "CalculatedHits": 6.0,
+    "CalculatedCards": 6.0
+   },
+   "upgraded": {
+    "name": "Perfected Strike+",
+    "description": "Deal 6 damage.\nDeals [green]3[/green] additional damage for ALL your cards containing “Strike”.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Pillage",
+   "locKey": "PILLAGE",
+   "art": "pillage",
+   "artPath": "images/packed/card_portraits/ironclad/pillage.png",
+   "name": "Pillage",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 6 damage.\nDraw cards until you draw a non-Attack card.",
+   "vars": {
+    "Damage": 6.0
+   },
+   "upgraded": {
+    "name": "Pillage+",
+    "description": "Deal [green]9[/green] damage.\nDraw cards until you draw a non-Attack card.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "PommelStrike",
+   "locKey": "POMMEL_STRIKE",
+   "art": "pommel_strike",
+   "artPath": "images/packed/card_portraits/ironclad/pommel_strike.png",
+   "name": "Pommel Strike",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 9 damage.\nDraw 1 card.",
+   "vars": {
+    "Damage": 9.0,
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Pommel Strike+",
+    "description": "Deal [green]10[/green] damage.\nDraw [green]2[/green] cards.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "PrimalForce",
+   "locKey": "PRIMAL_FORCE",
+   "art": "primal_force",
+   "artPath": "images/packed/card_portraits/ironclad/primal_force.png",
+   "name": "Primal Force",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [],
+   "description": "Transform all Attacks in your [gold]Hand[/gold] into [gold]Giant Rock[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Primal Force+",
+    "description": "Transform all Attacks in your [gold]Hand[/gold] into [gold]Giant Rock+[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Pyre",
+   "locKey": "PYRE",
+   "art": "pyre",
+   "artPath": "images/packed/card_portraits/ironclad/pyre.png",
+   "name": "Pyre",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "Gain [icon:energy] at the start of each turn.",
+   "vars": {
+    "Energy": 1.0
+   },
+   "upgraded": {
+    "name": "Pyre+",
+    "description": "Gain [icon:energy][icon:energy] at the start of each turn.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Rage",
+   "locKey": "RAGE",
+   "art": "rage",
+   "artPath": "images/packed/card_portraits/ironclad/rage.png",
+   "name": "Rage",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Whenever you play an Attack this turn, gain 3 [gold]Block[/gold].",
+   "vars": {
+    "Power": 3.0
+   },
+   "upgraded": {
+    "name": "Rage+",
+    "description": "Whenever you play an Attack this turn, gain [green]5[/green] [gold]Block[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Rampage",
+   "locKey": "RAMPAGE",
+   "art": "rampage",
+   "artPath": "images/packed/card_portraits/ironclad/rampage.png",
+   "name": "Rampage",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 10 damage.\nIncrease this card's damage by 5 this combat.",
+   "vars": {
+    "Damage": 10.0,
+    "Increase": 5.0
+   },
+   "upgraded": {
+    "name": "Rampage+",
+    "description": "Deal 10 damage.\nIncrease this card's damage by [green]10[/green] this combat.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Rupture",
+   "locKey": "RUPTURE",
+   "art": "rupture",
+   "artPath": "images/packed/card_portraits/ironclad/rupture.png",
+   "name": "Rupture",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Whenever you lose HP on your turn, gain 1 [gold]Strength[/gold].",
+   "vars": {
+    "StrengthPower": 1.0
+   },
+   "upgraded": {
+    "name": "Rupture+",
+    "description": "Whenever you lose HP on your turn, gain [green]2[/green] [gold]Strength[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "SecondWind",
+   "locKey": "SECOND_WIND",
+   "art": "second_wind",
+   "artPath": "images/packed/card_portraits/ironclad/second_wind.png",
+   "name": "Second Wind",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "[gold]Exhaust[/gold] all non-Attack cards in your [gold]Hand[/gold]. Gain 5 [gold]Block[/gold] for each card [gold]Exhausted[/gold].",
+   "vars": {
+    "Block": 5.0
+   },
+   "upgraded": {
+    "name": "Second Wind+",
+    "description": "[gold]Exhaust[/gold] all non-Attack cards in your [gold]Hand[/gold]. Gain [green]7[/green] [gold]Block[/gold] for each card [gold]Exhausted[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "SetupStrike",
+   "locKey": "SETUP_STRIKE",
+   "art": "setup_strike",
+   "artPath": "images/packed/card_portraits/ironclad/setup_strike.png",
+   "name": "Setup Strike",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 7 damage.\nGain 3 [gold]Strength[/gold] this turn.",
+   "vars": {
+    "Damage": 7.0,
+    "StrengthPower": 3.0
+   },
+   "upgraded": {
+    "name": "Setup Strike+",
+    "description": "Deal [green]9[/green] damage.\nGain [green]4[/green] [gold]Strength[/gold] this turn.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "ShrugItOff",
+   "locKey": "SHRUG_IT_OFF",
+   "art": "shrug_it_off",
+   "artPath": "images/packed/card_portraits/ironclad/shrug_it_off.png",
+   "name": "Shrug It Off",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 8 [gold]Block[/gold].\nDraw 1 card.",
+   "vars": {
+    "Block": 8.0,
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Shrug It Off+",
+    "description": "Gain [green]11[/green] [gold]Block[/gold].\nDraw 1 card.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Spite",
+   "locKey": "SPITE",
+   "art": "spite",
+   "artPath": "images/packed/card_portraits/ironclad/spite.png",
+   "name": "Spite",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Deal 5 damage.\nIf you lost HP this turn,\nhits 2 times.",
+   "vars": {
+    "Damage": 5.0,
+    "Repeat": 2.0
+   },
+   "upgraded": {
+    "name": "Spite+",
+    "description": "Deal 5 damage.\nIf you lost HP this turn,\nhits [green]3[/green] times.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Stampede",
+   "locKey": "STAMPEDE",
+   "art": "stampede",
+   "artPath": "images/packed/card_portraits/ironclad/stampede.png",
+   "name": "Stampede",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "At the end of your turn, 1 random Attack in your [gold]Hand[/gold] is played against a random enemy.",
+   "vars": {
+    "Power": 1.0
+   },
+   "upgraded": {
+    "name": "Stampede+",
+    "description": "At the end of your turn, 1 random Attack in your [gold]Hand[/gold] is played against a random enemy.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Stoke",
+   "locKey": "STOKE",
+   "art": "stoke",
+   "artPath": "images/packed/card_portraits/ironclad/stoke.png",
+   "name": "Stoke",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "[gold]Exhaust[/gold] your [gold]Hand[/gold].\nAdd 1 random card into your [gold]Hand[/gold] for each card [gold]Exhausted[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Stoke+",
+    "description": "[gold]Exhaust[/gold] your [gold]Hand[/gold].\nAdd 1 random [gold]Upgraded[/gold] card into your [gold]Hand[/gold] for each card [gold]Exhausted[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Stomp",
+   "locKey": "STOMP",
+   "art": "stomp",
+   "artPath": "images/packed/card_portraits/ironclad/stomp.png",
+   "name": "Stomp",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 3,
+   "keywords": [],
+   "description": "Deal 12 damage to ALL enemies.\nCosts 1 less [icon:energy] for each Attack played this turn.",
+   "vars": {
+    "Damage": 12.0
+   },
+   "upgraded": {
+    "name": "Stomp+",
+    "description": "Deal [green]15[/green] damage to ALL enemies.\nCosts 1 less [icon:energy] for each Attack played this turn.",
+    "cost": 3
+   }
+  },
+  {
+   "id": "StoneArmor",
+   "locKey": "STONE_ARMOR",
+   "art": "stone_armor",
+   "artPath": "images/packed/card_portraits/ironclad/stone_armor.png",
+   "name": "Stone Armor",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 4 [gold]Plating[/gold].",
+   "vars": {
+    "PlatingPower": 4.0
+   },
+   "upgraded": {
+    "name": "Stone Armor+",
+    "description": "Gain [green]6[/green] [gold]Plating[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "SwordBoomerang",
+   "locKey": "SWORD_BOOMERANG",
+   "art": "sword_boomerang",
+   "artPath": "images/packed/card_portraits/ironclad/sword_boomerang.png",
+   "name": "Sword Boomerang",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 3 damage to a random enemy 3 times.",
+   "vars": {
+    "Damage": 3.0,
+    "Repeat": 3.0
+   },
+   "upgraded": {
+    "name": "Sword Boomerang+",
+    "description": "Deal 3 damage to a random enemy [green]4[/green] times.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Taunt",
+   "locKey": "TAUNT",
+   "art": "taunt",
+   "artPath": "images/packed/card_portraits/ironclad/taunt.png",
+   "name": "Taunt",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 6 [gold]Block[/gold].\nApply 1 [gold]Vulnerable[/gold].",
+   "vars": {
+    "Block": 6.0,
+    "VulnerablePower": 1.0
+   },
+   "upgraded": {
+    "name": "Taunt+",
+    "description": "Gain [green]7[/green] [gold]Block[/gold].\nApply [green]2[/green] [gold]Vulnerable[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "TearAsunder",
+   "locKey": "TEAR_ASUNDER",
+   "art": "tear_asunder",
+   "artPath": "images/packed/card_portraits/ironclad/tear_asunder.png",
+   "name": "Tear Asunder",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 5 damage.\nHits an additional time for each time you lost HP this combat.",
+   "vars": {
+    "Damage": 5.0,
+    "Repeat": 1.0,
+    "CalculationBase": 0.0,
+    "CalculationExtra": 1.0,
+    "CalculatedHits": 0.0,
+    "CalculatedDamage": 0.0,
+    "CalculatedBlock": 0.0,
+    "CalculatedCards": 0.0
+   },
+   "upgraded": {
+    "name": "Tear Asunder+",
+    "description": "Deal [green]7[/green] damage.\nHits an additional time for each time you lost HP this combat.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Thrash",
+   "locKey": "THRASH",
+   "art": "thrash",
+   "artPath": "images/packed/card_portraits/ironclad/thrash.png",
+   "name": "Thrash",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 4 damage twice.\n[gold]Exhaust[/gold] a random Attack in your [gold]Hand[/gold] and add its damage to this card.",
+   "vars": {
+    "Damage": 4.0
+   },
+   "upgraded": {
+    "name": "Thrash+",
+    "description": "Deal [green]6[/green] damage twice.\n[gold]Exhaust[/gold] a random Attack in your [gold]Hand[/gold] and add its damage to this card.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Thunderclap",
+   "locKey": "THUNDERCLAP",
+   "art": "thunderclap",
+   "artPath": "images/packed/card_portraits/ironclad/thunderclap.png",
+   "name": "Thunderclap",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 4 damage and apply 1 [gold]Vulnerable[/gold] to ALL enemies.",
+   "vars": {
+    "Damage": 4.0,
+    "VulnerablePower": 1.0
+   },
+   "upgraded": {
+    "name": "Thunderclap+",
+    "description": "Deal [green]7[/green] damage and apply 1 [gold]Vulnerable[/gold] to ALL enemies.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Tremble",
+   "locKey": "TREMBLE",
+   "art": "tremble",
+   "artPath": "images/packed/card_portraits/ironclad/tremble.png",
+   "name": "Tremble",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Apply 3 [gold]Vulnerable[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "VulnerablePower": 3.0
+   },
+   "upgraded": {
+    "name": "Tremble+",
+    "description": "Apply [green]4[/green] [gold]Vulnerable[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "TrueGrit",
+   "locKey": "TRUE_GRIT",
+   "art": "true_grit",
+   "artPath": "images/packed/card_portraits/ironclad/true_grit.png",
+   "name": "True Grit",
+   "character": "ironclad",
+   "type": "Skill",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 7 [gold]Block[/gold].\n[gold]Exhaust[/gold] 1 card at random.",
+   "vars": {
+    "Block": 7.0
+   },
+   "upgraded": {
+    "name": "True Grit+",
+    "description": "Gain [green]9[/green] [gold]Block[/gold].\n[gold]Exhaust[/gold] 1 card.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "TwinStrike",
+   "locKey": "TWIN_STRIKE",
+   "art": "twin_strike",
+   "artPath": "images/packed/card_portraits/ironclad/twin_strike.png",
+   "name": "Twin Strike",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Common",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 5 damage twice.",
+   "vars": {
+    "Damage": 5.0
+   },
+   "upgraded": {
+    "name": "Twin Strike+",
+    "description": "Deal [green]7[/green] damage twice.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Unmovable",
+   "locKey": "UNMOVABLE",
+   "art": "unmovable",
+   "artPath": "images/packed/card_portraits/ironclad/unmovable.png",
+   "name": "Unmovable",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
+   "vars": {},
+   "upgraded": {
+    "name": "Unmovable+",
+    "description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Unrelenting",
+   "locKey": "UNRELENTING",
+   "art": "unrelenting",
+   "artPath": "images/packed/card_portraits/ironclad/unrelenting.png",
+   "name": "Unrelenting",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 14 damage.\nThe next Attack you play costs 0 [icon:energy].",
+   "vars": {
+    "Damage": 14.0
+   },
+   "upgraded": {
+    "name": "Unrelenting+",
+    "description": "Deal [green]20[/green] damage.\nThe next Attack you play costs 0 [icon:energy].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Uppercut",
+   "locKey": "UPPERCUT",
+   "art": "uppercut",
+   "artPath": "images/packed/card_portraits/ironclad/uppercut.png",
+   "name": "Uppercut",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 13 damage.\nApply 1 [gold]Weak[/gold].\nApply 1 [gold]Vulnerable[/gold].",
+   "vars": {
+    "Damage": 13.0,
+    "Power": 1.0
+   },
+   "upgraded": {
+    "name": "Uppercut+",
+    "description": "Deal 13 damage.\nApply [green]2[/green] [gold]Weak[/gold].\nApply [green]2[/green] [gold]Vulnerable[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Vicious",
+   "locKey": "VICIOUS",
+   "art": "vicious",
+   "artPath": "images/packed/card_portraits/ironclad/vicious.png",
+   "name": "Vicious",
+   "character": "ironclad",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Whenever you apply [gold]Vulnerable[/gold], draw 1 card.",
+   "vars": {
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Vicious+",
+    "description": "Whenever you apply [gold]Vulnerable[/gold], draw [green]2[/green] cards.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Whirlwind",
+   "locKey": "WHIRLWIND",
+   "art": "whirlwind",
+   "artPath": "images/packed/card_portraits/ironclad/whirlwind.png",
+   "name": "Whirlwind",
+   "character": "ironclad",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": "X",
+   "keywords": [],
+   "description": "Deal 5 damage to ALL enemies X times.",
+   "vars": {
+    "Damage": 5.0
+   },
+   "upgraded": {
+    "name": "Whirlwind+",
+    "description": "Deal [green]8[/green] damage to ALL enemies X times.",
+    "cost": "X"
+   }
+  },
+  {
+   "id": "Alchemize",
+   "locKey": "ALCHEMIZE",
+   "art": "alchemize",
+   "artPath": "images/packed/card_portraits/colorless/alchemize.png",
+   "name": "Alchemize",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Procure a random potion.\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Alchemize+",
+    "description": "Procure a random potion.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Anointed",
+   "locKey": "ANOINTED",
+   "art": "anointed",
+   "artPath": "images/packed/card_portraits/colorless/anointed.png",
+   "name": "Anointed",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Put every [gold]Rare[/gold] card from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Anointed+",
+    "description": "[gold]Retain[/gold].\nPut every [gold]Rare[/gold] card from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Automation",
+   "locKey": "AUTOMATION",
+   "art": "automation",
+   "artPath": "images/packed/card_portraits/colorless/automation.png",
+   "name": "Automation",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Every 10 cards you draw, gain [icon:energy].",
+   "vars": {
+    "Energy": 1.0
+   },
+   "upgraded": {
+    "name": "Automation+",
+    "description": "Every 10 cards you draw, gain [icon:energy].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "BeatDown",
+   "locKey": "BEAT_DOWN",
+   "art": "beat_down",
+   "artPath": "images/packed/card_portraits/colorless/beat_down.png",
+   "name": "Beat Down",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "Play 3 random Attacks from your [gold]Discard Pile[/gold].",
+   "vars": {
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Beat Down+",
+    "description": "Play [green]4[/green] random Attacks from your [gold]Discard Pile[/gold].",
+    "cost": 3
+   }
+  },
+  {
+   "id": "Bolas",
+   "locKey": "BOLAS",
+   "art": "bolas",
+   "artPath": "images/packed/card_portraits/colorless/bolas.png",
+   "name": "Bolas",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [],
+   "description": "Deal 3 damage.\nAt the start of your next turn, return this to your [gold]Hand[/gold].",
+   "vars": {
+    "Damage": 3.0
+   },
+   "upgraded": {
+    "name": "Bolas+",
+    "description": "Deal [green]4[/green] damage.\nAt the start of your next turn, return this to your [gold]Hand[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Calamity",
+   "locKey": "CALAMITY",
+   "art": "calamity",
+   "artPath": "images/packed/card_portraits/colorless/calamity.png",
+   "name": "Calamity",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "Whenever you play an Attack, add a random Attack into your [gold]Hand[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Calamity+",
+    "description": "Whenever you play an Attack, add a random Attack into your [gold]Hand[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Catastrophe",
+   "locKey": "CATASTROPHE",
+   "art": "catastrophe",
+   "artPath": "images/packed/card_portraits/colorless/catastrophe.png",
+   "name": "Catastrophe",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "Play 2 random cards from your [gold]Draw Pile[/gold].",
+   "vars": {
+    "Cards": 2.0
+   },
+   "upgraded": {
+    "name": "Catastrophe+",
+    "description": "Play [green]3[/green] random cards from your [gold]Draw Pile[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "DarkShackles",
+   "locKey": "DARK_SHACKLES",
+   "art": "dark_shackles",
+   "artPath": "images/packed/card_portraits/colorless/dark_shackles.png",
+   "name": "Dark Shackles",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Enemy loses 9 [gold]Strength[/gold] this turn.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "StrengthLoss": 9.0
+   },
+   "upgraded": {
+    "name": "Dark Shackles+",
+    "description": "Enemy loses [green]15[/green] [gold]Strength[/gold] this turn.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Discovery",
+   "locKey": "DISCOVERY",
+   "art": "discovery",
+   "artPath": "images/packed/card_portraits/colorless/discovery.png",
+   "name": "Discovery",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Choose 1 of 3 random cards to add into your [gold]Hand[/gold]. It's free to play this turn.\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Discovery+",
+    "description": "Choose 1 of 3 random cards to add into your [gold]Hand[/gold]. It's free to play this turn.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "DramaticEntrance",
+   "locKey": "DRAMATIC_ENTRANCE",
+   "art": "dramatic_entrance",
+   "artPath": "images/packed/card_portraits/colorless/dramatic_entrance.png",
+   "name": "Dramatic Entrance",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust",
+    "Innate"
+   ],
+   "description": "[gold]Innate[/gold].\nDeal 11 damage to ALL enemies.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Damage": 11.0
+   },
+   "upgraded": {
+    "name": "Dramatic Entrance+",
+    "description": "[gold]Innate[/gold].\nDeal [green]15[/green] damage to ALL enemies.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Entropy",
+   "locKey": "ENTROPY",
+   "art": "entropy",
+   "artPath": "images/packed/card_portraits/colorless/entropy.png",
+   "name": "Entropy",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "At the start of your turn, [gold]Transform[/gold] 1 card in your [gold]Hand[/gold].",
+   "vars": {
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Entropy+",
+    "description": "[gold]Innate[/gold].\nAt the start of your turn, [gold]Transform[/gold] 1 card in your [gold]Hand[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Equilibrium",
+   "locKey": "EQUILIBRIUM",
+   "art": "equilibrium",
+   "artPath": "images/packed/card_portraits/colorless/equilibrium.png",
+   "name": "Equilibrium",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "Gain 13 [gold]Block[/gold].\n[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",
+   "vars": {
+    "Block": 13.0,
+    "Equilibrium": 1.0
+   },
+   "upgraded": {
+    "name": "Equilibrium+",
+    "description": "Gain [green]16[/green] [gold]Block[/gold].\n[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "EternalArmor",
+   "locKey": "ETERNAL_ARMOR",
+   "art": "eternal_armor",
+   "artPath": "images/packed/card_portraits/colorless/eternal_armor.png",
+   "name": "Eternal Armor",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "Gain 9 [gold]Plating[/gold].",
+   "vars": {
+    "PlatingPower": 9.0
+   },
+   "upgraded": {
+    "name": "Eternal Armor+",
+    "description": "Gain [green]12[/green] [gold]Plating[/gold].",
+    "cost": 3
+   }
+  },
+  {
+   "id": "Fasten",
+   "locKey": "FASTEN",
+   "art": "fasten",
+   "artPath": "images/packed/card_portraits/colorless/fasten.png",
+   "name": "Fasten",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain an additional 4 [gold]Block[/gold] from Defend cards.",
+   "vars": {
+    "ExtraBlock": 4.0
+   },
+   "upgraded": {
+    "name": "Fasten+",
+    "description": "Gain an additional [green]6[/green] [gold]Block[/gold] from Defend cards.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Finesse",
+   "locKey": "FINESSE",
+   "art": "finesse",
+   "artPath": "images/packed/card_portraits/colorless/finesse.png",
+   "name": "Finesse",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Gain 4 [gold]Block[/gold].\nDraw 1 card.",
+   "vars": {
+    "Block": 4.0,
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Finesse+",
+    "description": "Gain [green]7[/green] [gold]Block[/gold].\nDraw 1 card.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Fisticuffs",
+   "locKey": "FISTICUFFS",
+   "art": "fisticuffs",
+   "artPath": "images/packed/card_portraits/colorless/fisticuffs.png",
+   "name": "Fisticuffs",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 7 damage.\nGain [gold]Block[/gold] equal to damage dealt.",
+   "vars": {
+    "Damage": 7.0
+   },
+   "upgraded": {
+    "name": "Fisticuffs+",
+    "description": "Deal [green]9[/green] damage.\nGain [gold]Block[/gold] equal to damage dealt.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "FlashOfSteel",
+   "locKey": "FLASH_OF_STEEL",
+   "art": "flash_of_steel",
+   "artPath": "images/packed/card_portraits/colorless/flash_of_steel.png",
+   "name": "Flash of Steel",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Deal 5 damage.\nDraw 1 card.",
+   "vars": {
+    "Damage": 5.0,
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Flash of Steel+",
+    "description": "Deal [green]8[/green] damage.\nDraw 1 card.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "GoldAxe",
+   "locKey": "GOLD_AXE",
+   "art": "gold_axe",
+   "artPath": "images/packed/card_portraits/colorless/gold_axe.png",
+   "name": "Gold Axe",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal damage equal to the number of cards played this combat.",
+   "vars": {
+    "CalculationBase": 0.0,
+    "ExtraDamage": 1.0,
+    "CalculatedDamage": 0.0,
+    "CalculatedBlock": 0.0,
+    "CalculatedHits": 0.0,
+    "CalculatedCards": 0.0
+   },
+   "upgraded": {
+    "name": "Gold Axe+",
+    "description": "[gold]Retain[/gold].\nDeal damage equal to the number of cards played this combat.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "HandOfGreed",
+   "locKey": "HAND_OF_GREED",
+   "art": "hand_of_greed",
+   "artPath": "images/packed/card_portraits/colorless/hand_of_greed.png",
+   "name": "Hand of Greed",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "Deal 20 damage.\nIf [gold]Fatal[/gold], gain 20 [gold]Gold[/gold].",
+   "vars": {
+    "Damage": 20.0,
+    "Gold": 20.0
+   },
+   "upgraded": {
+    "name": "Hand of Greed+",
+    "description": "Deal [green]25[/green] damage.\nIf [gold]Fatal[/gold], gain [green]25[/green] [gold]Gold[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "HiddenGem",
+   "locKey": "HIDDEN_GEM",
+   "art": "hidden_gem",
+   "artPath": "images/packed/card_portraits/colorless/hidden_gem.png",
+   "name": "Hidden Gem",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "A random card without [gold]Replay[/gold] in your [gold]Draw Pile[/gold] gains [gold]Replay[/gold] 2.",
+   "vars": {
+    "Replay": 2.0
+   },
+   "upgraded": {
+    "name": "Hidden Gem+",
+    "description": "A random card without [gold]Replay[/gold] in your [gold]Draw Pile[/gold] gains [gold]Replay[/gold] [green]3[/green].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Impatience",
+   "locKey": "IMPATIENCE",
+   "art": "impatience",
+   "artPath": "images/packed/card_portraits/colorless/impatience.png",
+   "name": "Impatience",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "If you have no Attacks in your [gold]Hand[/gold], draw 2 cards.",
+   "vars": {
+    "Cards": 2.0
+   },
+   "upgraded": {
+    "name": "Impatience+",
+    "description": "If you have no Attacks in your [gold]Hand[/gold], draw [green]3[/green] cards.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "JackOfAllTrades",
+   "locKey": "JACK_OF_ALL_TRADES",
+   "art": "jack_of_all_trades",
+   "artPath": "images/packed/card_portraits/colorless/jack_of_all_trades.png",
+   "name": "Jack of All Trades",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Add 1 random Colorless card into your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Cards": 1.0
+   },
+   "upgraded": {
+    "name": "Jack of All Trades+",
+    "description": "Add [green]2[/green] random Colorless cards into your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Jackpot",
+   "locKey": "JACKPOT",
+   "art": "jackpot",
+   "artPath": "images/packed/card_portraits/colorless/jackpot.png",
+   "name": "Jackpot",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "Deal 25 damage.\nAdd 3 random 0[icon:energy] cards into your [gold]Hand[/gold].",
+   "vars": {
+    "Damage": 25.0,
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Jackpot+",
+    "description": "Deal [green]30[/green] damage.\nAdd 3 random [gold]Upgraded[/gold] 0[icon:energy] cards into your [gold]Hand[/gold].",
+    "cost": 3
+   }
+  },
+  {
+   "id": "MasterOfStrategy",
+   "locKey": "MASTER_OF_STRATEGY",
+   "art": "master_of_strategy",
+   "artPath": "images/packed/card_portraits/colorless/master_of_strategy.png",
+   "name": "Master of Strategy",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Draw 3 cards.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Master of Strategy+",
+    "description": "Draw [green]4[/green] cards.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Mayhem",
+   "locKey": "MAYHEM",
+   "art": "mayhem",
+   "artPath": "images/packed/card_portraits/colorless/mayhem.png",
+   "name": "Mayhem",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 2,
+   "keywords": [],
+   "description": "At the start of your turn, play the top card of your [gold]Draw Pile[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Mayhem+",
+    "description": "At the start of your turn, play the top card of your [gold]Draw Pile[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "MindBlast",
+   "locKey": "MIND_BLAST",
+   "art": "mind_blast",
+   "artPath": "images/packed/card_portraits/colorless/mind_blast.png",
+   "name": "Mind Blast",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [
+    "Innate"
+   ],
+   "description": "[gold]Innate[/gold].\nDeal damage equal to the number of cards in your [gold]Draw Pile[/gold].",
+   "vars": {
+    "CalculationBase": 0.0,
+    "ExtraDamage": 1.0,
+    "CalculatedDamage": 0.0,
+    "CalculatedBlock": 0.0,
+    "CalculatedHits": 0.0,
+    "CalculatedCards": 0.0
+   },
+   "upgraded": {
+    "name": "Mind Blast+",
+    "description": "[gold]Innate[/gold].\nDeal damage equal to the number of cards in your [gold]Draw Pile[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Nostalgia",
+   "locKey": "NOSTALGIA",
+   "art": "nostalgia",
+   "artPath": "images/packed/card_portraits/colorless/nostalgia.png",
+   "name": "Nostalgia",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "The first Attack or Skill you play each turn is placed on top of your [gold]Draw Pile[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Nostalgia+",
+    "description": "The first Attack or Skill you play each turn is placed on top of your [gold]Draw Pile[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Omnislice",
+   "locKey": "OMNISLICE",
+   "art": "omnislice",
+   "artPath": "images/packed/card_portraits/colorless/omnislice.png",
+   "name": "Omnislice",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Deal 8 damage.\nDamage ALL other enemies equal to the damage dealt.",
+   "vars": {
+    "Damage": 8.0
+   },
+   "upgraded": {
+    "name": "Omnislice+",
+    "description": "Deal [green]11[/green] damage.\nDamage ALL other enemies equal to the damage dealt.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Panache",
+   "locKey": "PANACHE",
+   "art": "panache",
+   "artPath": "images/packed/card_portraits/colorless/panache.png",
+   "name": "Panache",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [],
+   "description": "Every time you play 5 cards in a single turn, deal 10 damage to ALL enemies.",
+   "vars": {
+    "PanacheDamage": 10.0
+   },
+   "upgraded": {
+    "name": "Panache+",
+    "description": "Every time you play 5 cards in a single turn, deal [green]14[/green] damage to ALL enemies.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "PanicButton",
+   "locKey": "PANIC_BUTTON",
+   "art": "panic_button",
+   "artPath": "images/packed/card_portraits/colorless/panic_button.png",
+   "name": "Panic Button",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Gain 30 [gold]Block[/gold].\nYou cannot gain [gold]Block[/gold] from cards for 2 turns.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Block": 30.0,
+    "Turns": 2.0
+   },
+   "upgraded": {
+    "name": "Panic Button+",
+    "description": "Gain [green]40[/green] [gold]Block[/gold].\nYou cannot gain [gold]Block[/gold] from cards for 2 turns.\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "PrepTime",
+   "locKey": "PREP_TIME",
+   "art": "prep_time",
+   "artPath": "images/packed/card_portraits/colorless/prep_time.png",
+   "name": "Prep Time",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "At the start of your turn, gain 4 [gold]Vigor[/gold].",
+   "vars": {
+    "PrepTimePower": 4.0
+   },
+   "upgraded": {
+    "name": "Prep Time+",
+    "description": "At the start of your turn, gain [green]6[/green] [gold]Vigor[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Production",
+   "locKey": "PRODUCTION",
+   "art": "production",
+   "artPath": "images/packed/card_portraits/colorless/production.png",
+   "name": "Production",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Gain [icon:energy][icon:energy].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Energy": 2.0
+   },
+   "upgraded": {
+    "name": "Production+",
+    "description": "Gain [icon:energy][icon:energy][icon:energy].\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Prolong",
+   "locKey": "PROLONG",
+   "art": "prolong",
+   "artPath": "images/packed/card_portraits/colorless/prolong.png",
+   "name": "Prolong",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Next turn, gain [gold]Block[/gold] equal to your current [gold]Block[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Prolong+",
+    "description": "Next turn, gain [gold]Block[/gold] equal to your current [gold]Block[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Prowess",
+   "locKey": "PROWESS",
+   "art": "prowess",
+   "artPath": "images/packed/card_portraits/colorless/prowess.png",
+   "name": "Prowess",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 1 [gold]Strength[/gold].\nGain 1 [gold]Dexterity[/gold].",
+   "vars": {
+    "StrengthPower": 1.0,
+    "DexterityPower": 1.0
+   },
+   "upgraded": {
+    "name": "Prowess+",
+    "description": "Gain [green]2[/green] [gold]Strength[/gold].\nGain [green]2[/green] [gold]Dexterity[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Purity",
+   "locKey": "PURITY",
+   "art": "purity",
+   "artPath": "images/packed/card_portraits/colorless/purity.png",
+   "name": "Purity",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust",
+    "Retain"
+   ],
+   "description": "[gold]Retain[/gold].\nExhaust up to 3 cards in your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Purity+",
+    "description": "[gold]Retain[/gold].\nExhaust up to [green]5[/green] cards in your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "Rend",
+   "locKey": "REND",
+   "art": "rend",
+   "artPath": "images/packed/card_portraits/colorless/rend.png",
+   "name": "Rend",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 10 damage.\nDeals 5 additional damage for each unique debuff on the enemy.",
+   "vars": {
+    "CalculationBase": 10.0,
+    "ExtraDamage": 5.0,
+    "CalculatedDamage": 10.0,
+    "CalculatedBlock": 10.0,
+    "CalculatedHits": 10.0,
+    "CalculatedCards": 10.0
+   },
+   "upgraded": {
+    "name": "Rend+",
+    "description": "Deal [green]12[/green] damage.\nDeals [green]8[/green] additional damage for each unique debuff on the enemy.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Restlessness",
+   "locKey": "RESTLESSNESS",
+   "art": "restlessness",
+   "artPath": "images/packed/card_portraits/colorless/restlessness.png",
+   "name": "Restlessness",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Retain"
+   ],
+   "description": "[gold]Retain[/gold].\nIf your [gold]Hand[/gold] is empty, draw 2 cards and gain [icon:energy][icon:energy].",
+   "vars": {
+    "Cards": 2.0,
+    "Energy": 2.0
+   },
+   "upgraded": {
+    "name": "Restlessness+",
+    "description": "[gold]Retain[/gold].\nIf your [gold]Hand[/gold] is empty, draw [green]3[/green] cards and gain [icon:energy][icon:energy][icon:energy].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "RollingBoulder",
+   "locKey": "ROLLING_BOULDER",
+   "art": "rolling_boulder",
+   "artPath": "images/packed/card_portraits/colorless/rolling_boulder.png",
+   "name": "Rolling Boulder",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Rare",
+   "cost": 3,
+   "keywords": [],
+   "description": "At the start of your turn, deal 5 damage to ALL enemies and increase this damage by 5.",
+   "vars": {
+    "RollingBoulderPower": 5.0,
+    "IncrementAmount": 5.0
+   },
+   "upgraded": {
+    "name": "Rolling Boulder+",
+    "description": "At the start of your turn, deal [green]10[/green] damage to ALL enemies and increase this damage by 5.",
+    "cost": 3
+   }
+  },
+  {
+   "id": "Salvo",
+   "locKey": "SALVO",
+   "art": "salvo",
+   "artPath": "images/packed/card_portraits/colorless/salvo.png",
+   "name": "Salvo",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 12 damage.\n[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",
+   "vars": {
+    "Damage": 12.0
+   },
+   "upgraded": {
+    "name": "Salvo+",
+    "description": "Deal [green]16[/green] damage.\n[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Scrawl",
+   "locKey": "SCRAWL",
+   "art": "scrawl",
+   "artPath": "images/packed/card_portraits/colorless/scrawl.png",
+   "name": "Scrawl",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Draw cards until your [gold]Hand[/gold] is full.\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Scrawl+",
+    "description": "[gold]Retain[/gold].\nDraw cards until your [gold]Hand[/gold] is full.\n[gold]Exhaust[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "SecretTechnique",
+   "locKey": "SECRET_TECHNIQUE",
+   "art": "secret_technique",
+   "artPath": "images/packed/card_portraits/colorless/secret_technique.png",
+   "name": "Secret Technique",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Put a Skill from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Secret Technique+",
+    "description": "Put a Skill from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "SecretWeapon",
+   "locKey": "SECRET_WEAPON",
+   "art": "secret_weapon",
+   "artPath": "images/packed/card_portraits/colorless/secret_weapon.png",
+   "name": "Secret Weapon",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Put an Attack from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Secret Weapon+",
+    "description": "Put an Attack from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "SeekerStrike",
+   "locKey": "SEEKER_STRIKE",
+   "art": "seeker_strike",
+   "artPath": "images/packed/card_portraits/colorless/seeker_strike.png",
+   "name": "Seeker Strike",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 9 damage.\nChoose 1 of 3 cards in your [gold]Draw Pile[/gold] to add into your [gold]Hand[/gold].",
+   "vars": {
+    "Damage": 9.0,
+    "Cards": 3.0
+   },
+   "upgraded": {
+    "name": "Seeker Strike+",
+    "description": "Deal [green]12[/green] damage.\nChoose 1 of 3 cards in your [gold]Draw Pile[/gold] to add into your [gold]Hand[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Shockwave",
+   "locKey": "SHOCKWAVE",
+   "art": "shockwave",
+   "artPath": "images/packed/card_portraits/colorless/shockwave.png",
+   "name": "Shockwave",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Apply 3 [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Power": 3.0
+   },
+   "upgraded": {
+    "name": "Shockwave+",
+    "description": "Apply [green]5[/green] [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.\n[gold]Exhaust[/gold].",
+    "cost": 2
+   }
+  },
+  {
+   "id": "Splash",
+   "locKey": "SPLASH",
+   "art": "splash",
+   "artPath": "images/packed/card_portraits/colorless/splash.png",
+   "name": "Splash",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 1,
+   "keywords": [],
+   "description": "Choose 1 of 3 random Attacks from another character to add into your [gold]Hand[/gold]. It's free to play this turn.",
+   "vars": {},
+   "upgraded": {
+    "name": "Splash+",
+    "description": "Choose 1 of 3 random [gold]Upgraded[/gold] Attacks from another character to add into your [gold]Hand[/gold]. It's free to play this turn.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Stratagem",
+   "locKey": "STRATAGEM",
+   "art": "stratagem",
+   "artPath": "images/packed/card_portraits/colorless/stratagem.png",
+   "name": "Stratagem",
+   "character": "colorless",
+   "type": "Power",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Whenever you shuffle your [gold]Draw Pile[/gold], choose a card from it to put into your [gold]Hand[/gold].",
+   "vars": {},
+   "upgraded": {
+    "name": "Stratagem+",
+    "description": "Whenever you shuffle your [gold]Draw Pile[/gold], choose a card from it to put into your [gold]Hand[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "TheBomb",
+   "locKey": "THE_BOMB",
+   "art": "the_bomb",
+   "artPath": "images/packed/card_portraits/colorless/the_bomb.png",
+   "name": "The Bomb",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 2,
+   "keywords": [],
+   "description": "At the end of 3 turns, deal 40 damage to ALL enemies.",
+   "vars": {
+    "Turns": 3.0,
+    "BombDamage": 40.0
+   },
+   "upgraded": {
+    "name": "The Bomb+",
+    "description": "At the end of 3 turns, deal [green]50[/green] damage to ALL enemies.",
+    "cost": 2
+   }
+  },
+  {
+   "id": "TheGambit",
+   "locKey": "THE_GAMBIT",
+   "art": "the_gambit",
+   "artPath": "images/packed/card_portraits/colorless/the_gambit.png",
+   "name": "The Gambit",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Rare",
+   "cost": 0,
+   "keywords": [],
+   "description": "Gain 50 [gold]Block[/gold].\nIf you take unblocked attack damage this combat, die.",
+   "vars": {
+    "Block": 50.0
+   },
+   "upgraded": {
+    "name": "The Gambit+",
+    "description": "Gain [green]75[/green] [gold]Block[/gold].\nIf you take unblocked attack damage this combat, die.",
+    "cost": 0
+   }
+  },
+  {
+   "id": "ThinkingAhead",
+   "locKey": "THINKING_AHEAD",
+   "art": "thinking_ahead",
+   "artPath": "images/packed/card_portraits/colorless/thinking_ahead.png",
+   "name": "Thinking Ahead",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 0,
+   "keywords": [
+    "Exhaust"
+   ],
+   "description": "Draw 2 cards.\nPut 1 card from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].\n[gold]Exhaust[/gold].",
+   "vars": {
+    "Cards": 2.0
+   },
+   "upgraded": {
+    "name": "Thinking Ahead+",
+    "description": "Draw 2 cards.\nPut 1 card from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].",
+    "cost": 0
+   }
+  },
+  {
+   "id": "ThrummingHatchet",
+   "locKey": "THRUMMING_HATCHET",
+   "art": "thrumming_hatchet",
+   "artPath": "images/packed/card_portraits/colorless/thrumming_hatchet.png",
+   "name": "Thrumming Hatchet",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 11 damage.\nAt the start of your next turn, return this to your [gold]Hand[/gold].",
+   "vars": {
+    "Damage": 11.0
+   },
+   "upgraded": {
+    "name": "Thrumming Hatchet+",
+    "description": "Deal [green]14[/green] damage.\nAt the start of your next turn, return this to your [gold]Hand[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "UltimateDefend",
+   "locKey": "ULTIMATE_DEFEND",
+   "art": "ultimate_defend",
+   "artPath": "images/packed/card_portraits/colorless/ultimate_defend.png",
+   "name": "Ultimate Defend",
+   "character": "colorless",
+   "type": "Skill",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Gain 11 [gold]Block[/gold].",
+   "vars": {
+    "Block": 11.0
+   },
+   "upgraded": {
+    "name": "Ultimate Defend+",
+    "description": "Gain [green]15[/green] [gold]Block[/gold].",
+    "cost": 1
+   }
+  },
+  {
+   "id": "UltimateStrike",
+   "locKey": "ULTIMATE_STRIKE",
+   "art": "ultimate_strike",
+   "artPath": "images/packed/card_portraits/colorless/ultimate_strike.png",
+   "name": "Ultimate Strike",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": 1,
+   "keywords": [],
+   "description": "Deal 14 damage.",
+   "vars": {
+    "Damage": 14.0
+   },
+   "upgraded": {
+    "name": "Ultimate Strike+",
+    "description": "Deal [green]20[/green] damage.",
+    "cost": 1
+   }
+  },
+  {
+   "id": "Volley",
+   "locKey": "VOLLEY",
+   "art": "volley",
+   "artPath": "images/packed/card_portraits/colorless/volley.png",
+   "name": "Volley",
+   "character": "colorless",
+   "type": "Attack",
+   "rarity": "Uncommon",
+   "cost": "X",
+   "keywords": [],
+   "description": "Deal 10 damage to a random enemy X times.",
+   "vars": {
+    "Damage": 10.0
+   },
+   "upgraded": {
+    "name": "Volley+",
+    "description": "Deal [green]14[/green] damage to a random enemy X times.",
+    "cost": "X"
+   }
+  }
+ ],
+ "potions": [
+  {
+   "id": "AttackPotion",
+   "locKey": "ATTACK_POTION",
+   "art": "attack_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/attack_potion.tres",
+   "name": "Attack Potion",
+   "rarity": "Common",
+   "description": "Choose [blue]1[/blue] of [blue]3[/blue] random Attack cards to add into your [gold]Hand[/gold]. It's free to play this turn."
+  },
+  {
+   "id": "BeetleJuice",
+   "locKey": "BEETLE_JUICE",
+   "art": "beetle_juice",
+   "artPath": "images/atlases/potion_atlas.sprites/beetle_juice.tres",
+   "name": "Beetle Juice",
+   "rarity": "Rare",
+   "description": "Enemy's attacks deal [blue]30%[/blue] less damage for the next [blue]4[/blue] turns."
+  },
+  {
+   "id": "BlessingOfTheForge",
+   "locKey": "BLESSING_OF_THE_FORGE",
+   "art": "blessing_of_the_forge",
+   "artPath": "images/atlases/potion_atlas.sprites/blessing_of_the_forge.tres",
+   "name": "Blessing of the Forge",
+   "rarity": "Uncommon",
+   "description": "[gold]Upgrade[/gold] all cards in your [gold]Hand[/gold] for the rest of combat."
+  },
+  {
+   "id": "BlockPotion",
+   "locKey": "BLOCK_POTION",
+   "art": "block_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/block_potion.tres",
+   "name": "Block Potion",
+   "rarity": "Common",
+   "description": "Gain [blue]12[/blue] [gold]Block[/gold]."
+  },
+  {
+   "id": "BottledPotential",
+   "locKey": "BOTTLED_POTENTIAL",
+   "art": "bottled_potential",
+   "artPath": "images/atlases/potion_atlas.sprites/bottled_potential.tres",
+   "name": "Bottled Potential",
+   "rarity": "Rare",
+   "description": "Shuffle ALL your cards into your [gold]Draw Pile[/gold]. Draw [blue]5[/blue] cards."
+  },
+  {
+   "id": "Clarity",
+   "locKey": "CLARITY",
+   "art": "clarity",
+   "artPath": "images/atlases/potion_atlas.sprites/clarity.tres",
+   "name": "Clarity Extract",
+   "rarity": "Uncommon",
+   "description": "Draw [blue]1[/blue] card. At the start of your next [blue]3[/blue] turns, draw [blue]1[/blue] additional card."
+  },
+  {
+   "id": "ColorlessPotion",
+   "locKey": "COLORLESS_POTION",
+   "art": "colorless_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/colorless_potion.tres",
+   "name": "Colorless Potion",
+   "rarity": "Common",
+   "description": "Choose [blue]1[/blue] of [blue]3[/blue] random Colorless cards to add into your [gold]Hand[/gold]. It's free to play this turn."
+  },
+  {
+   "id": "CureAll",
+   "locKey": "CURE_ALL",
+   "art": "cure_all",
+   "artPath": "images/atlases/potion_atlas.sprites/cure_all.tres",
+   "name": "Cure All",
+   "rarity": "Uncommon",
+   "description": "Gain [icon:energy]. Draw [blue]2[/blue] cards."
+  },
+  {
+   "id": "DexterityPotion",
+   "locKey": "DEXTERITY_POTION",
+   "art": "dexterity_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/dexterity_potion.tres",
+   "name": "Dexterity Potion",
+   "rarity": "Common",
+   "description": "Gain [blue]2[/blue] [gold]Dexterity[/gold]."
+  },
+  {
+   "id": "DistilledChaos",
+   "locKey": "DISTILLED_CHAOS",
+   "art": "distilled_chaos",
+   "artPath": "images/atlases/potion_atlas.sprites/distilled_chaos.tres",
+   "name": "Distilled Chaos",
+   "rarity": "Rare",
+   "description": "Play the top [blue]3[/blue] cards of your [gold]Draw Pile[/gold]."
+  },
+  {
+   "id": "DropletOfPrecognition",
+   "locKey": "DROPLET_OF_PRECOGNITION",
+   "art": "droplet_of_precognition",
+   "artPath": "images/atlases/potion_atlas.sprites/droplet_of_precognition.tres",
+   "name": "Droplet of Precognition",
+   "rarity": "Rare",
+   "description": "Choose a card in your [gold]Draw Pile[/gold] and add it into your [gold]Hand[/gold]."
+  },
+  {
+   "id": "Duplicator",
+   "locKey": "DUPLICATOR",
+   "art": "duplicator",
+   "artPath": "images/atlases/potion_atlas.sprites/duplicator.tres",
+   "name": "Duplicator",
+   "rarity": "Uncommon",
+   "description": "This turn, your next card is played an extra time."
+  },
+  {
+   "id": "EnergyPotion",
+   "locKey": "ENERGY_POTION",
+   "art": "energy_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/energy_potion.tres",
+   "name": "Energy Potion",
+   "rarity": "Common",
+   "description": "Gain [icon:energy][icon:energy]."
+  },
+  {
+   "id": "EntropicBrew",
+   "locKey": "ENTROPIC_BREW",
+   "art": "entropic_brew",
+   "artPath": "images/atlases/potion_atlas.sprites/entropic_brew.tres",
+   "name": "Entropic Brew",
+   "rarity": "Rare",
+   "description": "Fill all your empty potion slots with random potions."
+  },
+  {
+   "id": "ExplosiveAmpoule",
+   "locKey": "EXPLOSIVE_AMPOULE",
+   "art": "explosive_ampoule",
+   "artPath": "images/atlases/potion_atlas.sprites/explosive_ampoule.tres",
+   "name": "Explosive Ampoule",
+   "rarity": "Common",
+   "description": "Deal [blue]10[/blue] damage to ALL enemies."
+  },
+  {
+   "id": "FairyInABottle",
+   "locKey": "FAIRY_IN_A_BOTTLE",
+   "art": "fairy_in_a_bottle",
+   "artPath": "images/atlases/potion_atlas.sprites/fairy_in_a_bottle.tres",
+   "name": "Fairy in a Bottle",
+   "rarity": "Rare",
+   "description": "When your HP would be reduced to [blue]0[/blue], instead this potion is discarded and you heal to [blue]30%[/blue] of your Max HP."
+  },
+  {
+   "id": "FirePotion",
+   "locKey": "FIRE_POTION",
+   "art": "fire_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/fire_potion.tres",
+   "name": "Fire Potion",
+   "rarity": "Common",
+   "description": "Deal [blue]20[/blue] damage."
+  },
+  {
+   "id": "FlexPotion",
+   "locKey": "FLEX_POTION",
+   "art": "flex_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/flex_potion.tres",
+   "name": "Flex Potion",
+   "rarity": "Common",
+   "description": "Gain [blue]5[/blue] [gold]Strength[/gold]. At the end of your turn, lose [blue]5[/blue] [gold]Strength[/gold]."
+  },
+  {
+   "id": "Fortifier",
+   "locKey": "FORTIFIER",
+   "art": "fortifier",
+   "artPath": "images/atlases/potion_atlas.sprites/fortifier.tres",
+   "name": "Fortifier",
+   "rarity": "Uncommon",
+   "description": "Triple your [gold]Block[/gold]."
+  },
+  {
+   "id": "FruitJuice",
+   "locKey": "FRUIT_JUICE",
+   "art": "fruit_juice",
+   "artPath": "images/atlases/potion_atlas.sprites/fruit_juice.tres",
+   "name": "Fruit Juice",
+   "rarity": "Rare",
+   "description": "Gain [blue]5[/blue] Max HP."
+  },
+  {
+   "id": "FyshOil",
+   "locKey": "FYSH_OIL",
+   "art": "fysh_oil",
+   "artPath": "images/atlases/potion_atlas.sprites/fysh_oil.tres",
+   "name": "Fysh Oil",
+   "rarity": "Uncommon",
+   "description": "Gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold]."
+  },
+  {
+   "id": "GamblersBrew",
+   "locKey": "GAMBLERS_BREW",
+   "art": "gamblers_brew",
+   "artPath": "images/atlases/potion_atlas.sprites/gamblers_brew.tres",
+   "name": "Gambler's Brew",
+   "rarity": "Uncommon",
+   "description": "Discard any number of cards, then draw that many."
+  },
+  {
+   "id": "GigantificationPotion",
+   "locKey": "GIGANTIFICATION_POTION",
+   "art": "gigantification_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/gigantification_potion.tres",
+   "name": "Gigantification Potion",
+   "rarity": "Rare",
+   "description": "The next Attack you play deals triple damage."
+  },
+  {
+   "id": "HeartOfIron",
+   "locKey": "HEART_OF_IRON",
+   "art": "heart_of_iron",
+   "artPath": "images/atlases/potion_atlas.sprites/heart_of_iron.tres",
+   "name": "Heart of Iron",
+   "rarity": "Uncommon",
+   "description": "Gain [blue]7[/blue] [gold]Plating[/gold]."
+  },
+  {
+   "id": "LiquidBronze",
+   "locKey": "LIQUID_BRONZE",
+   "art": "liquid_bronze",
+   "artPath": "images/atlases/potion_atlas.sprites/liquid_bronze.tres",
+   "name": "Liquid Bronze",
+   "rarity": "Uncommon",
+   "description": "Gain [blue]3[/blue] [gold]Thorns[/gold]."
+  },
+  {
+   "id": "LiquidMemories",
+   "locKey": "LIQUID_MEMORIES",
+   "art": "liquid_memories",
+   "artPath": "images/atlases/potion_atlas.sprites/liquid_memories.tres",
+   "name": "Liquid Memories",
+   "rarity": "Rare",
+   "description": "Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold]. It's free to play this turn."
+  },
+  {
+   "id": "LuckyTonic",
+   "locKey": "LUCKY_TONIC",
+   "art": "lucky_tonic",
+   "artPath": "images/atlases/potion_atlas.sprites/lucky_tonic.tres",
+   "name": "Lucky Tonic",
+   "rarity": "Rare",
+   "description": "Gain [blue]1[/blue] [gold]Buffer[/gold]."
+  },
+  {
+   "id": "MazalethsGift",
+   "locKey": "MAZALETHS_GIFT",
+   "art": "mazaleths_gift",
+   "artPath": "images/atlases/potion_atlas.sprites/mazaleths_gift.tres",
+   "name": "Mazaleth's Gift",
+   "rarity": "Rare",
+   "description": "Gain [blue]1[/blue] [gold]Ritual[/gold]."
+  },
+  {
+   "id": "OrobicAcid",
+   "locKey": "OROBIC_ACID",
+   "art": "orobic_acid",
+   "artPath": "images/atlases/potion_atlas.sprites/orobic_acid.tres",
+   "name": "Orobic Acid",
+   "rarity": "Rare",
+   "description": "Add a random Attack, Skill, and Power into your [gold]Hand[/gold]. They're free to play this turn."
+  },
+  {
+   "id": "PotionOfBinding",
+   "locKey": "POTION_OF_BINDING",
+   "art": "potion_of_binding",
+   "artPath": "images/atlases/potion_atlas.sprites/potion_of_binding.tres",
+   "name": "Potion of Binding",
+   "rarity": "Uncommon",
+   "description": "Apply [blue]1[/blue] [gold]Weak[/gold] and [blue]1[/blue] [gold]Vulnerable[/gold] to ALL enemies."
+  },
+  {
+   "id": "PowderedDemise",
+   "locKey": "POWDERED_DEMISE",
+   "art": "powdered_demise",
+   "artPath": "images/atlases/potion_atlas.sprites/powdered_demise.tres",
+   "name": "Powdered Demise",
+   "rarity": "Uncommon",
+   "description": "Enemy loses [blue]9[/blue] HP at the end of each of its turns."
+  },
+  {
+   "id": "PowerPotion",
+   "locKey": "POWER_POTION",
+   "art": "power_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/power_potion.tres",
+   "name": "Power Potion",
+   "rarity": "Common",
+   "description": "Choose [blue]1[/blue] of [blue]3[/blue] random Power cards to add into your [gold]Hand[/gold]. It's free to play this turn."
+  },
+  {
+   "id": "RadiantTincture",
+   "locKey": "RADIANT_TINCTURE",
+   "art": "radiant_tincture",
+   "artPath": "images/atlases/potion_atlas.sprites/radiant_tincture.tres",
+   "name": "Radiant Tincture",
+   "rarity": "Uncommon",
+   "description": "Gain [icon:energy]. Gain an additional [icon:energy] at the start of your next [blue]3[/blue] turns."
+  },
+  {
+   "id": "RegenPotion",
+   "locKey": "REGEN_POTION",
+   "art": "regen_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/regen_potion.tres",
+   "name": "Regen Potion",
+   "rarity": "Uncommon",
+   "description": "Gain [green]5[/green] [gold]Regen[/gold]."
+  },
+  {
+   "id": "ShacklingPotion",
+   "locKey": "SHACKLING_POTION",
+   "art": "shackling_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/shackling_potion.tres",
+   "name": "Shackling Potion",
+   "rarity": "Rare",
+   "description": "ALL enemies lose [blue]7[/blue] [gold]Strength[/gold] this turn."
+  },
+  {
+   "id": "ShipInABottle",
+   "locKey": "SHIP_IN_A_BOTTLE",
+   "art": "ship_in_a_bottle",
+   "artPath": "images/atlases/potion_atlas.sprites/ship_in_a_bottle.tres",
+   "name": "Ship in a Bottle",
+   "rarity": "Rare",
+   "description": "Gain [blue]10[/blue] [gold]Block[/gold]. Next turn, gain [blue]10[/blue] [gold]Block[/gold]."
+  },
+  {
+   "id": "SkillPotion",
+   "locKey": "SKILL_POTION",
+   "art": "skill_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/skill_potion.tres",
+   "name": "Skill Potion",
+   "rarity": "Common",
+   "description": "Choose [blue]1[/blue] of [blue]3[/blue] random Skill cards to add into your [gold]Hand[/gold]. It's free to play this turn."
+  },
+  {
+   "id": "SneckoOil",
+   "locKey": "SNECKO_OIL",
+   "art": "snecko_oil",
+   "artPath": "images/atlases/potion_atlas.sprites/snecko_oil.tres",
+   "name": "Snecko Oil",
+   "rarity": "Rare",
+   "description": "Draw [blue]7[/blue] cards. Randomize the cost of cards in your [gold]Hand[/gold] this turn."
+  },
+  {
+   "id": "SpeedPotion",
+   "locKey": "SPEED_POTION",
+   "art": "speed_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/speed_potion.tres",
+   "name": "Speed Potion",
+   "rarity": "Common",
+   "description": "Gain [blue]5[/blue] [gold]Dexterity[/gold]. At the end of your turn, lose [blue]5[/blue] [gold]Dexterity[/gold]."
+  },
+  {
+   "id": "StableSerum",
+   "locKey": "STABLE_SERUM",
+   "art": "stable_serum",
+   "artPath": "images/atlases/potion_atlas.sprites/stable_serum.tres",
+   "name": "Stable Serum",
+   "rarity": "Uncommon",
+   "description": "[gold]Retain[/gold] your [gold]Hand[/gold] for [blue]2[/blue] turns."
+  },
+  {
+   "id": "StrengthPotion",
+   "locKey": "STRENGTH_POTION",
+   "art": "strength_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/strength_potion.tres",
+   "name": "Strength Potion",
+   "rarity": "Common",
+   "description": "Gain [blue]2[/blue] [gold]Strength[/gold]."
+  },
+  {
+   "id": "SwiftPotion",
+   "locKey": "SWIFT_POTION",
+   "art": "swift_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/swift_potion.tres",
+   "name": "Swift Potion",
+   "rarity": "Common",
+   "description": "Draw [blue]3[/blue] cards."
+  },
+  {
+   "id": "TouchOfInsanity",
+   "locKey": "TOUCH_OF_INSANITY",
+   "art": "touch_of_insanity",
+   "artPath": "images/atlases/potion_atlas.sprites/touch_of_insanity.tres",
+   "name": "Touch of Insanity",
+   "rarity": "Uncommon",
+   "description": "Choose a card in your [gold]Hand[/gold]. It is free to play this combat."
+  },
+  {
+   "id": "VulnerablePotion",
+   "locKey": "VULNERABLE_POTION",
+   "art": "vulnerable_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/vulnerable_potion.tres",
+   "name": "Vulnerable Potion",
+   "rarity": "Common",
+   "description": "Apply [blue]3[/blue] [gold]Vulnerable[/gold]."
+  },
+  {
+   "id": "WeakPotion",
+   "locKey": "WEAK_POTION",
+   "art": "weak_potion",
+   "artPath": "images/atlases/potion_atlas.sprites/weak_potion.tres",
+   "name": "Weak Potion",
+   "rarity": "Common",
+   "description": "Apply [blue]3[/blue] [gold]Weak[/gold]."
+  }
+ ],
+ "relics": [
+  {
+   "id": "Akabeko",
+   "locKey": "AKABEKO",
+   "art": "akabeko",
+   "artPath": "images/relics/akabeko.png",
+   "name": "Akabeko",
+   "rarity": "Uncommon",
+   "description": "At the start of each combat, gain [blue]8[/blue] [gold]Vigor[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "AmethystAubergine",
+   "locKey": "AMETHYST_AUBERGINE",
+   "art": "amethyst_aubergine",
+   "artPath": "images/relics/amethyst_aubergine.png",
+   "name": "Amethyst Aubergine",
+   "rarity": "Common",
+   "description": "Enemies drop [blue]15[/blue] additional [gold]Gold[/gold].",
+   "allowedInShops": false
+  },
+  {
+   "id": "Anchor",
+   "locKey": "ANCHOR",
+   "art": "anchor",
+   "artPath": "images/relics/anchor.png",
+   "name": "Anchor",
+   "rarity": "Common",
+   "description": "Start each combat with [blue]10[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "ArtOfWar",
+   "locKey": "ART_OF_WAR",
+   "art": "art_of_war",
+   "artPath": "images/relics/art_of_war.png",
+   "name": "Art of War",
+   "rarity": "Rare",
+   "description": "If you do not play any Attacks during your turn, gain an additional [icon:energy] next turn.",
+   "allowedInShops": true
+  },
+  {
+   "id": "BagOfMarbles",
+   "locKey": "BAG_OF_MARBLES",
+   "art": "bag_of_marbles",
+   "artPath": "images/relics/bag_of_marbles.png",
+   "name": "Bag of Marbles",
+   "rarity": "Common",
+   "description": "At the start of each combat, apply [blue]1[/blue] [gold]Vulnerable[/gold] to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "BagOfPreparation",
+   "locKey": "BAG_OF_PREPARATION",
+   "art": "bag_of_preparation",
+   "artPath": "images/relics/bag_of_preparation.png",
+   "name": "Bag of Preparation",
+   "rarity": "Common",
+   "description": "At the start of each combat, draw [blue]2[/blue] additional cards.",
+   "allowedInShops": true
+  },
+  {
+   "id": "BeatingRemnant",
+   "locKey": "BEATING_REMNANT",
+   "art": "beating_remnant",
+   "artPath": "images/relics/beating_remnant.png",
+   "name": "Beating Remnant",
+   "rarity": "Rare",
+   "description": "You cannot lose more than [blue]20[/blue] HP in a single turn.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Bellows",
+   "locKey": "BELLOWS",
+   "art": "bellows",
+   "artPath": "images/relics/bellows.png",
+   "name": "Bellows",
+   "rarity": "Rare",
+   "description": "The first [gold]Hand[/gold] you draw each combat is [gold]Upgraded[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "BeltBuckle",
+   "locKey": "BELT_BUCKLE",
+   "art": "belt_buckle",
+   "artPath": "images/relics/belt_buckle.png",
+   "name": "Belt Buckle",
+   "rarity": "Shop",
+   "description": "While you have no [gold]Potions[/gold], you have [blue]2[/blue] additional [gold]Dexterity[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "BloodVial",
+   "locKey": "BLOOD_VIAL",
+   "art": "blood_vial",
+   "artPath": "images/relics/blood_vial.png",
+   "name": "Blood Vial",
+   "rarity": "Common",
+   "description": "At the start of each combat, heal [green]2[/green] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "BookOfFiveRings",
+   "locKey": "BOOK_OF_FIVE_RINGS",
+   "art": "book_of_five_rings",
+   "artPath": "images/relics/book_of_five_rings.png",
+   "name": "Book of Five Rings",
+   "rarity": "Common",
+   "description": "Every [blue]5[/blue] cards you add to your [gold]Deck[/gold], heal [green]20[/green] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "BowlerHat",
+   "locKey": "BOWLER_HAT",
+   "art": "bowler_hat",
+   "artPath": "images/relics/bowler_hat.png",
+   "name": "Bowler Hat",
+   "rarity": "Uncommon",
+   "description": "Gain [blue]25%[/blue] additional [gold]Gold[/gold].",
+   "allowedInShops": false
+  },
+  {
+   "id": "Bread",
+   "locKey": "BREAD",
+   "art": "bread",
+   "artPath": "images/relics/bread.png",
+   "name": "Bread",
+   "rarity": "Shop",
+   "description": "At the start of your first turn, lose [icon:energy][icon:energy]. At the start of all other turns, gain [icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "BronzeScales",
+   "locKey": "BRONZE_SCALES",
+   "art": "bronze_scales",
+   "artPath": "images/relics/bronze_scales.png",
+   "name": "Bronze Scales",
+   "rarity": "Common",
+   "description": "Start each combat with [blue]3[/blue] [gold]Thorns[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "BurningSticks",
+   "locKey": "BURNING_STICKS",
+   "art": "burning_sticks",
+   "artPath": "images/relics/burning_sticks.png",
+   "name": "Burning Sticks",
+   "rarity": "Shop",
+   "description": "The first time each combat you [gold]Exhaust[/gold] a Skill, add a copy of it into your [gold]Hand[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Candelabra",
+   "locKey": "CANDELABRA",
+   "art": "candelabra",
+   "artPath": "images/relics/candelabra.png",
+   "name": "Candelabra",
+   "rarity": "Uncommon",
+   "description": "At the start of your [blue]2nd[/blue] turn, gain [icon:energy][icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "CaptainsWheel",
+   "locKey": "CAPTAINS_WHEEL",
+   "art": "captains_wheel",
+   "artPath": "images/relics/captains_wheel.png",
+   "name": "Captain's Wheel",
+   "rarity": "Rare",
+   "description": "At the start of your [blue]3rd[/blue] turn, gain [blue]18[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Cauldron",
+   "locKey": "CAULDRON",
+   "art": "cauldron",
+   "artPath": "images/relics/cauldron.png",
+   "name": "Cauldron",
+   "rarity": "Shop",
+   "description": "Upon pickup, brews [blue]5[/blue] random [gold]Potions[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "CentennialPuzzle",
+   "locKey": "CENTENNIAL_PUZZLE",
+   "art": "centennial_puzzle",
+   "artPath": "images/relics/centennial_puzzle.png",
+   "name": "Centennial Puzzle",
+   "rarity": "Common",
+   "description": "The first time you lose HP each combat, draw [blue]3[/blue] cards.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Chandelier",
+   "locKey": "CHANDELIER",
+   "art": "chandelier",
+   "artPath": "images/relics/chandelier.png",
+   "name": "Chandelier",
+   "rarity": "Rare",
+   "description": "At the start of your [blue]3rd[/blue] turn, gain [icon:energy][icon:energy][icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "ChemicalX",
+   "locKey": "CHEMICAL_X",
+   "art": "chemical_x",
+   "artPath": "images/relics/chemical_x.png",
+   "name": "Chemical X",
+   "rarity": "Shop",
+   "description": "The effects of your cost [blue]X[/blue] cards are increased by [blue]2[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "CloakClasp",
+   "locKey": "CLOAK_CLASP",
+   "art": "cloak_clasp",
+   "artPath": "images/relics/cloak_clasp.png",
+   "name": "Cloak Clasp",
+   "rarity": "Rare",
+   "description": "At the end of your turn, gain [blue]1[/blue] [gold]Block[/gold] for each card in your [gold]Hand[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "DingyRug",
+   "locKey": "DINGY_RUG",
+   "art": "dingy_rug",
+   "artPath": "images/relics/dingy_rug.png",
+   "name": "Dingy Rug",
+   "rarity": "Shop",
+   "description": "Card rewards can now contain Colorless cards.",
+   "allowedInShops": true
+  },
+  {
+   "id": "DollysMirror",
+   "locKey": "DOLLYS_MIRROR",
+   "art": "dollys_mirror",
+   "artPath": "images/relics/dollys_mirror.png",
+   "name": "Dolly's Mirror",
+   "rarity": "Shop",
+   "description": "Upon pickup, obtain an additional copy of a card in your [gold]Deck[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "DragonFruit",
+   "locKey": "DRAGON_FRUIT",
+   "art": "dragon_fruit",
+   "artPath": "images/relics/dragon_fruit.png",
+   "name": "Dragon Fruit",
+   "rarity": "Shop",
+   "description": "Whenever you gain [gold]Gold[/gold], raise your Max HP by [blue]1[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "EternalFeather",
+   "locKey": "ETERNAL_FEATHER",
+   "art": "eternal_feather",
+   "artPath": "images/relics/eternal_feather.png",
+   "name": "Eternal Feather",
+   "rarity": "Uncommon",
+   "description": "For every [blue]5[/blue] cards in your [gold]Deck[/gold], heal [green]3[/green] HP whenever you enter a [gold]Rest Site[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "FestivePopper",
+   "locKey": "FESTIVE_POPPER",
+   "art": "festive_popper",
+   "artPath": "images/relics/festive_popper.png",
+   "name": "Festive Popper",
+   "rarity": "Common",
+   "description": "At the start of each combat, deal [blue]9[/blue] damage to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "FrozenEgg",
+   "locKey": "FROZEN_EGG",
+   "art": "frozen_egg",
+   "artPath": "images/relics/frozen_egg.png",
+   "name": "Frozen Egg",
+   "rarity": "Rare",
+   "description": "Whenever you add a Power into your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",
+   "allowedInShops": true
+  },
+  {
+   "id": "GamblingChip",
+   "locKey": "GAMBLING_CHIP",
+   "art": "gambling_chip",
+   "artPath": "images/relics/gambling_chip.png",
+   "name": "Gambling Chip",
+   "rarity": "Rare",
+   "description": "At the start of each combat, discard any number of cards then draw that many.",
+   "allowedInShops": true
+  },
+  {
+   "id": "GamePiece",
+   "locKey": "GAME_PIECE",
+   "art": "game_piece",
+   "artPath": "images/relics/game_piece.png",
+   "name": "Game Piece",
+   "rarity": "Rare",
+   "description": "Whenever you play a Power, draw [blue]1[/blue] card.",
+   "allowedInShops": true
+  },
+  {
+   "id": "GhostSeed",
+   "locKey": "GHOST_SEED",
+   "art": "ghost_seed",
+   "artPath": "images/relics/ghost_seed.png",
+   "name": "Ghost Seed",
+   "rarity": "Shop",
+   "description": "[gold]Strikes[/gold] and [gold]Defends[/gold] gain [gold]Ethereal[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Girya",
+   "locKey": "GIRYA",
+   "art": "girya",
+   "artPath": "images/relics/girya.png",
+   "name": "Girya",
+   "rarity": "Rare",
+   "description": "You can now gain [gold]Strength[/gold] at [gold]Rest Sites[/gold]. ([blue]3[/blue] times max)",
+   "allowedInShops": true
+  },
+  {
+   "id": "GnarledHammer",
+   "locKey": "GNARLED_HAMMER",
+   "art": "gnarled_hammer",
+   "artPath": "images/relics/gnarled_hammer.png",
+   "name": "Gnarled Hammer",
+   "rarity": "Shop",
+   "description": "Upon pickup, [gold]Enchant[/gold] up to [blue]3[/blue] Attacks with [purple]Sharp[/purple] [blue]3[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Gorget",
+   "locKey": "GORGET",
+   "art": "gorget",
+   "artPath": "images/relics/gorget.png",
+   "name": "Gorget",
+   "rarity": "Common",
+   "description": "At the start of each combat, gain [blue]4[/blue] [gold]Plating[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "GremlinHorn",
+   "locKey": "GREMLIN_HORN",
+   "art": "gremlin_horn",
+   "artPath": "images/relics/gremlin_horn.png",
+   "name": "Gremlin Horn",
+   "rarity": "Uncommon",
+   "description": "Whenever an enemy dies, gain [icon:energy] and draw [blue]1[/blue] card.",
+   "allowedInShops": true
+  },
+  {
+   "id": "HappyFlower",
+   "locKey": "HAPPY_FLOWER",
+   "art": "happy_flower",
+   "artPath": "images/relics/happy_flower.png",
+   "name": "Happy Flower",
+   "rarity": "Common",
+   "description": "Every [blue]3[/blue] turns, gain [icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "HornCleat",
+   "locKey": "HORN_CLEAT",
+   "art": "horn_cleat",
+   "artPath": "images/relics/horn_cleat.png",
+   "name": "Horn Cleat",
+   "rarity": "Uncommon",
+   "description": "At the start of your [blue]2nd[/blue] turn, gain [blue]14[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "IceCream",
+   "locKey": "ICE_CREAM",
+   "art": "ice_cream",
+   "artPath": "images/relics/ice_cream.png",
+   "name": "Ice Cream",
+   "rarity": "Rare",
+   "description": "Energy is now conserved between turns.",
+   "allowedInShops": true
+  },
+  {
+   "id": "IntimidatingHelmet",
+   "locKey": "INTIMIDATING_HELMET",
+   "art": "intimidating_helmet",
+   "artPath": "images/relics/intimidating_helmet.png",
+   "name": "Intimidating Helmet",
+   "rarity": "Rare",
+   "description": "Whenever you play a card that costs [icon:energy][icon:energy] or more, gain [blue]4[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "JossPaper",
+   "locKey": "JOSS_PAPER",
+   "art": "joss_paper",
+   "artPath": "images/relics/joss_paper.png",
+   "name": "Joss Paper",
+   "rarity": "Uncommon",
+   "description": "Every [blue]5[/blue] times you [gold]Exhaust[/gold] a card, draw [blue]1[/blue] card.",
+   "allowedInShops": true
+  },
+  {
+   "id": "JuzuBracelet",
+   "locKey": "JUZU_BRACELET",
+   "art": "juzu_bracelet",
+   "artPath": "images/relics/juzu_bracelet.png",
+   "name": "Juzu Bracelet",
+   "rarity": "Common",
+   "description": "Regular enemy combats are no longer encountered in [gold]?[/gold] rooms.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Kifuda",
+   "locKey": "KIFUDA",
+   "art": "kifuda",
+   "artPath": "images/relics/kifuda.png",
+   "name": "Kifuda",
+   "rarity": "Shop",
+   "description": "Upon pickup, [gold]Enchant[/gold] up to [blue]3[/blue] cards with [purple]Adroit[/purple].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Kunai",
+   "locKey": "KUNAI",
+   "art": "kunai",
+   "artPath": "images/relics/kunai.png",
+   "name": "Kunai",
+   "rarity": "Rare",
+   "description": "Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]1[/blue] [gold]Dexterity[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Kusarigama",
+   "locKey": "KUSARIGAMA",
+   "art": "kusarigama",
+   "artPath": "images/relics/kusarigama.png",
+   "name": "Kusarigama",
+   "rarity": "Uncommon",
+   "description": "Every time you play [blue]3[/blue] Attacks in a single turn, deal [blue]6[/blue] damage to a random enemy.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Lantern",
+   "locKey": "LANTERN",
+   "art": "lantern",
+   "artPath": "images/relics/lantern.png",
+   "name": "Lantern",
+   "rarity": "Common",
+   "description": "Start each combat with an additional [icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "LastingCandy",
+   "locKey": "LASTING_CANDY",
+   "art": "lasting_candy",
+   "artPath": "images/relics/lasting_candy.png",
+   "name": "Lasting Candy",
+   "rarity": "Uncommon",
+   "description": "Every other combat, your card rewards gain an additional Power.",
+   "allowedInShops": true
+  },
+  {
+   "id": "LavaLamp",
+   "locKey": "LAVA_LAMP",
+   "art": "lava_lamp",
+   "artPath": "images/relics/lava_lamp.png",
+   "name": "Lava Lamp",
+   "rarity": "Shop",
+   "description": "At the end of combat, [gold]Upgrade[/gold] all card rewards if you took no damage.",
+   "allowedInShops": true
+  },
+  {
+   "id": "LeesWaffle",
+   "locKey": "LEES_WAFFLE",
+   "art": "lees_waffle",
+   "artPath": "images/relics/lees_waffle.png",
+   "name": "Lee's Waffle",
+   "rarity": "Shop",
+   "description": "Upon pickup, raise your Max HP by [blue]7[/blue] and heal all of your HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "LetterOpener",
+   "locKey": "LETTER_OPENER",
+   "art": "letter_opener",
+   "artPath": "images/relics/letter_opener.png",
+   "name": "Letter Opener",
+   "rarity": "Uncommon",
+   "description": "Every time you play [blue]3[/blue] Skills in a single turn, deal [blue]5[/blue] damage to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "LizardTail",
+   "locKey": "LIZARD_TAIL",
+   "art": "lizard_tail",
+   "artPath": "images/relics/lizard_tail.png",
+   "name": "Lizard Tail",
+   "rarity": "Rare",
+   "description": "When your HP would be reduced to [blue]0[/blue], heal to [green]50%[/green] of your Max HP instead (works once).",
+   "allowedInShops": true
+  },
+  {
+   "id": "LuckyFysh",
+   "locKey": "LUCKY_FYSH",
+   "art": "lucky_fysh",
+   "artPath": "images/relics/lucky_fysh.png",
+   "name": "Lucky Fysh",
+   "rarity": "Uncommon",
+   "description": "Whenever you add a card to your [gold]Deck[/gold], gain [blue]15[/blue] [gold]Gold[/gold].",
+   "allowedInShops": false
+  },
+  {
+   "id": "Mango",
+   "locKey": "MANGO",
+   "art": "mango",
+   "artPath": "images/relics/mango.png",
+   "name": "Mango",
+   "rarity": "Rare",
+   "description": "Upon pickup, raise your Max HP by [blue]14[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "MealTicket",
+   "locKey": "MEAL_TICKET",
+   "art": "meal_ticket",
+   "artPath": "images/relics/meal_ticket.png",
+   "name": "Meal Ticket",
+   "rarity": "Common",
+   "description": "Whenever you enter a shop room, heal [green]15[/green] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "MeatOnTheBone",
+   "locKey": "MEAT_ON_THE_BONE",
+   "art": "meat_on_the_bone",
+   "artPath": "images/relics/meat_on_the_bone.png",
+   "name": "Meat on the Bone",
+   "rarity": "Rare",
+   "description": "If your HP is at or below [blue]50%[/blue] at the end of combat, heal [green]12[/green] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "MembershipCard",
+   "locKey": "MEMBERSHIP_CARD",
+   "art": "membership_card",
+   "artPath": "images/relics/membership_card.png",
+   "name": "Membership Card",
+   "rarity": "Shop",
+   "description": "[blue]50%[/blue] discount on all products!",
+   "allowedInShops": true
+  },
+  {
+   "id": "MercuryHourglass",
+   "locKey": "MERCURY_HOURGLASS",
+   "art": "mercury_hourglass",
+   "artPath": "images/relics/mercury_hourglass.png",
+   "name": "Mercury Hourglass",
+   "rarity": "Uncommon",
+   "description": "At the start of your turn, deal [blue]3[/blue] damage to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "MiniatureCannon",
+   "locKey": "MINIATURE_CANNON",
+   "art": "miniature_cannon",
+   "artPath": "images/relics/miniature_cannon.png",
+   "name": "Miniature Cannon",
+   "rarity": "Uncommon",
+   "description": "[gold]Upgraded[/gold] Attacks deal [blue]3[/blue] additional damage.",
+   "allowedInShops": true
+  },
+  {
+   "id": "MiniatureTent",
+   "locKey": "MINIATURE_TENT",
+   "art": "miniature_tent",
+   "artPath": "images/relics/miniature_tent.png",
+   "name": "Miniature Tent",
+   "rarity": "Shop",
+   "description": "You may choose any number of options at [gold]Rest Sites[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "MoltenEgg",
+   "locKey": "MOLTEN_EGG",
+   "art": "molten_egg",
+   "artPath": "images/relics/molten_egg.png",
+   "name": "Molten Egg",
+   "rarity": "Rare",
+   "description": "Whenever you add an Attack card to your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",
+   "allowedInShops": true
+  },
+  {
+   "id": "MummifiedHand",
+   "locKey": "MUMMIFIED_HAND",
+   "art": "mummified_hand",
+   "artPath": "images/relics/mummified_hand.png",
+   "name": "Mummified Hand",
+   "rarity": "Rare",
+   "description": "Whenever you play a Power, a random card in your [gold]Hand[/gold] is free to play that turn.",
+   "allowedInShops": true
+  },
+  {
+   "id": "MysticLighter",
+   "locKey": "MYSTIC_LIGHTER",
+   "art": "mystic_lighter",
+   "artPath": "images/relics/mystic_lighter.png",
+   "name": "Mystic Lighter",
+   "rarity": "Shop",
+   "description": "[gold]Enchanted[/gold] Attacks deal [blue]9[/blue] additional damage.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Nunchaku",
+   "locKey": "NUNCHAKU",
+   "art": "nunchaku",
+   "artPath": "images/relics/nunchaku.png",
+   "name": "Nunchaku",
+   "rarity": "Uncommon",
+   "description": "Every time you play [blue]10[/blue] Attacks, gain [icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "OddlySmoothStone",
+   "locKey": "ODDLY_SMOOTH_STONE",
+   "art": "oddly_smooth_stone",
+   "artPath": "images/relics/oddly_smooth_stone.png",
+   "name": "Oddly Smooth Stone",
+   "rarity": "Common",
+   "description": "Start each combat with [blue]1[/blue] [gold]Dexterity[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "OldCoin",
+   "locKey": "OLD_COIN",
+   "art": "old_coin",
+   "artPath": "images/relics/old_coin.png",
+   "name": "Old Coin",
+   "rarity": "Rare",
+   "description": "Upon pickup, gain [blue]300[/blue] [gold]Gold[/gold].",
+   "allowedInShops": false
+  },
+  {
+   "id": "Orichalcum",
+   "locKey": "ORICHALCUM",
+   "art": "orichalcum",
+   "artPath": "images/relics/orichalcum.png",
+   "name": "Orichalcum",
+   "rarity": "Uncommon",
+   "description": "If you end your turn without [gold]Block[/gold], gain [blue]6[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "OrnamentalFan",
+   "locKey": "ORNAMENTAL_FAN",
+   "art": "ornamental_fan",
+   "artPath": "images/relics/ornamental_fan.png",
+   "name": "Ornamental Fan",
+   "rarity": "Uncommon",
+   "description": "Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]4[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Orrery",
+   "locKey": "ORRERY",
+   "art": "orrery",
+   "artPath": "images/relics/orrery.png",
+   "name": "Orrery",
+   "rarity": "Shop",
+   "description": "Upon pickup, gain [blue]5[/blue] card rewards.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Pantograph",
+   "locKey": "PANTOGRAPH",
+   "art": "pantograph",
+   "artPath": "images/relics/pantograph.png",
+   "name": "Pantograph",
+   "rarity": "Uncommon",
+   "description": "At the start of each [gold]Boss[/gold] combat, heal [green]25[/green] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "ParryingShield",
+   "locKey": "PARRYING_SHIELD",
+   "art": "parrying_shield",
+   "artPath": "images/relics/parrying_shield.png",
+   "name": "Parrying Shield",
+   "rarity": "Uncommon",
+   "description": "If you end a turn with at least [blue]10[/blue] [gold]Block[/gold], deal [blue]6[/blue] damage to a random enemy.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Pear",
+   "locKey": "PEAR",
+   "art": "pear",
+   "artPath": "images/relics/pear.png",
+   "name": "Pear",
+   "rarity": "Uncommon",
+   "description": "Upon pickup, raise your Max HP by [blue]10[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "PenNib",
+   "locKey": "PEN_NIB",
+   "art": "pen_nib",
+   "artPath": "images/relics/pen_nib.png",
+   "name": "Pen Nib",
+   "rarity": "Uncommon",
+   "description": "Every [blue]10th[/blue] Attack you play deals double damage.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Pendulum",
+   "locKey": "PENDULUM",
+   "art": "pendulum",
+   "artPath": "images/relics/pendulum.png",
+   "name": "Pendulum",
+   "rarity": "Common",
+   "description": "Every [blue]3[/blue] turns, draw [blue]1[/blue] card.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Permafrost",
+   "locKey": "PERMAFROST",
+   "art": "permafrost",
+   "artPath": "images/relics/permafrost.png",
+   "name": "Permafrost",
+   "rarity": "Uncommon",
+   "description": "The first time you play a Power each combat, gain [blue]7[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "PetrifiedToad",
+   "locKey": "PETRIFIED_TOAD",
+   "art": "petrified_toad",
+   "artPath": "images/relics/petrified_toad.png",
+   "name": "Petrified Toad",
+   "rarity": "Uncommon",
+   "description": "At the start of each combat, procure a [gold]Potion-Shaped Rock[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Planisphere",
+   "locKey": "PLANISPHERE",
+   "art": "planisphere",
+   "artPath": "images/relics/planisphere.png",
+   "name": "Planisphere",
+   "rarity": "Uncommon",
+   "description": "Whenever you enter a [gold]?[/gold] room, heal [green]5[/green] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Pocketwatch",
+   "locKey": "POCKETWATCH",
+   "art": "pocketwatch",
+   "artPath": "images/relics/pocketwatch.png",
+   "name": "Pocketwatch",
+   "rarity": "Rare",
+   "description": "Whenever you play [blue]3[/blue] or fewer cards during your turn, draw [blue]3[/blue] additional cards at the start of your next turn.",
+   "allowedInShops": true
+  },
+  {
+   "id": "PotionBelt",
+   "locKey": "POTION_BELT",
+   "art": "potion_belt",
+   "artPath": "images/relics/potion_belt.png",
+   "name": "Potion Belt",
+   "rarity": "Common",
+   "description": "Upon pickup, gain [blue]2[/blue] potion slots.",
+   "allowedInShops": true
+  },
+  {
+   "id": "PrayerWheel",
+   "locKey": "PRAYER_WHEEL",
+   "art": "prayer_wheel",
+   "artPath": "images/relics/prayer_wheel.png",
+   "name": "Prayer Wheel",
+   "rarity": "Rare",
+   "description": "Normal enemies drop an additional card reward.",
+   "allowedInShops": true
+  },
+  {
+   "id": "PunchDagger",
+   "locKey": "PUNCH_DAGGER",
+   "art": "punch_dagger",
+   "artPath": "images/relics/punch_dagger.png",
+   "name": "Punch Dagger",
+   "rarity": "Shop",
+   "description": "Upon pickup, [gold]Enchant[/gold] an Attack with [purple]Momentum[/purple] [blue]5[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "RainbowRing",
+   "locKey": "RAINBOW_RING",
+   "art": "rainbow_ring",
+   "artPath": "images/relics/rainbow_ring.png",
+   "name": "Rainbow Ring",
+   "rarity": "Rare",
+   "description": "The first time you play an Attack, Skill, and Power each turn, gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "RazorTooth",
+   "locKey": "RAZOR_TOOTH",
+   "art": "razor_tooth",
+   "artPath": "images/relics/razor_tooth.png",
+   "name": "Razor Tooth",
+   "rarity": "Rare",
+   "description": "Every time you play an Attack or Skill, [gold]Upgrade[/gold] it for the remainder of combat.",
+   "allowedInShops": true
+  },
+  {
+   "id": "RedMask",
+   "locKey": "RED_MASK",
+   "art": "red_mask",
+   "artPath": "images/relics/red_mask.png",
+   "name": "Red Mask",
+   "rarity": "Common",
+   "description": "At the start of each combat, apply [blue]1[/blue] [gold]Weak[/gold] to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "RegalPillow",
+   "locKey": "REGAL_PILLOW",
+   "art": "regal_pillow",
+   "artPath": "images/relics/regal_pillow.png",
+   "name": "Regal Pillow",
+   "rarity": "Common",
+   "description": "Whenever you [gold]Rest[/gold], heal an additional [blue]15[/blue] HP.",
+   "allowedInShops": true
+  },
+  {
+   "id": "ReptileTrinket",
+   "locKey": "REPTILE_TRINKET",
+   "art": "reptile_trinket",
+   "artPath": "images/relics/reptile_trinket.png",
+   "name": "Reptile Trinket",
+   "rarity": "Uncommon",
+   "description": "Whenever you use a potion, gain [blue]3[/blue] [gold]Strength[/gold] this turn.",
+   "allowedInShops": true
+  },
+  {
+   "id": "RingingTriangle",
+   "locKey": "RINGING_TRIANGLE",
+   "art": "ringing_triangle",
+   "artPath": "images/relics/ringing_triangle.png",
+   "name": "Ringing Triangle",
+   "rarity": "Shop",
+   "description": "[gold]Retain[/gold] your [gold]Hand[/gold] on the first turn of combat.",
+   "allowedInShops": true
+  },
+  {
+   "id": "RippleBasin",
+   "locKey": "RIPPLE_BASIN",
+   "art": "ripple_basin",
+   "artPath": "images/relics/ripple_basin.png",
+   "name": "Ripple Basin",
+   "rarity": "Uncommon",
+   "description": "If you did not play any Attacks during your turn, gain [blue]4[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "RoyalStamp",
+   "locKey": "ROYAL_STAMP",
+   "art": "royal_stamp",
+   "artPath": "images/relics/royal_stamp.png",
+   "name": "Royal Stamp",
+   "rarity": "Shop",
+   "description": "Upon pickup, choose an Attack or Skill in your [gold]Deck[/gold] to [gold]Enchant[/gold] with [purple]Royally Approved[/purple].",
+   "allowedInShops": true
+  },
+  {
+   "id": "ScreamingFlagon",
+   "locKey": "SCREAMING_FLAGON",
+   "art": "screaming_flagon",
+   "artPath": "images/relics/screaming_flagon.png",
+   "name": "Screaming Flagon",
+   "rarity": "Shop",
+   "description": "If you end your turn with no cards in your [gold]Hand[/gold], deal [blue]20[/blue] damage to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Shovel",
+   "locKey": "SHOVEL",
+   "art": "shovel",
+   "artPath": "images/relics/shovel.png",
+   "name": "Shovel",
+   "rarity": "Rare",
+   "description": "You can now dig at [gold]Rest Sites[/gold] to obtain a random [gold]Relic[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Shuriken",
+   "locKey": "SHURIKEN",
+   "art": "shuriken",
+   "artPath": "images/relics/shuriken.png",
+   "name": "Shuriken",
+   "rarity": "Rare",
+   "description": "Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]1[/blue] [gold]Strength[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "SlingOfCourage",
+   "locKey": "SLING_OF_COURAGE",
+   "art": "sling_of_courage",
+   "artPath": "images/relics/sling_of_courage.png",
+   "name": "Sling of Courage",
+   "rarity": "Shop",
+   "description": "Start each [gold]Elite[/gold] combat with [blue]2[/blue] [gold]Strength[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "SparklingRouge",
+   "locKey": "SPARKLING_ROUGE",
+   "art": "sparkling_rouge",
+   "artPath": "images/relics/sparkling_rouge.png",
+   "name": "Sparkling Rouge",
+   "rarity": "Uncommon",
+   "description": "At the start of your [blue]3rd[/blue] turn, gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "StoneCalendar",
+   "locKey": "STONE_CALENDAR",
+   "art": "stone_calendar",
+   "artPath": "images/relics/stone_calendar.png",
+   "name": "Stone Calendar",
+   "rarity": "Rare",
+   "description": "At the end of turn [blue]7[/blue], deal [blue]52[/blue] damage to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "StoneCracker",
+   "locKey": "STONE_CRACKER",
+   "art": "stone_cracker",
+   "artPath": "images/relics/stone_cracker.png",
+   "name": "Stone Cracker",
+   "rarity": "Uncommon",
+   "description": "At the start of each combat, [gold]Upgrade[/gold] [blue]2[/blue] random cards in your [gold]Draw Pile[/gold] for the rest of combat.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Strawberry",
+   "locKey": "STRAWBERRY",
+   "art": "strawberry",
+   "artPath": "images/relics/strawberry.png",
+   "name": "Strawberry",
+   "rarity": "Common",
+   "description": "Upon pickup, raise your Max HP by [blue]7[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "StrikeDummy",
+   "locKey": "STRIKE_DUMMY",
+   "art": "strike_dummy",
+   "artPath": "images/relics/strike_dummy.png",
+   "name": "Strike Dummy",
+   "rarity": "Common",
+   "description": "Cards containing “Strike” deal [blue]3[/blue] additional damage.",
+   "allowedInShops": true
+  },
+  {
+   "id": "SturdyClamp",
+   "locKey": "STURDY_CLAMP",
+   "art": "sturdy_clamp",
+   "artPath": "images/relics/sturdy_clamp.png",
+   "name": "Sturdy Clamp",
+   "rarity": "Rare",
+   "description": "Up to [blue]10[/blue] [gold]Block[/gold] persists across turns.",
+   "allowedInShops": true
+  },
+  {
+   "id": "TheAbacus",
+   "locKey": "THE_ABACUS",
+   "art": "the_abacus",
+   "artPath": "images/relics/the_abacus.png",
+   "name": "The Abacus",
+   "rarity": "Shop",
+   "description": "Whenever you shuffle your [gold]Draw Pile[/gold], gain [blue]6[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "TheCourier",
+   "locKey": "THE_COURIER",
+   "art": "the_courier",
+   "artPath": "images/relics/the_courier.png",
+   "name": "The Courier",
+   "rarity": "Rare",
+   "description": "The merchant no longer runs out of cards, relics, or potions and his prices are reduced by [blue]20%[/blue].",
+   "allowedInShops": false
+  },
+  {
+   "id": "TinyMailbox",
+   "locKey": "TINY_MAILBOX",
+   "art": "tiny_mailbox",
+   "artPath": "images/relics/tiny_mailbox.png",
+   "name": "Tiny Mailbox",
+   "rarity": "Uncommon",
+   "description": "Whenever you [gold]Rest[/gold], procure [blue]2[/blue] random [gold]Potions[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Toolbox",
+   "locKey": "TOOLBOX",
+   "art": "toolbox",
+   "artPath": "images/relics/toolbox.png",
+   "name": "Toolbox",
+   "rarity": "Shop",
+   "description": "At the start of each combat, choose [blue]1[/blue] of [blue]3[/blue] random Colorless cards and add the chosen card into your [gold]Hand[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "ToxicEgg",
+   "locKey": "TOXIC_EGG",
+   "art": "toxic_egg",
+   "artPath": "images/relics/toxic_egg.png",
+   "name": "Toxic Egg",
+   "rarity": "Rare",
+   "description": "Whenever you add a Skill into your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",
+   "allowedInShops": true
+  },
+  {
+   "id": "TungstenRod",
+   "locKey": "TUNGSTEN_ROD",
+   "art": "tungsten_rod",
+   "artPath": "images/relics/tungsten_rod.png",
+   "name": "Tungsten Rod",
+   "rarity": "Rare",
+   "description": "Whenever you would lose HP, lose [blue]1[/blue] less.",
+   "allowedInShops": true
+  },
+  {
+   "id": "TuningFork",
+   "locKey": "TUNING_FORK",
+   "art": "tuning_fork",
+   "artPath": "images/relics/tuning_fork.png",
+   "name": "Tuning Fork",
+   "rarity": "Uncommon",
+   "description": "Every time you play [blue]10[/blue] Skills, gain [blue]7[/blue] [gold]Block[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "UnceasingTop",
+   "locKey": "UNCEASING_TOP",
+   "art": "unceasing_top",
+   "artPath": "images/relics/unceasing_top.png",
+   "name": "Unceasing Top",
+   "rarity": "Rare",
+   "description": "Whenever you have no cards in [gold]Hand[/gold] during your turn, draw a card.",
+   "allowedInShops": true
+  },
+  {
+   "id": "UnsettlingLamp",
+   "locKey": "UNSETTLING_LAMP",
+   "art": "unsettling_lamp",
+   "artPath": "images/relics/unsettling_lamp.png",
+   "name": "Unsettling Lamp",
+   "rarity": "Rare",
+   "description": "Each combat, the first time you play a card that [gold]Debuffs[/gold] an enemy, double its effect.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Vajra",
+   "locKey": "VAJRA",
+   "art": "vajra",
+   "artPath": "images/relics/vajra.png",
+   "name": "Vajra",
+   "rarity": "Common",
+   "description": "Start each combat with [blue]1[/blue] [gold]Strength[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Vambrace",
+   "locKey": "VAMBRACE",
+   "art": "vambrace",
+   "artPath": "images/relics/vambrace.png",
+   "name": "Vambrace",
+   "rarity": "Uncommon",
+   "description": "The first time you gain [gold]Block[/gold] from a card each combat, double the amount gained.",
+   "allowedInShops": true
+  },
+  {
+   "id": "VenerableTeaSet",
+   "locKey": "VENERABLE_TEA_SET",
+   "art": "venerable_tea_set",
+   "artPath": "images/relics/venerable_tea_set.png",
+   "name": "Venerable Tea Set",
+   "rarity": "Common",
+   "description": "Whenever you enter a [gold]Rest Site[/gold], start the next combat with an additional [icon:energy][icon:energy].",
+   "allowedInShops": true
+  },
+  {
+   "id": "VexingPuzzlebox",
+   "locKey": "VEXING_PUZZLEBOX",
+   "art": "vexing_puzzlebox",
+   "artPath": "images/relics/vexing_puzzlebox.png",
+   "name": "Vexing Puzzlebox",
+   "rarity": "Rare",
+   "description": "At the start of each combat, add a random card into your [gold]Hand[/gold]. It's free to play this turn.",
+   "allowedInShops": true
+  },
+  {
+   "id": "WarPaint",
+   "locKey": "WAR_PAINT",
+   "art": "war_paint",
+   "artPath": "images/relics/war_paint.png",
+   "name": "War Paint",
+   "rarity": "Common",
+   "description": "Upon pickup, [gold]Upgrade[/gold] [blue]2[/blue] random Skills.",
+   "allowedInShops": true
+  },
+  {
+   "id": "Whetstone",
+   "locKey": "WHETSTONE",
+   "art": "whetstone",
+   "artPath": "images/relics/whetstone.png",
+   "name": "Whetstone",
+   "rarity": "Common",
+   "description": "Upon pickup, [gold]Upgrade[/gold] [blue]2[/blue] random Attacks.",
+   "allowedInShops": true
+  },
+  {
+   "id": "WhiteBeastStatue",
+   "locKey": "WHITE_BEAST_STATUE",
+   "art": "white_beast_statue",
+   "artPath": "images/relics/white_beast_statue.png",
+   "name": "White Beast Statue",
+   "rarity": "Rare",
+   "description": "[gold]Potions[/gold] always appear in combat rewards.",
+   "allowedInShops": true
+  },
+  {
+   "id": "WhiteStar",
+   "locKey": "WHITE_STAR",
+   "art": "white_star",
+   "artPath": "images/relics/white_star.png",
+   "name": "White Star",
+   "rarity": "Rare",
+   "description": "[gold]Elites[/gold] drop an additional [gold]Rare[/gold] card reward.",
+   "allowedInShops": true
+  },
+  {
+   "id": "WingCharm",
+   "locKey": "WING_CHARM",
+   "art": "wing_charm",
+   "artPath": "images/relics/wing_charm.png",
+   "name": "Wing Charm",
+   "rarity": "Shop",
+   "description": "A random card in each card reward is [gold]Enchanted[/gold] with [purple]Swift[/purple] [blue]1[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "Brimstone",
+   "locKey": "BRIMSTONE",
+   "art": "brimstone",
+   "artPath": "images/relics/brimstone.png",
+   "name": "Brimstone",
+   "rarity": "Shop",
+   "description": "At the start of your turn, gain [blue]2[/blue] [gold]Strength[/gold] and ALL enemies gain [blue]1[/blue] [gold]Strength[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "CharonsAshes",
+   "locKey": "CHARONS_ASHES",
+   "art": "charons_ashes",
+   "artPath": "images/relics/charons_ashes.png",
+   "name": "Charon's Ashes",
+   "rarity": "Rare",
+   "description": "Whenever you [gold]Exhaust[/gold] a card, deal [blue]3[/blue] damage to ALL enemies.",
+   "allowedInShops": true
+  },
+  {
+   "id": "DemonTongue",
+   "locKey": "DEMON_TONGUE",
+   "art": "demon_tongue",
+   "artPath": "images/relics/demon_tongue.png",
+   "name": "Demon Tongue",
+   "rarity": "Rare",
+   "description": "The first time you lose HP on your turn, heal HP equal to the amount lost.",
+   "allowedInShops": true
+  },
+  {
+   "id": "PaperPhrog",
+   "locKey": "PAPER_PHROG",
+   "art": "paper_phrog",
+   "artPath": "images/relics/paper_phrog.png",
+   "name": "Paper Phrog",
+   "rarity": "Uncommon",
+   "description": "Enemies with [gold]Vulnerable[/gold] take [blue]75%[/blue] more damage rather than [blue]50%[/blue].",
+   "allowedInShops": true
+  },
+  {
+   "id": "RedSkull",
+   "locKey": "RED_SKULL",
+   "art": "red_skull",
+   "artPath": "images/relics/red_skull.png",
+   "name": "Red Skull",
+   "rarity": "Common",
+   "description": "While your HP is at or below [blue]50%[/blue], you have [blue]3[/blue] additional [gold]Strength[/gold].",
+   "allowedInShops": true
+  },
+  {
+   "id": "RuinedHelmet",
+   "locKey": "RUINED_HELMET",
+   "art": "ruined_helmet",
+   "artPath": "images/relics/ruined_helmet.png",
+   "name": "Ruined Helmet",
+   "rarity": "Rare",
+   "description": "The first time you gain [gold]Strength[/gold] each combat, double the amount gained.",
+   "allowedInShops": true
+  },
+  {
+   "id": "SelfFormingClay",
+   "locKey": "SELF_FORMING_CLAY",
+   "art": "self_forming_clay",
+   "artPath": "images/relics/self_forming_clay.png",
+   "name": "Self-Forming Clay",
+   "rarity": "Uncommon",
+   "description": "Whenever you lose HP in combat, gain [blue]3[/blue] [gold]Block[/gold] next turn.",
+   "allowedInShops": true
+  }
+ ],
+ "merchantLines": {
+  "foulPotion": [
+   "Yesss, that's the stuff!",
+   "Keep it coming!",
+   "Ahhh, so refreshing..."
+  ],
+  "playerDead": [
+   "PLACEHOLDER: I don't do business with corpses.",
+   "PLACEHOLDER: No HP, no service."
+  ],
+  "purchaseFailureForbidden": [
+   "Seems like you can't do that.",
+   "Something the matter?"
+  ],
+  "purchaseFailureGold": [
+   "You'll need more coin.",
+   "[sine]This isn't a charity.[/sine]",
+   "Come back when you're a little [jitter]richer[/jitter].",
+   "I don't deal in [jitter]credit[/jitter]."
+  ],
+  "purchaseFailureSpace": [
+   "My potions are too powerful for your inventory!",
+   "Sorry, you look like you've got your hands full..."
+  ],
+  "purchaseSuccess": [
+   "Support your local business.",
+   "Thank you for your patronage.",
+   "Enjoy your purchase."
+  ]
+ }
+}

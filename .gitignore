@@ -1,0 +1,6 @@
+node_modules
+dist
+.env
+.DS_Store
+# Fish hackathon starter kit (its own repo; holds the local API key)
+fish-hackathon/

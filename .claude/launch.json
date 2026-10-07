@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "haggle-server", "runtimeExecutable": "npm", "runtimeArgs": ["run", "server"], "port": 8787 },
+    { "name": "haggle-web", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 5173 },
+    {
+      "name": "agent04-server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "fish-hackathon/fish-audio/examples/04-agent-web", "run", "server"],
+      "port": 8787
+    },
+    {
+      "name": "agent04-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "fish-hackathon/fish-audio/examples/04-agent-web", "run", "dev", "--", "--port", "5174"],
+      "port": 5174
+    }
+  ]
+}

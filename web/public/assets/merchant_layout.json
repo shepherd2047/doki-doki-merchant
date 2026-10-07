@@ -1,0 +1,14 @@
+{
+ "canvas": [
+  1920,
+  1080
+ ],
+ "merchant": {
+  "file": "merchant.png",
+  "h": 331,
+  "w": 263,
+  "x": 1204,
+  "y": 470
+ },
+ "note": "merchant.png placed at (x, y) on merchant_bg.png reproduces merchant_room.png (Spine setup pose, idle_loop frame 0)"
+}

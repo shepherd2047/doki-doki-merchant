@@ -52,6 +52,14 @@ Copy `dist/DokiDokiMerchant/` into the game's `mods/` folder (next to the game e
 `SlayTheSpire2.app/Contents/MacOS/mods/`), copy `DokiDokiMerchant.cfg.example` to `DokiDokiMerchant.cfg` in the
 same folder, and fill in your keys.
 
+### Sharing with a friend on your keys
+
+`scripts/make-key-installer.sh` writes `dist/key-installer/Doki-keys-windows.bat` and `Doki-keys-mac.command`,
+which carry your `DokiDokiMerchant.cfg` and install it next to the mod wherever Steam put it (Workshop or the
+game's `mods/` folder). Your friend subscribes on the Workshop, starts the game once, double-clicks the script
+and restarts. The scripts contain your keys: send them privately; never commit or upload them. The Workshop
+package itself (`scripts/build.sh`) never contains keys.
+
 ## Play
 
 - Enter any shop. Hold **V** to talk (or click the mic), or type into the box and press Enter.

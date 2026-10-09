@@ -13,6 +13,14 @@ Flirt with him. Haggle with him. Lowball him if you hate being alive.
 Built in an afternoon at SF Tech Week's **Conversational AI x Gaming Hackathon** by one Ironclad who should have
 been fighting Act 1 bosses.
 
+**Two ways to play:**
+
+- **In the browser:** the hackathon demo, a self-contained dating sim with its own climb, fights and endings.
+  Fish hosted voice agents, runs in Chrome. See [Run it](#run-it-browser).
+- **In Slay the Spire 2:** a real mod. Every shop in your actual run gets the rug, the haggling, the affection
+  meter and the secret card, on top of the game's own shop. OpenAI brain, Fish voice. See
+  [Play it in the real game](#play-it-in-the-real-game-sts2-mod).
+
 ---
 
 ## How to win a man who lives on a rug
@@ -78,7 +86,7 @@ it. He's in love, not stupid.
   Fish voice design. No real person was harmed or sampled.
 - **The API key never reaches the browser.** A tiny Express server mints short-lived session tokens.
 
-## Run it
+## Run it (browser)
 
 ```bash
 npm install
@@ -101,6 +109,18 @@ Use Chrome for voice (mic permission). Typing works everywhere, for the shy.
 | `?bonus` | Force the bonus tent. |
 | `?fight` | Skip the romance, go straight to the violence. |
 
+## Play it in the real game (STS2 mod)
+
+```bash
+cd mod
+scripts/build.sh     # needs the .NET 9 SDK and Slay the Spire 2 installed
+scripts/install.sh   # copies it into the game's mods folder
+```
+
+Put your OpenAI and Fish keys in `DokiDokiMerchant.cfg` in the installed mod folder, restart the game and walk
+into a shop (or type `room shop` in the dev console). Hold **V** to talk. Full instructions, config and
+troubleshooting: [mod/README.md](mod/README.md).
+
 ## Where things live
 
 - `web/src/main.js`: the shop, the run, both voice agents and their turn-taking.
@@ -109,6 +129,7 @@ Use Chrome for voice (mic permission). Typing works everywhere, for the shy.
 - `server/server.mjs`: mints Fish agent session tokens.
 - `scripts/`: agent setup, voice design, bestie narration.
 - `tools/`: extract the demo's assets from your own STS2 install.
+- `mod/`: the Slay the Spire 2 mod (C#, Godot 4.5 / .NET 9).
 
 ## Credits
 

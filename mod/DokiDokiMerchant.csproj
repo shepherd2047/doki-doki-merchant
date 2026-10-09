@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>DokiDokiMerchant</AssemblyName>
+    <RootNamespace>DokiDokiMerchant</RootNamespace>
+    <Sts2ResourcesDir Condition="'$(Sts2ResourcesDir)' == '' and '$(STS2_RESOURCES_DIR)' != ''">$(STS2_RESOURCES_DIR)</Sts2ResourcesDir>
+    <Sts2ResourcesDir Condition="'$(Sts2ResourcesDir)' == ''">$(HOME)/Library/Application Support/Steam/steamapps/common/Slay the Spire 2/SlayTheSpire2.app/Contents/Resources</Sts2ResourcesDir>
+    <Sts2AssemblyDir>$(Sts2ResourcesDir)/data_sts2_macos_arm64</Sts2AssemblyDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="mic-helper/**" />
+    <Compile Remove="stubs/**" />
+    <Reference Include="sts2">
+      <HintPath>$(Sts2AssemblyDir)/sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GodotSharp">
+      <HintPath>$(Sts2AssemblyDir)/GodotSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(Sts2AssemblyDir)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateSts2Assemblies" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(Sts2AssemblyDir)/sts2.dll')" Text="Could not find sts2.dll in '$(Sts2AssemblyDir)'. Set STS2_RESOURCES_DIR to the game's Resources directory." />
+  </Target>
+</Project>

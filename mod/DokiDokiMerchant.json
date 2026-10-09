@@ -1,0 +1,12 @@
+{
+  "id": "DokiDokiMerchant",
+  "name": "Doki Doki Merchant",
+  "author": "shepherd2047",
+  "description": "The Merchant talks back. Haggle with him out loud (hold V, or type), win his heart across the run, and he might pull a secret Rare card from under the counter. Voice: Fish Audio. Brain: any OpenAI-compatible model. Single-player only.",
+  "version": "0.1.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": true,
+  "min_game_version": "0.111.0"
+}

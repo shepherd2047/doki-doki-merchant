@@ -1,0 +1,12 @@
+{
+  "openai_api_key": "",
+  "openai_base_url": "https://api.openai.com/v1",
+  "openai_model": "gpt-4.1-mini",
+  "fish_api_key": "",
+  "fish_tts_model": "s2.1-pro",
+  "merchant_voice_id": "739d07bfe41e4cc68cfd8fb4682c69c5",
+  "bestie_voice_id": "18e2b286c7dd4aa19f6720de4ea2b772",
+  "bestie_enabled": true,
+  "language": "en",
+  "push_to_talk_key": "V"
+}

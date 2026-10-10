@@ -112,7 +112,7 @@ internal sealed class Haggle
         var s = (reference ?? "").Trim().ToLowerInvariant().TrimStart('#');
         var stocked = OnRug.ToList();
         if (int.TryParse(s, out var n)) return stocked.FirstOrDefault(i => i.Shelf == n);
-        static string Norm(string x) => Regex.Replace(x.ToLowerInvariant(), "[^a-z0-9]", "");
+        static string Norm(string x) => Regex.Replace(x.ToLowerInvariant(), @"[^\p{L}\p{N}]", "");
         var ns = Norm(s);
         if (ns.Length == 0) return null;
         return stocked.FirstOrDefault(i => Norm(ItemText.Name(i)) == ns)
@@ -215,8 +215,8 @@ internal static class ItemText
                 MerchantCardEntry c when c.CreationResult != null => c.CreationResult.Card.Title,
                 MerchantRelicEntry r when r.Model != null => r.Model.Title.GetFormattedText(),
                 MerchantPotionEntry p when p.Model != null => p.Model.Title.GetFormattedText(),
-                MerchantCardRemovalEntry => "Card Removal (removes one card from your deck)",
-                _ => "(sold)",
+                MerchantCardRemovalEntry => Loc.T("Card Removal (removes one card from your deck)", "移除卡牌（从你的牌组移除一张牌）"),
+                _ => Loc.T("(sold)", "（已售出）"),
             };
         }
         catch

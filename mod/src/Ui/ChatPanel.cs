@@ -97,7 +97,7 @@ internal sealed class ChatPanel
         bar.AddChild(_field);
 
         // Placeholder as an overlay label: LineEdit can't render its placeholder in a different (italic) font.
-        _placeholder = Theme.MakeLabel("…or type to the Merchant", 28, new Color("b9a9c0"), outline: 0);
+        _placeholder = Theme.MakeLabel(Loc.T("…or type to the Merchant", "……或者打字跟商人说"), 28, new Color("b9a9c0"), outline: 0);
         if (Italic(Theme.Bold ?? Theme.Font) is { } pf) _placeholder.AddThemeFontOverride("font", pf);
         _placeholder.VerticalAlignment = VerticalAlignment.Center;
         _placeholder.SetAnchorsPreset(Control.LayoutPreset.FullRect);
@@ -143,7 +143,7 @@ internal sealed class ChatPanel
 
         _button = new Button
         {
-            Text = "Say it ♥",
+            Text = Loc.T("Say it ♥", "说出口 ♥"),
             FocusMode = Control.FocusModeEnum.None,
             MouseFilter = Control.MouseFilterEnum.Stop,
             MouseDefaultCursorShape = Control.CursorShape.PointingHand,
@@ -199,7 +199,7 @@ internal sealed class ChatPanel
         _list.AddThemeConstantOverride("separation", 8);
         pad.AddChild(_list);
 
-        _empty = Theme.MakeLabel("Nothing said yet. Tap the mic or type below ♥", 24, Grey, outline: 0);
+        _empty = Theme.MakeLabel(Loc.T("Nothing said yet. Tap the mic or type below ♥", "还没人说话。点麦克风或在下面打字 ♥"), 24, Grey, outline: 0);
         if (Italic(Theme.Font) is { } ef) _empty.AddThemeFontOverride("font", ef);
         _empty.AutowrapMode = TextServer.AutowrapMode.WordSmart;
         _list.AddChild(_empty);
@@ -229,7 +229,7 @@ internal sealed class ChatPanel
         _arrow.VerticalAlignment = VerticalAlignment.Center;
         _arrow.Resized += () => _arrow.PivotOffset = _arrow.Size / 2;
         row.AddChild(_arrow);
-        var title = Theme.MakeLabel("Chat log", 24, TabText, bold: true, outline: 0);
+        var title = Theme.MakeLabel(Loc.T("Chat log", "聊天记录"), 24, TabText, bold: true, outline: 0);
         title.VerticalAlignment = VerticalAlignment.Center;
         row.AddChild(title);
 
@@ -298,9 +298,9 @@ internal sealed class ChatPanel
         var body = Escape(text ?? "");
         string bb = (who ?? "").ToLowerInvariant() switch
         {
-            "you" => $"[b][color=#ff8a7a]You[/color][/b]  [color=#ffffff]{body}[/color]",
-            "merchant" => $"[b][color=#9fd3ff]Merchant[/color][/b]  [color=#dfe8f0]{body}[/color]",
-            "bestie" => $"[b][color=#{Theme.Pink.ToHtml(false)}]Bestie[/color][/b]  [i][color=#ffd6ea]{body}[/color][/i]",
+            "you" => $"[b][color=#ff8a7a]{Loc.T("You", "你")}[/color][/b]  [color=#ffffff]{body}[/color]",
+            "merchant" => $"[b][color=#9fd3ff]{Loc.T("Merchant", "商人")}[/color][/b]  [color=#dfe8f0]{body}[/color]",
+            "bestie" => $"[b][color=#{Theme.Pink.ToHtml(false)}]{Loc.T("Bestie", "闺蜜")}[/color][/b]  [i][color=#ffd6ea]{body}[/color][/i]",
             _ => $"[i][color=#999988]{body}[/color][/i]",
         };
         var rtl = new RichTextLabel

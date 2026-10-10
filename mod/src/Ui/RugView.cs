@@ -418,7 +418,7 @@ void fragment() {
             s.SetBorderWidthAll(4);
             s.ContentMarginLeft = s.ContentMarginRight = 12;
             pc.AddThemeStyleboxOverride("panel", s);
-            var l = Theme.MakeLabel("SOLD", 46, Theme.Red, bold: true, outline: 0);
+            var l = Theme.MakeLabel(Loc.T("SOLD", "已售"), 46, Theme.Red, bold: true, outline: 0);
             pc.AddChild(l);
             var size = pc.GetCombinedMinimumSize();
             if (size.X < 10) size = new Vector2(150, 60);
@@ -431,7 +431,7 @@ void fragment() {
 
         private void BuildRibbon()
         {
-            const string text = "♥ SECRET ♥";
+            var text = Loc.T("♥ SECRET ♥", "♥ 秘密 ♥");
             var font = Theme.Bold ?? Theme.Font;
             var tw = font?.GetStringSize(text, HorizontalAlignment.Left, -1, 22).X ?? 130f;
             var th = font != null ? font.GetHeight(22) : 28f;

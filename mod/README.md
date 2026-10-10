@@ -8,6 +8,7 @@ relic effects (The Courier, Membership Card…) and card removal behave exactly 
 - **Brain:** any OpenAI-compatible chat model (default `gpt-4.1-mini`). The game owns the numbers: prices,
   floors and affection are computed by the mod; the model only acts them out through tool calls.
 - **Voice:** Fish Audio for speech recognition and the two designed voices (the Merchant and your bestie).
+  Optional: without a Fish key he haggles in text.
 - **Single-player only.** Tested on macOS (Apple Silicon). Windows should work but is untested.
 
 ## What you need
@@ -82,7 +83,7 @@ Security › Microphone). Typing always works.
 | `fish_tts_model` | `s2.1-pro` | |
 | `merchant_voice_id` / `bestie_voice_id` | designed voices | Fish voice model ids. |
 | `bestie_enabled` | `true` | Your gossipy friend commenting from the sidelines. |
-| `language` | `en` | |
+| `language` | `auto` | `auto` follows the game's language; `zh` = Simplified Chinese UI, voice recognition and dialogue; `en` = English. |
 | `push_to_talk_key` | `V` | |
 
 ## Troubleshooting
@@ -91,6 +92,8 @@ Security › Microphone). Typing always works.
   Fix the cfg and restart the game.
 - **The shop looks native / nothing happens**: check the game's log for lines starting with `[Doki]`
   (macOS: `~/Library/Application Support/SlayTheSpire2/logs/`).
+- **Chinese UI**: set `"language": "zh"` (or leave `auto` with the game set to 简体中文). Chinese text uses the game's own
+  Source Han Serif font.
 - **He talks but you can't hear him**: no Fish key, or the Fish request failed; the text still shows.
 
 ## Where things live

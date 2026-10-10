@@ -189,7 +189,7 @@ void fragment() {
         tagStyle.ContentMarginLeft = tagStyle.ContentMarginRight = 12;
         tagStyle.ContentMarginTop = tagStyle.ContentMarginBottom = 2;
         _youTag.AddThemeStyleboxOverride("panel", tagStyle);
-        var tagLabel = Theme.MakeLabel("You", 20, Colors.White, bold: true, outline: 0);
+        var tagLabel = Theme.MakeLabel(Loc.T("You", "你"), 20, Colors.White, bold: true, outline: 0);
         _youTag.AddChild(tagLabel);
         _youText.AddChild(_youTag);
 
@@ -365,13 +365,13 @@ void fragment() {
         switch (who)
         {
             case "bestie":
-                name = "Your Bestie ♥"; top = Theme.Lilac; bottom = new Color("8a4fd8"); shadow = new Color("3a1468");
+                name = Loc.T("Your Bestie ♥", "你的闺蜜 ♥"); top = Theme.Lilac; bottom = new Color("8a4fd8"); shadow = new Color("3a1468");
                 break;
             case "system":
                 name = "Doki Doki Merchant"; top = Theme.Brass; bottom = new Color("6e6a64"); shadow = new Color("3a2c14");
                 break;
             default:
-                name = "The Merchant ♥"; top = Theme.Pink; bottom = Theme.PinkDeep; shadow = new Color("6a1438");
+                name = Loc.T("The Merchant ♥", "商人 ♥"); top = Theme.Pink; bottom = Theme.PinkDeep; shadow = new Color("6a1438");
                 break;
         }
         _plateLabel.Text = name;

@@ -7,6 +7,6 @@
   "merchant_voice_id": "739d07bfe41e4cc68cfd8fb4682c69c5",
   "bestie_voice_id": "18e2b286c7dd4aa19f6720de4ea2b772",
   "bestie_enabled": true,
-  "language": "en",
+  "language": "auto",
   "push_to_talk_key": "V"
 }

@@ -204,7 +204,7 @@ internal sealed class NativeShop
         {
             if (i > 0) sb.Append("  ·  ");
             var p = parts[i].Replace("[", "[lb]");
-            if (parts[i].StartsWith("Haggled", StringComparison.OrdinalIgnoreCase))
+            if (parts[i].StartsWith("Haggled", StringComparison.OrdinalIgnoreCase) || parts[i].StartsWith("砍价"))
                 sb.Append("[color=#").Append(Theme.Green.ToHtml(false)).Append(']').Append(p).Append("[/color]");
             else
                 sb.Append(p);
@@ -353,7 +353,7 @@ internal sealed class NativeShop
         var b = new Button
         {
             Name = "DokiLeave",
-            Text = "Leave the shop",
+            Text = Loc.T("Leave the shop", "离开商店"),
             FocusMode = Control.FocusModeEnum.None,
             MouseFilter = Control.MouseFilterEnum.Stop,
             MouseDefaultCursorShape = Control.CursorShape.PointingHand,

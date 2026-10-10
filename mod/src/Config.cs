@@ -17,7 +17,7 @@ internal sealed class Config
     public string MerchantVoiceId = "739d07bfe41e4cc68cfd8fb4682c69c5";
     public string BestieVoiceId = "18e2b286c7dd4aa19f6720de4ea2b772";
     public bool BestieEnabled = true;
-    public string Language = "en";
+    public string Language = "auto";
     public string PushToTalkKey = "V";
 
     public static string ModDir => Path.GetDirectoryName(typeof(Config).Assembly.Location) ?? ".";
@@ -25,10 +25,14 @@ internal sealed class Config
 
     /// <summary>What's missing, in words the player can act on; null when ready to talk.</summary>
     public string? Problem =>
-        !File.Exists(FilePath) ? $"Doki Doki Merchant: create {FilePath} (copy DokiDokiMerchant.cfg.example) and add your keys."
-        : string.IsNullOrWhiteSpace(OpenAiKey) ? "Doki Doki Merchant: add openai_api_key to DokiDokiMerchant.cfg."
-        : string.IsNullOrWhiteSpace(FishKey) ? "Doki Doki Merchant: add fish_api_key to DokiDokiMerchant.cfg."
+        !File.Exists(FilePath) ? Loc.T($"Doki Doki Merchant: create {FilePath} (copy DokiDokiMerchant.cfg.example) and add your keys.",
+            $"Doki Doki Merchant：请创建 {FilePath}（复制 DokiDokiMerchant.cfg.example）并填入你的 key。")
+        : string.IsNullOrWhiteSpace(OpenAiKey) ? Loc.T("Doki Doki Merchant: add openai_api_key to DokiDokiMerchant.cfg.",
+            "Doki Doki Merchant：请在 DokiDokiMerchant.cfg 里填入 openai_api_key。")
         : null;
+
+    /// <summary>A Fish Audio key is optional: without one he haggles in text only (no voices, no microphone).</summary>
+    public bool HasVoice => !string.IsNullOrWhiteSpace(FishKey);
 
     public static Config Load()
     {
@@ -54,6 +58,7 @@ internal sealed class Config
         {
             Log.Error($"[Doki] Could not read {FilePath}: {e.Message}");
         }
+        Loc.Apply(c.Language);
         return c;
     }
 }

@@ -23,6 +23,19 @@ internal sealed class Toasts
             ["secret"] = ("Under the Counter", "He showed you the good stuff."),
         };
 
+    /// <summary>The same achievements in Chinese.</summary>
+    private static readonly IReadOnlyDictionary<string, (string Name, string Description)> AllZh =
+        new Dictionary<string, (string, string)>
+        {
+            ["crush"] = ("兜帽暗恋", "夸了一个你从没见过脸的男人。"),
+            ["fool"] = ("原价购买的冤大头", "他一路笑着去了银行。"),
+            ["friendzone"] = ("被兜帽男发了好人卡", "你曾经是熟客。是你自己搞砸的。"),
+            ["transaction"] = ("爱情就是一场交易", "达成“亲爱的”。你的钱包在哭泣。"),
+            ["cheapskate"] = ("铁公鸡", "他再也不跟你讲价了。"),
+            ["simp"] = ("舔狗", "原价买了 3 件东西。全是为了他。"),
+            ["secret"] = ("柜台底下", "他给你看了压箱底的好货。"),
+        };
+
     private const float Width = 470, Left = 24, Bottom = 1080 - 110, Gap = 10;
     private const float InTime = 0.4f, Hold = 4.2f, OutTime = 0.6f;
     private static readonly Color BgFrom = new("1d2633"), BgTo = new("2a3646");
@@ -61,7 +74,8 @@ internal sealed class Toasts
     {
         if (!All.TryGetValue(key, out var a) || !Unlocked.Add(key)) return;
         Save();
-        Show("Achievement unlocked", a.Name, a.Description);
+        if (Loc.Zh && AllZh.TryGetValue(key, out var zh)) a = zh;
+        Show(Loc.T("Achievement unlocked", "成就解锁"), a.Name, a.Description);
     }
 
     /// <summary>A toast with any text (trophy icon, small caps header, gold name, small description).</summary>

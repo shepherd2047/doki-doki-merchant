@@ -93,7 +93,7 @@ internal sealed class DetailPopup
         info.AddChild(_buyRow);
 
         // Round × in the top-right corner (#detail .close).
-        var close = new Button { Text = "×", FocusMode = Control.FocusModeEnum.None, MouseFilter = Control.MouseFilterEnum.Stop, TooltipText = "Close" };
+        var close = new Button { Text = "×", FocusMode = Control.FocusModeEnum.None, MouseFilter = Control.MouseFilterEnum.Stop, TooltipText = Loc.T("Close", "关闭") };
         Theme.StyleButton(close, ButtonBox(24, 0, 0), 34, Theme.Ink);
         close.CustomMinimumSize = new Vector2(48, 48);
         close.Size = new Vector2(48, 48);
@@ -398,7 +398,7 @@ internal sealed class DetailPopup
         _buyRow.AddChild(Spacer(18));
         if (!item.Entry.IsStocked)
         {
-            var sold = Theme.MakeLabel("Sold", 30, Theme.Red, bold: true, outline: 0);
+            var sold = Theme.MakeLabel(Loc.T("Sold", "已售出"), 30, Theme.Red, bold: true, outline: 0);
             Shadow(sold);
             _buyRow.AddChild(sold);
             return;
@@ -411,7 +411,7 @@ internal sealed class DetailPopup
             : cost.ToString();
         if ((deal || taxed) && item.ListPrice > 0 && item.ListPrice != cost)
             price = $"[s][color=#aaaaaa]{item.ListPrice}[/color][/s] {price}";
-        var label = item.Kind == "service" || item.Entry is MerchantCardRemovalEntry ? "Remove a card for" : "Buy for";
+        var removal = item.Kind == "service" || item.Entry is MerchantCardRemovalEntry;
 
         var btn = new Button { FocusMode = Control.FocusModeEnum.None, MouseFilter = Control.MouseFilterEnum.Stop, SizeFlagsHorizontal = Control.SizeFlags.ShrinkBegin };
         Theme.StyleButton(btn, ButtonBox(14, 26, 12), 30, Theme.Ink);
@@ -422,7 +422,8 @@ internal sealed class DetailPopup
             ScrollActive = false,
             AutowrapMode = TextServer.AutowrapMode.Off,
             MouseFilter = Control.MouseFilterEnum.Ignore,
-            Text = $"{label} {price} gold",
+            Text = Loc.Zh ? $"{(removal ? "花" : "购买：")}{price} 金币{(removal ? "移除一张牌" : "")}"
+                : $"{(removal ? "Remove a card for" : "Buy for")} {price} gold",
         };
         StyleRich(text, 30, Theme.Ink, bold: true);
         btn.AddChild(text);
@@ -450,7 +451,7 @@ internal sealed class DetailPopup
     // ------------------------------------------------------------------ text
 
     private static string Title(Haggle.Item item) =>
-        item.Entry is MerchantCardRemovalEntry ? "Card Removal" : ItemText.Name(item);
+        item.Entry is MerchantCardRemovalEntry ? Loc.T("Card Removal", "移除卡牌") : ItemText.Name(item);
 
     private static string MetaLine(Haggle.Item item)
     {
@@ -461,20 +462,21 @@ internal sealed class DetailPopup
                 case MerchantCardEntry c when c.CreationResult != null:
                 {
                     var card = c.CreationResult.Card;
-                    return $"{(item.Secret ? "♥ Secret · " : "")}{CardOwner(card)} · {Words(card.Rarity.ToString())} {Words(card.Type.ToString())}";
+                    var kind = Loc.Zh ? $"{Loc.Word(card.Rarity.ToString())}{Loc.Word(card.Type.ToString())}牌" : $"{Words(card.Rarity.ToString())} {Words(card.Type.ToString())}";
+                    return $"{(item.Secret ? Loc.T("♥ Secret · ", "♥ 秘密 · ") : "")}{CardOwner(card)} · {kind}";
                 }
-                case MerchantRelicEntry r when r.Model != null: return $"{Words(r.Model.Rarity.ToString())} relic";
-                case MerchantPotionEntry p when p.Model != null: return $"{Words(p.Model.Rarity.ToString())} potion";
-                case MerchantCardRemovalEntry: return "Service";
+                case MerchantRelicEntry r when r.Model != null: return Loc.Zh ? $"{Loc.Word(r.Model.Rarity.ToString())}遗物" : $"{Words(r.Model.Rarity.ToString())} relic";
+                case MerchantPotionEntry p when p.Model != null: return Loc.Zh ? $"{Loc.Word(p.Model.Rarity.ToString())}药水" : $"{Words(p.Model.Rarity.ToString())} potion";
+                case MerchantCardRemovalEntry: return Loc.T("Service", "服务");
             }
         }
         catch { }
-        return item.Kind == "service" ? "Service" : item.Kind;
+        return item.Kind == "service" ? Loc.T("Service", "服务") : item.Kind;
     }
 
     private static string CardOwner(CardModel card)
     {
-        try { if (card.Pool.IsColorless) return "Colorless"; } catch { }
+        try { if (card.Pool.IsColorless) return Loc.T("Colorless", "无色"); } catch { }
         try
         {
             var t = card.Owner?.Character?.Title.GetFormattedText();
@@ -487,7 +489,7 @@ internal sealed class DetailPopup
             if (!string.IsNullOrEmpty(p)) return char.ToUpperInvariant(p[0]) + p[1..];
         }
         catch { }
-        return "Card";
+        return Loc.T("Card", "卡牌");
     }
 
     /// <summary>"RareCard" -> "Rare Card".</summary>
@@ -502,7 +504,7 @@ internal sealed class DetailPopup
                 MerchantCardEntry c when c.CreationResult != null => c.CreationResult.Card.GetDescriptionForPile(PileType.None),
                 MerchantRelicEntry r when r.Model != null => r.Model.DynamicDescription.GetFormattedText(),
                 MerchantPotionEntry p when p.Model != null => p.Model.DynamicDescription.GetFormattedText(),
-                MerchantCardRemovalEntry => "Remove one card of your choice from your deck.",
+                MerchantCardRemovalEntry => Loc.T("Remove one card of your choice from your deck.", "从你的牌组中移除一张你选择的牌。"),
                 _ => "",
             };
             return ToBbcode(raw);

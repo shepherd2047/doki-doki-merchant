@@ -79,7 +79,7 @@ internal sealed class MicButton
         _hit.Pressed += () => Pressed?.Invoke();
         _box.AddChild(_hit);
 
-        _status = Theme.MakeLabel("Tap to talk", 20, StatusColor, bold: true, outline: 0);
+        _status = Theme.MakeLabel(Loc.T("Tap to talk", "点一下说话"), 20, StatusColor, bold: true, outline: 0);
         _status.AddThemeColorOverride("font_shadow_color", Colors.Black);
         _status.AddThemeConstantOverride("shadow_offset_x", 0);
         _status.AddThemeConstantOverride("shadow_offset_y", 2);

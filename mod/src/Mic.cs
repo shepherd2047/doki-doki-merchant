@@ -19,6 +19,17 @@ internal interface IMic : IDisposable
         OperatingSystem.IsMacOS() ? new HelperMic() : new GodotMic(parent);
 }
 
+/// <summary>No Fish Audio key: nothing to transcribe with, so the mic stays off and the player types.</summary>
+internal sealed class NoMic : IMic
+{
+    public string? Problem => Loc.T("Voice is off: add fish_api_key to DokiDokiMerchant.cfg to talk out loud. Typing works.",
+        "语音未开启：在 DokiDokiMerchant.cfg 里填入 fish_api_key 才能语音对话。打字可以正常使用。");
+    public void Start() { }
+    public Task<byte[]?> Stop() => Task.FromResult<byte[]?>(null);
+    public void Poll() { }
+    public void Dispose() { }
+}
+
 /// <summary>
 /// Windows/Linux: Godot's own capture. The game ships with audio input switched off, but the engine checks the
 /// setting when a microphone stream starts, so turning it on at runtime is enough.
@@ -92,10 +103,14 @@ internal sealed class HelperMic : IMic
     private readonly TcpListener _listener;
     private TcpClient? _client;
     private NetworkStream? _stream;
-    private string? _problem = "Starting the microphone helper…";
+    /// <summary>The Problem while the helper is still starting up (not a real failure).</summary>
+    public static readonly string Starting = "Starting the microphone helper…";
+    private string? _problem = Starting;
     private readonly SemaphoreSlim _lock = new(1, 1);
 
     public string? Problem => _problem;
+
+    private static string Disconnected => Loc.T("The microphone helper disconnected. Typing still works.", "麦克风助手断开了。仍然可以打字。");
 
     public HelperMic()
     {
@@ -105,7 +120,7 @@ internal sealed class HelperMic : IMic
         var app = Path.Combine(Config.ModDir, "DokiMicHelper.app");
         if (!Directory.Exists(app))
         {
-            _problem = "Microphone helper is missing (DokiMicHelper.app). Typing still works.";
+            _problem = Loc.T("Microphone helper is missing (DokiMicHelper.app). Typing still works.", "缺少麦克风助手（DokiMicHelper.app）。仍然可以打字。");
             return;
         }
         try
@@ -115,7 +130,7 @@ internal sealed class HelperMic : IMic
         }
         catch (Exception e)
         {
-            _problem = "Could not start the microphone helper. Typing still works.";
+            _problem = Loc.T("Could not start the microphone helper. Typing still works.", "无法启动麦克风助手。仍然可以打字。");
             Log.Warn($"[Doki] open DokiMicHelper.app failed: {e.Message}");
             return;
         }
@@ -129,7 +144,7 @@ internal sealed class HelperMic : IMic
             var accept = _listener.AcceptTcpClientAsync();
             if (await Task.WhenAny(accept, Task.Delay(TimeSpan.FromSeconds(30))) != accept)
             {
-                _problem = "The microphone helper didn't answer. Typing still works.";
+                _problem = Loc.T("The microphone helper didn't answer. Typing still works.", "麦克风助手没有响应。仍然可以打字。");
                 return;
             }
             _client = accept.Result;
@@ -140,11 +155,12 @@ internal sealed class HelperMic : IMic
             var n = await _stream.ReadAsync(b);
             _problem = n == 1 && b[0] == (byte)'Y'
                 ? null
-                : "Microphone access was refused. Allow DokiMicHelper in System Settings › Privacy & Security › Microphone. Typing still works.";
+                : Loc.T("Microphone access was refused. Allow DokiMicHelper in System Settings › Privacy & Security › Microphone. Typing still works.",
+                    "麦克风权限被拒绝。请在 系统设置 › 隐私与安全性 › 麦克风 中允许 DokiMicHelper。仍然可以打字。");
         }
         catch (Exception e)
         {
-            _problem = "The microphone helper disconnected. Typing still works.";
+            _problem = Disconnected;
             Log.Warn($"[Doki] Mic helper connection failed: {e.Message}");
         }
     }
@@ -153,7 +169,7 @@ internal sealed class HelperMic : IMic
     {
         if (_problem != null || _stream == null) return;
         try { _stream.WriteByte((byte)'S'); }
-        catch { _problem = "The microphone helper disconnected. Typing still works."; }
+        catch { _problem = Disconnected; }
     }
 
     public async Task<byte[]?> Stop()
@@ -173,7 +189,7 @@ internal sealed class HelperMic : IMic
         }
         catch (Exception e)
         {
-            _problem = "The microphone helper disconnected. Typing still works.";
+            _problem = Disconnected;
             Log.Warn($"[Doki] Mic helper read failed: {e.Message}");
             return null;
         }

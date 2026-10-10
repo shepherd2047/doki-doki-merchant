@@ -47,7 +47,7 @@ internal static class Fish
         var audio = new ByteArrayContent(wav);
         audio.Headers.ContentType = new MediaTypeHeaderValue("audio/wav");
         form.Add(audio, "audio", "clip.wav");
-        form.Add(new StringContent(cfg.Language), "language");
+        form.Add(new StringContent(Loc.Code), "language");
         form.Add(new StringContent("false"), "tag_audio_events");
         req.Content = form;
         using var res = await Http.SendAsync(req);

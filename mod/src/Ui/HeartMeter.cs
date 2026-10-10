@@ -159,7 +159,7 @@ internal sealed class HeartMeter
             }
         }
 
-        _level.Text = $"Lv {levelNo} · {levelName}";
+        _level.Text = $"Lv {levelNo} · {Loc.Level(levelName)}";
         if (_levelNo != levelNo)
         {
             var first = _levelNo < 0;

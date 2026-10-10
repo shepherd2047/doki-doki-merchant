@@ -134,7 +134,8 @@ internal sealed class Doki
             SetTalkEnabled(false);
             return;
         }
-        _mic = IMic.Create(_stage.Canvas);
+        _mic = _cfg.HasVoice ? IMic.Create(_stage.Canvas) : new NoMic();
+        if (!_cfg.HasVoice) _chat.Add("system", _mic.Problem!);
         TaskHelper.RunSafely(Greet());
     }
 
@@ -210,9 +211,11 @@ internal sealed class Doki
     {
         string Plural(int n, string w) => $"{n} {w}{(n == 1 ? "" : "s")}";
         var act = "";
-        try { act = $"Act {_player.RunState.CurrentActIndex + 1} · "; } catch { }
-        var text = $"Bought: {Plural(_cardsBought, "card")}, {Plural(_relicsBought, "relic")}  ·  {act}Floor {_player.RunState.TotalFloor}  ·  Visit {_visit}";
-        if (_haggledOff > 0) text += $"  ·  Haggled off: {_haggledOff} gold";
+        try { act = Loc.T($"Act {_player.RunState.CurrentActIndex + 1} · ", $"第 {_player.RunState.CurrentActIndex + 1} 幕 · "); } catch { }
+        var text = Loc.Zh
+            ? $"已购：{_cardsBought} 张牌，{_relicsBought} 件遗物  ·  {act}第 {_player.RunState.TotalFloor} 层  ·  第 {_visit} 次光顾"
+            : $"Bought: {Plural(_cardsBought, "card")}, {Plural(_relicsBought, "relic")}  ·  {act}Floor {_player.RunState.TotalFloor}  ·  Visit {_visit}";
+        if (_haggledOff > 0) text += Loc.T($"  ·  Haggled off: {_haggledOff} gold", $"  ·  砍价省下：{_haggledOff} 金币");
         _native.SetInfo(text);
     }
 
@@ -307,8 +310,9 @@ internal sealed class Doki
             if (_alive)
             {
                 var msg = e.Message.Contains("401")
-                    ? "The chat model refused the API key (401). Check openai_api_key in DokiDokiMerchant.cfg, then re-enter the shop."
-                    : "The Merchant lost his train of thought (network error). Try again.";
+                    ? Loc.T("The chat model refused the API key (401). Check openai_api_key in DokiDokiMerchant.cfg, then re-enter the shop.",
+                        "聊天模型拒绝了 API key（401）。检查 DokiDokiMerchant.cfg 里的 openai_api_key，然后重新进入商店。")
+                    : Loc.T("The Merchant lost his train of thought (network error). Try again.", "商人走神了（网络错误）。再试一次。");
                 _dialogue.Say("system", msg, 0);
                 _chat.Add("system", msg);
             }
@@ -339,21 +343,23 @@ internal sealed class Doki
                     {
                         var offer = Num("offer");
                         var list = Num("list_price");
-                        _fx.Stamp($"♥ DEAL! {offer}g", StampKind.Deal, offer < list ? $"{list - offer}g off" : "full price… he's thrilled");
+                        _fx.Stamp(Loc.T($"♥ DEAL! {offer}g", $"♥ 成交！{offer} 金"), StampKind.Deal,
+                            offer < list ? Loc.T($"{list - offer}g off", $"便宜了 {list - offer} 金") : Loc.T("full price… he's thrilled", "原价……他乐坏了"));
                         RefreshShop();
                         break;
                     }
                     case "counter":
-                        _fx.Stamp($"COUNTER: {Num("counter_offer")}g", StampKind.Info, $"you offered {Num("offer")}g");
+                        _fx.Stamp(Loc.T($"COUNTER: {Num("counter_offer")}g", $"还价：{Num("counter_offer")} 金"), StampKind.Info, Loc.T($"you offered {Num("offer")}g", $"你出价 {Num("offer")} 金"));
                         break;
                     case "final":
-                        _fx.Stamp($"FINAL OFFER: {Num("counter_offer")}g", StampKind.Info, "his absolute floor");
+                        _fx.Stamp(Loc.T($"FINAL OFFER: {Num("counter_offer")}g", $"最终报价：{Num("counter_offer")} 金"), StampKind.Info, Loc.T("his absolute floor", "他的底线了"));
                         break;
                 }
                 if (insulted)
                 {
                     _affection.Lowball();
-                    _fx.Stamp("LOWBALL!", StampKind.Bad, _haggle.Angry ? "STRIKE 3/3 · uh oh" : $"STRIKE {_haggle.InsultStreak}/3");
+                    _fx.Stamp(Loc.T("LOWBALL!", "砍太狠了！"), StampKind.Bad,
+                        _haggle.Angry ? Loc.T("STRIKE 3/3 · uh oh", "警告 3/3 · 完了") : Loc.T($"STRIKE {_haggle.InsultStreak}/3", $"警告 {_haggle.InsultStreak}/3"));
                     _dialogue.Shake(); // the Bad stamp jolts the stage itself
                     if (_haggle.Angry && !_angerApplied)
                     {
@@ -361,7 +367,7 @@ internal sealed class Doki
                         _haggle.ApplyAngerTax();
                         RefreshShop();
                         _toasts.Unlock("cheapskate");
-                        _fx.Vignette(false, "FURIOUS!", "every price +50%");
+                        _fx.Vignette(false, Loc.T("FURIOUS!", "暴怒！"), Loc.T("every price +50%", "全部涨价 50%"));
                         Bestie("He's furious: three insulting lowballs in a row, and now every price is up by half.");
                     }
                     else if (_haggle.InsultStreak == 2)
@@ -380,21 +386,21 @@ internal sealed class Doki
                 {
                     var delta = res["delta"]?.GetValue<int>() ?? 0;
                     var d = delta > 0 ? $"+{delta} ♥" : $"−{-delta} ♥";
-                    var capped = res["capped"]?.GetValue<bool>() == true ? " (maxed for this floor)" : "";
+                    var capped = res["capped"]?.GetValue<bool>() == true ? Loc.T(" (maxed for this floor)", "（本层已满）") : "";
                     switch (kind)
                     {
                         case "flirt":
-                            if (wasStranger && delta <= 2) _fx.Stamp("FLIRT…?", StampKind.Love, $"he's not there yet · {d}");
-                            else _fx.Stamp("CRITICAL FLIRT!", StampKind.Love, d + capped);
+                            if (wasStranger && delta <= 2) _fx.Stamp(Loc.T("FLIRT…?", "撩……？"), StampKind.Love, Loc.T($"he's not there yet · {d}", $"他还没那么熟 · {d}"));
+                            else _fx.Stamp(Loc.T("CRITICAL FLIRT!", "暴击撩拨！"), StampKind.Love, d + capped);
                             break;
                         case "compliment":
-                            _fx.Stamp("SWEET TALK!", StampKind.Love, d + capped);
+                            _fx.Stamp(Loc.T("SWEET TALK!", "甜言蜜语！"), StampKind.Love, d + capped);
                             break;
                         case "small_talk":
-                            _fx.Stamp("SMALL TALK", StampKind.Info, d + capped);
+                            _fx.Stamp(Loc.T("SMALL TALK", "闲聊"), StampKind.Info, d + capped);
                             break;
                         default:
-                            _fx.Stamp("RUDE!", StampKind.Bad, d);
+                            _fx.Stamp(Loc.T("RUDE!", "无礼！"), StampKind.Bad, d);
                             _dialogue.Shake();
                             break;
                     }
@@ -456,7 +462,7 @@ Your heart (this is secretly a dating sim, ""Doki Doki Merchant"", and you are t
 - Never mention numbers, meters, points or levels by name. Show it through tone.
 - You have one secret Rare card under the counter. Revealed: {secret} When a [GAME] message says SECRET UNLOCKED, reveal it in a hushed, flustered whisper.
 - Only at Darling, you may break the fourth wall once, briefly, e.g. ""My counterpart in the unmodded game just sits there, you know. Mute. Tragic."" or ""Don't tell Neow about us.""
-- Reply in the customer's language ({_cfg.Language} by default).";
+- {(Loc.Zh ? "Speak Simplified Chinese (简体中文) unless the customer clearly writes in another language. Keep emotion tags in English. Use item names exactly as listed above." : "Reply in the customer's language (English by default).")}";
     }
 
     private string CharacterName()
@@ -472,6 +478,9 @@ Your heart (this is secretly a dating sim, ""Doki Doki Merchant"", and you are t
 You receive one thing that just happened, plus what the Merchant just said. Reply with ONE short spoken reaction to the player, at most 16 words, specific to what happened. Call the player ""babe"". Be dramatic, giddy, supportive, a little teasing; warn them when things go badly.
 You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], [whispering], [squealing], [cringing]. Never talk to the Merchant, no emojis, no quotation marks.";
 
+    private const string BestieChinese =
+        "\nSpeak Simplified Chinese (简体中文), at most 30 characters, and call the player \"宝\" or \"姐妹\" instead of \"babe\". Keep any emotion tag in English.";
+
     private void Bestie(string what)
     {
         if (!_cfg.BestieEnabled || !_talkEnabled) return;
@@ -486,7 +495,8 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         _turnLock.Release();
         try
         {
-            var line = await Brain.OneShot(_cfg, BestiePrompt, $"{what}\nThe Merchant just said: {_lastMerchantLine}");
+            var prompt = Loc.Zh ? BestiePrompt + BestieChinese : BestiePrompt;
+            var line = await Brain.OneShot(_cfg, prompt, $"{what}\nThe Merchant just said: {_lastMerchantLine}");
             if (_alive && !string.IsNullOrWhiteSpace(line)) await Speak("bestie", line);
         }
         catch (Exception e)
@@ -499,7 +509,12 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
 
     private async Task Speak(string who, string text)
     {
-        byte[] pcm;
+        byte[] pcm = Array.Empty<byte>();
+        if (!_cfg.HasVoice)
+        {
+            if (_alive) _speech.Enqueue((who, StripTags(text), pcm)); // text only
+            return;
+        }
         await _voiceLock.WaitAsync();
         try
         {
@@ -555,7 +570,7 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         if (!_talkEnabled)
         {
             _micButton.SetState(MicState.Disabled);
-            _micButton.SetStatus("Typing and talking are off");
+            _micButton.SetStatus(Loc.T("Typing and talking are off", "打字和语音已关闭"));
             return;
         }
 
@@ -567,19 +582,19 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
 
         var problem = _mic?.Problem;
         _micButton.SetState(_recording ? MicState.Listening : _thinking ? MicState.Thinking : speaking ? MicState.Speaking : MicState.Idle);
-        _micButton.SetStatus(problem != null && problem.StartsWith("Starting") ? "Waking the mic…"
-            : problem != null ? "Mic off · type below"
-            : _recording ? (_recordingByClick ? "Listening… tap to send" : $"Listening… release {_pttKey}")
-            : _thinking ? "He's thinking…"
-            : speaking ? "Tap to interrupt"
-            : $"Tap or hold {_pttKey} to talk");
+        _micButton.SetStatus(problem == HelperMic.Starting ? Loc.T("Waking the mic…", "正在唤醒麦克风……")
+            : problem != null ? Loc.T("Mic off · type below", "麦克风不可用 · 请打字")
+            : _recording ? (_recordingByClick ? Loc.T("Listening… tap to send", "正在听……点一下发送") : Loc.T($"Listening… release {_pttKey}", $"正在听……松开 {_pttKey}"))
+            : _thinking ? Loc.T("He's thinking…", "他在想……")
+            : speaking ? Loc.T("Tap to interrupt", "点一下打断")
+            : Loc.T($"Tap or hold {_pttKey} to talk", $"点一下或按住 {_pttKey} 说话"));
     }
 
     private void OnMicClicked()
     {
         if (!_talkEnabled) return;
         if (_recording) StopTalking();
-        else if (_mic?.Problem is { } p && !p.StartsWith("Starting"))
+        else if (_mic?.Problem is { } p && p != HelperMic.Starting)
         {
             _dialogue.Say("system", p, 0);
             _chat.Add("system", p);
@@ -682,7 +697,7 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         if (ch.Why == "compliment") _toasts.Unlock("crush");
         if (ch.LevelUp || ch.LevelDown)
         {
-            _fx.Vignette(ch.LevelUp, ch.LevelUp ? "♥ Affection up! ♥" : "Affection down…", _affection.LevelName);
+            _fx.Vignette(ch.LevelUp, ch.LevelUp ? Loc.T("♥ Affection up! ♥", "♥ 好感度上升！♥") : Loc.T("Affection down…", "好感度下降……"), Loc.Level(_affection.LevelName));
             TaskHelper.RunSafely(Event($"Your feelings toward the customer changed: they are now your \"{_affection.LevelName}\". {_affection.Mood}"));
         }
         if (ch.LevelUp)
@@ -700,7 +715,7 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         if (ch.Capped && !_cappedSaid)
         {
             _cappedSaid = true;
-            _fx.Note("He needs time… come back next floor ♥", _heart.PopAnchor);
+            _fx.Note(Loc.T("He needs time… come back next floor ♥", "他需要点时间……下一层再来吧 ♥"), _heart.PopAnchor);
             Bestie("The Merchant won't warm up any more this visit; the player has to come back to the next shop.");
         }
         MaybeRevealSecret();
@@ -735,7 +750,7 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         _boughtName[entry] = ItemText.Name(entry);
         _rug.RevealSecret(it);
         _rug.Point(it);
-        _fx.Stamp("SECRET CARD!", StampKind.Deal, "from under the counter ♥");
+        _fx.Stamp(Loc.T("SECRET CARD!", "秘密卡牌！"), StampKind.Deal, Loc.T("from under the counter ♥", "从柜台底下拿出来的 ♥"));
         _toasts.Unlock("secret");
         TaskHelper.RunSafely(Event($"SECRET UNLOCKED: flustered, you pull a Rare card, {ItemText.Name(entry)}, from under the counter and put it on the rug (shelf #{it.Shelf}). Reveal it in a hushed whisper: something you don't show just anyone. It can be haggled like anything else."));
         Bestie($"The Merchant just pulled a secret Rare card, {ItemText.Name(entry)}, from under the counter, just for the player.");

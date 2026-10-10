@@ -38,6 +38,27 @@ internal static class Theme
             Font ??= found;
             Bold ??= found;
         }
+        // Kreon has no Chinese glyphs: fall back to the game's own Simplified Chinese fonts, whatever the UI
+        // language, since the Merchant answers in Chinese whenever the player writes in it.
+        if (!_cjk)
+        {
+            _cjk = true;
+            Font = WithCjk(Font, "res://themes/fonts/zhs/source_han_serif_sc_medium_shared.tres", "res://fonts/zhs/SourceHanSerifSC-Medium.otf");
+            Bold = WithCjk(Bold, "res://themes/fonts/zhs/source_han_serif_sc_bold_shared.tres", "res://fonts/zhs/SourceHanSerifSC-Bold.otf");
+        }
+    }
+
+    private static bool _cjk;
+
+    /// <summary>A copy of <paramref name="font"/> (the game's shared resource stays untouched) with a CJK fallback.</summary>
+    private static Font? WithCjk(Font? font, string themePath, string filePath)
+    {
+        var cjk = Load<Font>(themePath) ?? Load<Font>(filePath);
+        if (font == null) return cjk;
+        if (cjk == null) return font;
+        var v = new FontVariation { BaseFont = font };
+        v.Fallbacks = new Godot.Collections.Array<Font> { cjk };
+        return v;
     }
 
     /// <summary>Loads a game resource by its res:// path (null, and a log line, when it isn't there).</summary>

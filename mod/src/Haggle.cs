@@ -25,6 +25,8 @@ internal sealed class Haggle
         public bool Secret;
         /// <summary>True while the secret card is still under the counter.</summary>
         public bool Hidden;
+        /// <summary>Price lowered as a gift from the Merchant (affection perk or date reward), not haggled.</summary>
+        public bool Gift;
     }
 
     public readonly List<Item> Items = new();
@@ -173,7 +175,7 @@ internal sealed class Haggle
         if (counter != null) res["counter_offer"] = counter;
         if (verdict == "accept")
         {
-            it.Agreed = Math.Min(p, list);
+            it.Agreed = Math.Min(p, it.Agreed ?? list); // never haggle a gift or an earlier deal back up
             AgreedPrices[it.Entry] = it.Agreed.Value;
             res["note"] = "Deal. The price on the rug now shows the agreed price; the customer buys it by picking it up.";
         }
@@ -187,6 +189,20 @@ internal sealed class Haggle
         return res;
     }
 
+    /// <summary>
+    /// The Merchant lowers an item's price as a present. Shown and bought like an agreed deal; ignored when the
+    /// price is already that low or he's furious.
+    /// </summary>
+    public bool GiveGift(Item it, int price)
+    {
+        price = Math.Max(0, price);
+        if (Angry || it.Hidden || !it.Entry.IsStocked || price >= (it.Agreed ?? it.ListPrice)) return false;
+        it.Agreed = price;
+        it.Gift = true;
+        AgreedPrices[it.Entry] = price;
+        return true;
+    }
+
     /// <summary>Three insults: every price goes up 50% and all deals are off.</summary>
     public void ApplyAngerTax()
     {
@@ -194,6 +210,7 @@ internal sealed class Haggle
         foreach (var it in Items)
         {
             it.Agreed = null;
+            it.Gift = false;
             AngerTax.Add(it.Entry);
         }
     }

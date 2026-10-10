@@ -98,6 +98,7 @@ internal sealed class Affection
 
     public Change Lowball() => Add(-8, "lowball");
     public Change LeftEmptyHanded() => Add(-5, "left");
+    public Change AwkwardDate() => Add(-10, "date");
 
     private Change Add(int delta, string why)
     {
@@ -122,27 +123,79 @@ internal sealed class Affection
 }
 
 /// <summary>
-/// What the Merchant remembers about the current run (affection and how many times you've visited), keyed by
-/// the run seed so Continue picks it back up. Kept in the mod folder, never in the game's own save files.
+/// What the Merchant remembers about the current run (affection, visits, what the customer told him, whether
+/// you've been on your date, a few counters for achievements), keyed by the run seed so Continue picks it back
+/// up. Kept in the mod folder, never in the game's own save files.
 /// </summary>
+internal sealed class RunRecord
+{
+    public const int MaxFacts = 8;
+
+    public int Affection = 20;
+    public int Visits;
+    /// <summary>Short notes the Merchant chose to remember about the customer (the remember tool).</summary>
+    public List<string> Facts = new();
+    /// <summary>How many of <see cref="Facts"/> were learned before this visit started.</summary>
+    public int FactsBeforeVisit;
+    public bool Dated;
+    public int EmptyVisits;
+    public int FloorDeals;
+
+    public bool AddFact(string fact)
+    {
+        fact = fact.Trim();
+        if (fact.Length == 0) return false;
+        if (fact.Length > 140) fact = fact[..140];
+        if (Facts.Any(f => string.Equals(f, fact, StringComparison.OrdinalIgnoreCase))) return false;
+        Facts.Add(fact);
+        while (Facts.Count > MaxFacts) Facts.RemoveAt(0);
+        FactsBeforeVisit = Math.Min(FactsBeforeVisit, Facts.Count);
+        return true;
+    }
+}
+
 internal static class RunMemory
 {
     private static string FilePath => Path.Combine(Config.ModDir, "runs.dat");
 
-    public static (int affection, int visits) Get(string seed)
+    public static RunRecord Get(string seed)
     {
-        var j = Read();
-        if (j[seed] is JsonObject o)
-            return (o["affection"]?.GetValue<int>() ?? 20, o["visits"]?.GetValue<int>() ?? 0);
-        return (20, 0);
+        var r = new RunRecord();
+        if (Read()[seed] is not JsonObject o) return r;
+        try
+        {
+            r.Affection = o["affection"]?.GetValue<int>() ?? 20;
+            r.Visits = o["visits"]?.GetValue<int>() ?? 0;
+            r.Dated = o["dated"]?.GetValue<bool>() ?? false;
+            r.EmptyVisits = o["empty_visits"]?.GetValue<int>() ?? 0;
+            r.FloorDeals = o["floor_deals"]?.GetValue<int>() ?? 0;
+            if (o["facts"] is JsonArray facts)
+                foreach (var f in facts)
+                    if (f?.GetValue<string>() is { Length: > 0 } s) r.Facts.Add(s);
+        }
+        catch
+        {
+            // Half-read is fine: he just forgets the rest.
+        }
+        r.FactsBeforeVisit = r.Facts.Count;
+        return r;
     }
 
-    public static void Set(string seed, int affection, int visits)
+    public static void Set(string seed, RunRecord r)
     {
         try
         {
             var j = Read();
-            j[seed] = new JsonObject { ["affection"] = affection, ["visits"] = visits, ["at"] = DateTime.UtcNow.ToString("o") };
+            j[seed] = new JsonObject
+            {
+                ["affection"] = r.Affection,
+                ["visits"] = r.Visits,
+                ["dated"] = r.Dated,
+                ["empty_visits"] = r.EmptyVisits,
+                ["floor_deals"] = r.FloorDeals,
+                ["facts"] = new JsonArray(r.Facts.Select(f => (JsonNode)JsonValue.Create(f)!).ToArray()),
+                ["at"] = DateTime.UtcNow.ToString("o"),
+            };
             // Keep only the 20 most recent runs.
             foreach (var old in j.OrderByDescending(kv => kv.Value?["at"]?.GetValue<string>()).Skip(20).Select(kv => kv.Key).ToList())
                 j.Remove(old);

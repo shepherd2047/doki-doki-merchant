@@ -29,6 +29,7 @@ internal sealed class Doki
     private readonly Player _player;
     private readonly string _seed;
     private readonly int _visit;
+    private readonly RunRecord _rec;
     private readonly Affection _affection;
     private readonly Haggle _haggle;
     private readonly Brain _brain;
@@ -55,6 +56,14 @@ internal sealed class Doki
     private bool _pttWasDown;
     private string _speakingWho = "";
 
+    // Affection perks and the date
+    private bool _potionGift, _removalGift;
+    private string? _startGifts;
+    private Button? _dateButton;
+    private List<Date.Question>? _dateQs;
+    private int _dateRound, _dateScore;
+    private bool _dateReplying, _dateEnded;
+
     // UI
     private ShopStage _stage = null!;
     private NativeShop _native = null!;
@@ -66,6 +75,7 @@ internal sealed class Doki
     private ChatPanel _chat = null!;
     private Fx _fx = null!;
     private Toasts _toasts = null!;
+    private DatePanel _date = null!;
     private AudioStreamPlayer _voice = null!;
 
     // Achievement bookkeeping that spans the whole run (the web game's stats), keyed by run seed.
@@ -109,15 +119,15 @@ internal sealed class Doki
         _inv = room.Room.GetLocalInventory();
         _player = _inv.Player;
         _seed = _player.RunState.Rng.StringSeed;
-        var (aff, visits) = RunMemory.Get(_seed);
-        _visit = visits + 1;
-        _affection = new Affection(aff);
+        _rec = RunMemory.Get(_seed);
+        _visit = _rec.Visits + 1;
+        _affection = new Affection(_rec.Affection);
         _haggle = new Haggle(_inv, _affection, () => _player.Gold);
         _brain = new Brain(_cfg, RunTool);
         _pttKey = Enum.TryParse<Key>(_cfg.PushToTalkKey, true, out var k) ? k : Key.V;
 
         BuildUi();
-        RunMemory.Set(_seed, _affection.Value, _visit);
+        SaveRun();
         _affection.Changed += OnAffectionChanged;
         foreach (var it in _haggle.Items)
         {
@@ -125,6 +135,7 @@ internal sealed class Doki
             it.Entry.PurchaseCompleted += OnPurchased;
         }
         room.GetTree().ProcessFrame += OnFrame;
+        OnVisitStart();
 
         var problem = _cfg.Problem;
         if (problem != null)
@@ -145,8 +156,12 @@ internal sealed class Doki
         _alive = false;
         try
         {
-            if (_purchases == 0) _affection.LeftEmptyHanded();
-            RunMemory.Set(_seed, _affection.Value, _visit);
+            if (_purchases == 0)
+            {
+                _affection.LeftEmptyHanded();
+                _rec.EmptyVisits++;
+            }
+            SaveRun();
             foreach (var it in _haggle.Items) it.Entry.PurchaseCompleted -= OnPurchased;
             if (GodotObject.IsInstanceValid(_room)) _room.GetTree().ProcessFrame -= OnFrame;
         }
@@ -183,6 +198,8 @@ internal sealed class Doki
         _detail = new DetailPopup(_stage.Popups);
         _detail.BuyPressed += it => TaskHelper.RunSafely(Buy(it));
         _detail.Closed += () => _rug.SetSelected(null);
+        _date = new DatePanel(_stage.Popups);
+        _date.Picked += OnDatePicked;
         _fx = new Fx(_stage.Fx, _stage.Root);
         _toasts = new Toasts(_stage.Toasts);
 
@@ -280,11 +297,18 @@ internal sealed class Doki
     {
         await Task.Delay(1200);
         var ret = _visit > 1 ? $"They've been to your shop {_visit - 1} time(s) before this climb." : "First time you've seen them.";
-        await Event($"The customer (the {CharacterName()}) walks into your tent on floor {_player.RunState.TotalFloor}. {ret} Greet them in one short line.");
+        if (_startGifts != null) ret += $" {_startGifts} Mention it grudgingly, as if it's nothing.";
+        if (_rec.FactsBeforeVisit > 0) ret += " Bring up one thing you remember about them.";
+        await Event($"The customer (the {CharacterName()}) walks into your tent on floor {_player.RunState.TotalFloor}. {ret} Greet them in one or two short sentences.");
     }
+
+    private static readonly Regex Catchphrase = new(
+        @"isn'?t a charity|little richer|deal in credit|local business|不是慈善|有钱了再来|不赊账|本地生意|小本生意",
+        RegexOptions.IgnoreCase);
 
     private async Task Say(string customerWords)
     {
+        if (Catchphrase.IsMatch(customerWords)) _toasts.Unlock("parrot");
         _affection.NewTurn();
         await RunTurn(customerWords);
     }
@@ -407,6 +431,14 @@ internal sealed class Doki
                 }
                 return res;
             }
+            case "remember":
+            {
+                if (!_rec.AddFact(Str(args["fact"]) ?? ""))
+                    return new JsonObject { ["saved"] = false, ["reason"] = "empty or already known" };
+                SaveRun();
+                _fx.Note(Loc.T("He'll remember that ♥", "他记住了 ♥"), _heart.PopAnchor);
+                return new JsonObject { ["saved"] = true };
+            }
             case "show_item":
             {
                 var it = _haggle.Resolve(Str(args["item"]));
@@ -433,6 +465,7 @@ internal sealed class Doki
         var goods = string.Join("\n", _haggle.OnRug.Select(i =>
         {
             var price = Haggle.AngerTax.Contains(i.Entry) ? $"{(int)Math.Round(i.ListPrice * 1.5)} gold (furious markup)"
+                : i.Agreed is { } g && i.Gift ? $"{g} gold (your gift to them, normally {i.ListPrice})"
                 : i.Agreed is { } a ? $"{a} gold (agreed, was {i.ListPrice})"
                 : $"{i.ListPrice} gold";
             return $"#{i.Shelf} {ItemText.Name(i)} [{i.Kind}{(i.Secret ? ", your secret card" : "")}], {price}. {ItemText.Describe(i)}";
@@ -461,8 +494,25 @@ Your heart (this is secretly a dating sim, ""Doki Doki Merchant"", and you are t
 - The levels go Stranger, Customer, Regular, Favourite, Darling. Cold with strangers; smug and teasing with regulars; flustered, coy and tsundere with favourites (""I-it's not a discount because I *like* you or anything!""); openly smitten with a darling, but still a schemer who loves gold.
 - Never mention numbers, meters, points or levels by name. Show it through tone.
 - You have one secret Rare card under the counter. Revealed: {secret} When a [GAME] message says SECRET UNLOCKED, reveal it in a hushed, flustered whisper.
+{MemoryPrompt()}
 - Only at Darling, you may break the fourth wall once, briefly, e.g. ""My counterpart in the unmodded game just sits there, you know. Mute. Tragic."" or ""Don't tell Neow about us.""
 - {(Loc.Zh ? "Speak Simplified Chinese (简体中文) unless the customer clearly writes in another language. Keep emotion tags in English. Use item names exactly as listed above." : "Reply in the customer's language (English by default).")}";
+    }
+
+    private string MemoryPrompt()
+    {
+        var lines = new List<string>
+        {
+            "- When the customer tells you something personal worth remembering (their name, what they like or hate, a promise), call remember. Never say you're taking notes.",
+        };
+        if (_rec.Facts.Count > 0)
+            lines.Add("- What you remember about them from this climb (bring one up naturally now and then, never as a list):\n"
+                      + string.Join("\n", _rec.Facts.Select(f => "  * " + f)));
+        if (_affection.Index >= 4 && !_rec.Dated)
+            lines.Add("- You're smitten enough to want a date, and a \"Date\" button is now on their screen. You may hint once, flustered, that you'd close the shop early for them.");
+        if (_rec.Dated)
+            lines.Add("- You've already been on a date with them this climb. You think about it more than you'd admit.");
+        return string.Join("\n", lines);
     }
 
     private string CharacterName()
@@ -667,22 +717,31 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         if (it == null) return;
         var paid = Haggle.AngerTax.Contains(entry) ? (int)Math.Round(it.ListPrice * 1.5) : it.Agreed ?? it.ListPrice;
         var name = _boughtName.TryGetValue(entry, out var n) ? n : "something";
+        var gift = it.Gift;
+        var floor = _haggle.FloorOf(it);
+        // Clear the deal first: an affection change below may hand out a new gift (a restocked slot included).
+        it.Agreed = null;
+        it.Gift = false;
+        it.Rounds = 0;
+        Haggle.AgreedPrices.Remove(entry);
         _purchases++;
         if (it.Kind == "card") _cardsBought++;
         if (it.Kind == "relic") _relicsBought++;
-        if (paid < it.ListPrice) _haggledOff += it.ListPrice - paid;
-        if (paid >= it.ListPrice && it.Kind != "service")
+        if (!gift)
         {
-            _toasts.Unlock("fool");
-            if (++RunStat.FullPrice >= 3) _toasts.Unlock("simp");
+            if (paid < it.ListPrice) _haggledOff += it.ListPrice - paid;
+            if (paid >= it.ListPrice && it.Kind != "service")
+            {
+                _toasts.Unlock("fool");
+                if (++RunStat.FullPrice >= 3) _toasts.Unlock("simp");
+            }
+            if (paid < it.ListPrice && paid <= floor + 1 && ++_rec.FloorDeals >= 5) _toasts.Unlock("haggle_master");
+            _affection.Purchase(paid, it.ListPrice, floor);
         }
-        _affection.Purchase(paid, it.ListPrice, _haggle.FloorOf(it));
-        it.Agreed = null;
-        it.Rounds = 0;
-        Haggle.AgreedPrices.Remove(entry);
+        SaveRun();
         if (entry.IsStocked) _boughtName[entry] = ItemText.Name(entry); // restocked (The Courier)
         RefreshShop();
-        TaskHelper.RunSafely(Event($"The customer just bought {name} for {paid} gold. They have {_player.Gold} gold left."));
+        TaskHelper.RunSafely(Event($"The customer just {(gift ? "took your gift," : "bought")} {name} for {paid} gold. They have {_player.Gold} gold left."));
         MaybeRevealSecret();
     }
 
@@ -698,7 +757,10 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         if (ch.LevelUp || ch.LevelDown)
         {
             _fx.Vignette(ch.LevelUp, ch.LevelUp ? Loc.T("♥ Affection up! ♥", "♥ 好感度上升！♥") : Loc.T("Affection down…", "好感度下降……"), Loc.Level(_affection.LevelName));
-            TaskHelper.RunSafely(Event($"Your feelings toward the customer changed: they are now your \"{_affection.LevelName}\". {_affection.Mood}"));
+            var gifts = ch.LevelUp ? ApplyPerks() : null;
+            TaskHelper.RunSafely(Event($"Your feelings toward the customer changed: they are now your \"{_affection.LevelName}\". {_affection.Mood}"
+                                       + (gifts != null ? $" {gifts} Tell them, flustered." : "")));
+            UpdateDateButton(announce: ch.LevelUp);
         }
         if (ch.LevelUp)
         {
@@ -754,5 +816,190 @@ You may start with one emotion tag in square brackets, e.g. [gasps], [giggles], 
         _toasts.Unlock("secret");
         TaskHelper.RunSafely(Event($"SECRET UNLOCKED: flustered, you pull a Rare card, {ItemText.Name(entry)}, from under the counter and put it on the rug (shelf #{it.Shelf}). Reveal it in a hushed whisper: something you don't show just anyone. It can be haggled like anything else."));
         Bestie($"The Merchant just pulled a secret Rare card, {ItemText.Name(entry)}, from under the counter, just for the player.");
+    }
+
+    // ───────────────────────── run memory, perks, the date ─────────────────────────
+
+    private void SaveRun()
+    {
+        _rec.Affection = _affection.Value;
+        _rec.Visits = _visit;
+        RunMemory.Set(_seed, _rec);
+    }
+
+    private void OnVisitStart()
+    {
+        if (_visit >= 5) _toasts.Unlock("loyal");
+        if (_rec.EmptyVisits >= 3) _toasts.Unlock("window_shopper");
+        if (_rec.FactsBeforeVisit > 0)
+        {
+            _toasts.Unlock("remembered");
+            _fx.Note(Loc.T("He remembers you ♥", "他还记得你 ♥"), _heart.PopAnchor);
+        }
+        _startGifts = ApplyPerks();
+        UpdateDateButton(announce: false);
+    }
+
+    /// <summary>
+    /// What his affection buys you, once per visit: Regular and up, the cheapest potion on the rug is free;
+    /// Favourite and up, card removal is half price. Returns a note for the model, or null when nothing new.
+    /// </summary>
+    private string? ApplyPerks()
+    {
+        var show = new List<string>();
+        var tell = new List<string>();
+        if (_affection.Index >= 2 && !_potionGift)
+        {
+            var potion = _haggle.OnRug.Where(i => i.Kind == "potion").OrderBy(i => i.ListPrice).FirstOrDefault();
+            if (potion != null && _haggle.GiveGift(potion, 0))
+            {
+                _potionGift = true;
+                show.Add(Loc.T($"free {ItemText.Name(potion)}", $"免费的{ItemText.Name(potion)}"));
+                tell.Add($"{ItemText.Name(potion)} for free");
+            }
+        }
+        if (_affection.Index >= 3 && !_removalGift)
+        {
+            var removal = _haggle.OnRug.FirstOrDefault(i => i.Kind == "service");
+            if (removal != null && _haggle.GiveGift(removal, (int)Math.Round(removal.ListPrice * 0.5)))
+            {
+                _removalGift = true;
+                show.Add(Loc.T("card removal half price", "移除卡牌半价"));
+                tell.Add("card removal at half price");
+            }
+        }
+        if (show.Count == 0) return null;
+        RefreshShop();
+        _fx.Stamp(Loc.T("ON THE HOUSE!", "本店请客！"), StampKind.Love, string.Join(" · ", show));
+        _toasts.Unlock("on_the_house");
+        return $"Because you like them, you're giving them {string.Join(" and ", tell)} this visit (already marked on the rug).";
+    }
+
+    private void UpdateDateButton(bool announce)
+    {
+        var want = _affection.Index >= 4 && !_rec.Dated && !_haggle.Angry;
+        if (want && _dateButton == null)
+        {
+            _dateButton = _native.AddSideButton(Loc.T("♥ Ask him on a date", "♥ 约他出去"), StartDate);
+            if (announce) Bestie("The Merchant is smitten enough to go on a date with the player. There's a Date button now!");
+        }
+        else if (!want && _dateButton != null)
+        {
+            if (GodotObject.IsInstanceValid(_dateButton)) _dateButton.QueueFree();
+            _dateButton = null;
+        }
+    }
+
+    private void StartDate()
+    {
+        if (!_alive || _rec.Dated || _date.IsOpen) return;
+        _detail.Hide();
+        _rug.SetSelected(null);
+        _dateQs = Date.Draw();
+        _dateRound = 0;
+        _dateScore = 0;
+        _dateReplying = false;
+        _dateEnded = false;
+        AskDate();
+    }
+
+    private void AskDate()
+    {
+        var q = _dateQs![_dateRound];
+        _date.Ask(_dateRound + 1, Date.Rounds, q.Text, q.Answers.Select(a => a.Text).ToList());
+    }
+
+    private void OnDatePicked(int choice)
+    {
+        if (!_alive || _dateQs == null) return;
+        if (_dateEnded)
+        {
+            _date.Hide();
+            _dateQs = null;
+            return;
+        }
+        if (_dateReplying)
+        {
+            _dateReplying = false;
+            if (++_dateRound < Date.Rounds) AskDate();
+            else EndDate();
+            return;
+        }
+        if (choice < 0) return;
+        var a = _dateQs[_dateRound].Answers[choice];
+        _dateScore += a.Score;
+        _dateReplying = true;
+        var verdict = a.Score switch
+        {
+            >= 2 => Loc.T("♥♥ He melts.", "♥♥ 他融化了。"),
+            1 => Loc.T("♥ He likes that.", "♥ 他挺喜欢。"),
+            0 => Loc.T("… He's not sure what to make of it.", "……他不知道该作何反应。"),
+            _ => Loc.T("♡ Ouch.", "♡ 扎心了。"),
+        };
+        _date.Say($"{_dateRound + 1}/{Date.Rounds}",
+            $"[color=#ffb3d6]{Loc.T("You", "你")}:[/color] {DatePanel.Escape(a.Text)}\n\n" +
+            $"[b][color=#ff7eb6]{Loc.T("The Merchant", "商人")}:[/color][/b] {DatePanel.Escape(StripTags(a.Reply))}\n\n" +
+            $"[i][color=#c9a3ff]{verdict}[/color][/i]",
+            _dateRound + 1 < Date.Rounds ? Loc.T("Continue ♥", "继续 ♥") : Loc.T("How did it go…?", "结果如何……？"));
+        TaskHelper.RunSafely(Speak("merchant", a.Reply));
+    }
+
+    private void EndDate()
+    {
+        _dateEnded = true;
+        _rec.Dated = true;
+        SaveRun();
+        _toasts.Unlock("first_date");
+        string body, tell, bestie;
+        if (_dateScore >= Date.Perfect)
+        {
+            _toasts.Unlock("soulmate");
+            var relic = _haggle.OnRug.Where(i => i.Kind == "relic").OrderByDescending(i => i.ListPrice).FirstOrDefault();
+            if (relic != null && _haggle.GiveGift(relic, 0))
+            {
+                var name = ItemText.Name(relic);
+                body = Loc.T($"He takes {name} off the rug and presses it into your hands. \"Free. Tell anyone and I'll deny it.\"",
+                    $"他从地毯上拿起{name}，塞进你手里。“免费的。敢告诉别人我就不认账。”");
+                tell = $"It went perfectly, and you gave them {name} for free (it's on the rug at 0 gold).";
+            }
+            else
+            {
+                GiftAll(0.5);
+                body = Loc.T("He's so happy he marks everything on the rug half price. \"Don't get used to it.\"",
+                    "他高兴得把地毯上所有东西都打了五折。“别习惯了。”");
+                tell = "It went perfectly, and you put everything on the rug at half price for them.";
+            }
+            _fx.Vignette(true, Loc.T("♥ Perfect date! ♥", "♥ 完美约会！♥"), Loc.T("Soulmate", "灵魂伴侣"));
+            bestie = "The date was PERFECT. The Merchant is head over heels and just gave the player a free gift.";
+        }
+        else if (_dateScore >= Date.Sweet)
+        {
+            GiftAll(0.75);
+            body = Loc.T("He's in such a good mood that everything on the rug is 25% off. For today.",
+                "他心情好得不得了，地毯上所有东西都打七五折。仅限今天。");
+            tell = "It went sweetly, and you knocked 25% off everything on the rug for them.";
+            _fx.Stamp(Loc.T("SWEET DATE!", "甜蜜约会！"), StampKind.Love, Loc.T("everything 25% off", "全场七五折"));
+            bestie = "The date went sweetly; the Merchant knocked 25% off everything for the player.";
+        }
+        else
+        {
+            _affection.AwkwardDate();
+            body = Loc.T("He clears his throat, straightens his hood and reopens the shop. That was… awkward.",
+                "他清了清嗓子，整了整兜帽，重新开张。刚才……好尴尬。");
+            tell = "It went awkwardly and you're a bit hurt.";
+            _fx.Stamp(Loc.T("AWKWARD…", "好尴尬……"), StampKind.Bad, Loc.T("he's a little hurt", "他有点受伤"));
+            bestie = "The date was a disaster. Awkward silence. The Merchant is a little hurt.";
+        }
+        RefreshShop();
+        UpdateDateButton(announce: false);
+        _date.Say(Loc.T("The end", "约会结束"), DatePanel.Escape(body), Loc.T("Back to the shop", "回到商店"));
+        TaskHelper.RunSafely(Event($"You just went on a date with the customer in your tent. {tell} React in one short line as you reopen the shop."));
+        Bestie(bestie);
+    }
+
+    private void GiftAll(double mul)
+    {
+        foreach (var it in _haggle.OnRug.ToList())
+            _haggle.GiveGift(it, (int)Math.Round(it.ListPrice * mul));
     }
 }

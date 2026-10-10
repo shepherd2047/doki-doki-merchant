@@ -21,6 +21,14 @@ internal sealed class Toasts
             ["cheapskate"] = ("Cheapskate", "He refuses to haggle with you anymore."),
             ["simp"] = ("Simp", "Bought 3 things at list price. For him."),
             ["secret"] = ("Under the Counter", "He showed you the good stuff."),
+            ["on_the_house"] = ("On the House", "He gave you something for free. He'll deny it."),
+            ["window_shopper"] = ("Window Shopper", "Left three shops empty-handed in one climb."),
+            ["haggle_master"] = ("Bottom Dollar", "Talked him down to his floor five times in one climb."),
+            ["parrot"] = ("Parrot", "Threw his own catchphrase back at him."),
+            ["first_date"] = ("First Date", "Tea in a tent with a hooded man. Romantic."),
+            ["soulmate"] = ("Soulmate", "A perfect date. He's never closing the shop early for anyone else."),
+            ["remembered"] = ("He Remembers", "He wrote down what you told him. Somewhere under the hood."),
+            ["loyal"] = ("Loyal Customer", "Visited him five times in one climb."),
         };
 
     /// <summary>The same achievements in Chinese.</summary>
@@ -34,6 +42,14 @@ internal sealed class Toasts
             ["cheapskate"] = ("铁公鸡", "他再也不跟你讲价了。"),
             ["simp"] = ("舔狗", "原价买了 3 件东西。全是为了他。"),
             ["secret"] = ("柜台底下", "他给你看了压箱底的好货。"),
+            ["on_the_house"] = ("本店请客", "他免费送了你东西。他不会承认的。"),
+            ["window_shopper"] = ("只看不买", "一局里空手离开了三家商店。"),
+            ["haggle_master"] = ("砍价大师", "一局里五次把他砍到底价。"),
+            ["parrot"] = ("复读机", "用他自己的口头禅回敬了他。"),
+            ["first_date"] = ("初次约会", "和兜帽男在帐篷里喝茶。好浪漫。"),
+            ["soulmate"] = ("灵魂伴侣", "一次完美的约会。他再也不会为别人提早关店了。"),
+            ["remembered"] = ("他还记得", "他把你说过的话记下来了。记在兜帽底下某个地方。"),
+            ["loyal"] = ("忠实顾客", "一局里光顾了他五次。"),
         };
 
     private const float Width = 470, Left = 24, Bottom = 1080 - 110, Gap = 10;

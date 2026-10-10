@@ -131,6 +131,47 @@ internal sealed class NativeShop
     private readonly Control _hud;
     private SceneTree? _tree;
     private int _frame;
+    private readonly List<Button> _side = new();
+
+    /// <summary>A pink button stacked under Leave (e.g. the Date button). Removed with the shop.</summary>
+    public Button AddSideButton(string text, Action pressed)
+    {
+        var b = new Button
+        {
+            Name = "DokiSide" + _side.Count,
+            Text = text,
+            FocusMode = Control.FocusModeEnum.None,
+            MouseFilter = Control.MouseFilterEnum.Stop,
+            MouseDefaultCursorShape = Control.CursorShape.PointingHand,
+        };
+        var box = Theme.Box(Theme.PinkDeep, Theme.Pink.Lightened(0.35f), 3, 14);
+        box.ContentMarginLeft = box.ContentMarginRight = 20;
+        box.ContentMarginTop = box.ContentMarginBottom = 6;
+        box.ShadowColor = new Color(0, 0, 0, 0.45f);
+        box.ShadowSize = 6;
+        box.ShadowOffset = new Vector2(0, 3);
+        Theme.StyleButton(b, box, 26, Theme.Ink);
+        b.AnchorLeft = b.AnchorRight = 1;
+        b.AnchorTop = b.AnchorBottom = 0;
+        b.GrowHorizontal = Control.GrowDirection.Begin;
+        b.OffsetRight = -28;
+        b.Pressed += pressed;
+        _side.Add(b);
+        _hud.AddChild(b);
+        PlaceSide();
+        return b;
+    }
+
+    private void PlaceSide()
+    {
+        _side.RemoveAll(b => !Valid(b));
+        var y = _leave.OffsetTop;
+        foreach (var b in _side)
+        {
+            y += 64;
+            if (!Mathf.IsEqualApprox(b.OffsetTop, y)) { b.OffsetTop = y; b.OffsetBottom = y; }
+        }
+    }
 
     private void Unsubscribe()
     {
@@ -166,6 +207,7 @@ internal sealed class NativeShop
         }
         if (!Mathf.IsEqualApprox(_info.Position.Y, stripY)) _info.Position = new Vector2(_info.Position.X, stripY);
         if (!Mathf.IsEqualApprox(_leave.OffsetTop, leaveY)) { _leave.OffsetTop = leaveY; _leave.OffsetBottom = leaveY; }
+        PlaceSide();
     }
 
     /// <summary>The Merchant character node (for HeartMeter's glow), or null.</summary>
@@ -306,6 +348,7 @@ internal sealed class NativeShop
             }
             if (Valid(_info)) _info.QueueFree();
             if (Valid(_leave)) _leave.QueueFree();
+            foreach (var b in _side) if (Valid(b)) b.QueueFree();
         }
         catch (Exception e)
         {

@@ -68,6 +68,18 @@ package itself (`scripts/build.sh`) never contains keys.
 - **Leave** (top right) opens the map, like the native Proceed button.
 - Want to test without walking to a shop? Open the dev console with `` ` `` and type `room shop`.
 
+### Winning his heart
+
+- **Perks.** At *Regular* the cheapest potion on the rug is on the house (once per shop); at *Favourite* card
+  removal is half price too. Gifts show as green deal prices and still go through the game's purchase code.
+- **The date.** At *Darling* a **♥ Ask him on a date** button appears under Leave, once per climb. Three
+  questions, three answers each; he reacts to every one. A perfect date gets you his best relic for free, a sweet
+  one takes 25% off the rug, an awkward one costs you some affection.
+- **He remembers you.** Tell him your name, what you love or hate, make him a promise: he writes it down and
+  brings it up at later shops in the same climb.
+- **15 achievements**, kept across runs (window shopping, talking him down to his floor, quoting his catchphrases
+  back at him, the perfect date…).
+
 **Microphone on macOS:** the game itself can't ask for mic access, so the mod launches a tiny helper,
 `DokiMicHelper.app`, the first time you talk. Allow it when macOS asks (or later in System Settings › Privacy &
 Security › Microphone). Typing always works.

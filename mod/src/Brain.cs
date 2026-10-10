@@ -41,6 +41,12 @@ internal sealed class Brain
                     ["enum"] = new JsonArray("compliment", "flirt", "small_talk", "insult"),
                 },
             }, "kind"),
+        Fn("remember",
+            "Write down one short fact about the customer worth bringing up at a later shop: their name, what they like or hate, something personal they told you, a promise. Not prices or haggling. At most once per turn.",
+            new JsonObject
+            {
+                ["fact"] = new JsonObject { ["type"] = "string", ["description"] = "One short sentence, e.g. 'Their name is Mia and they hate Strikes.'" },
+            }, "fact"),
         Fn("show_item",
             "Point at an item on the rug so the customer can see which one you mean. Use whenever you start talking about a specific item.",
             new JsonObject

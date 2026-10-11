@@ -65,7 +65,8 @@ package itself (`scripts/build.sh`) never contains keys.
 ## Play
 
 - Enter any shop. Hold **V** to talk (or click the mic), or type into the box and press Enter.
-- Click an item on the rug for its details and the Buy button. Haggle first; he has a hidden floor per item.
+- Hover an item for the game's own tooltip; click it to buy at the price on the rug, like the native shop.
+  Haggle first: the list price gets struck through and your best price so far shows next to it.
 - **Leave** (top right) opens the map, like the native Proceed button.
 - Want to test without walking to a shop? Open the dev console with `` ` `` and type `room shop`.
 

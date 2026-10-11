@@ -244,17 +244,8 @@ internal sealed class Doki
         UpdateInfo();
     }
 
-    private void OnItemClicked(Haggle.Item it)
-    {
-        if (_detail.IsOpen && _detail.Item == it)
-        {
-            _detail.Hide();
-            _rug.SetSelected(null);
-            return;
-        }
-        _detail.Show(it, _player.Gold);
-        _rug.SetSelected(it);
-    }
+    /// <summary>Like the native shop: a click buys at the price on the rug (hover for the game's tooltips).</summary>
+    private void OnItemClicked(Haggle.Item it) => TaskHelper.RunSafely(Buy(it));
 
     /// <summary>Buy through the game's own purchase code: gold, relic hooks, The Courier, the card-removal screen.</summary>
     private async Task Buy(Haggle.Item it)

@@ -16,7 +16,7 @@ public static class ModEntry
         }
 
         _initialized = true;
-        MegaCrit.Sts2.Core.Logging.Log.Info("[Doki] Loading Doki Doki Merchant v0.3.0");
+        MegaCrit.Sts2.Core.Logging.Log.Info("[Doki] Loading Doki Doki Merchant v0.3.1");
         new HarmonyLib.Harmony(HarmonyId).PatchAll();
     }
 }

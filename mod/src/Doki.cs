@@ -373,9 +373,11 @@ internal sealed class Doki
                         break;
                     }
                     case "counter":
+                        RefreshShop();
                         _fx.Stamp(Loc.T($"COUNTER: {Num("counter_offer")}g", $"还价：{Num("counter_offer")} 金"), StampKind.Info, Loc.T($"you offered {Num("offer")}g", $"你出价 {Num("offer")} 金"));
                         break;
                     case "final":
+                        RefreshShop();
                         _fx.Stamp(Loc.T($"FINAL OFFER: {Num("counter_offer")}g", $"最终报价：{Num("counter_offer")} 金"), StampKind.Info, Loc.T("his absolute floor", "他的底线了"));
                         break;
                 }
@@ -443,9 +445,7 @@ internal sealed class Doki
             {
                 var it = _haggle.Resolve(Str(args["item"]));
                 if (it == null) return new JsonObject { ["error"] = "No such item on the rug." };
-                _rug.Point(it);
-                _detail.Show(it, _player.Gold);
-                _rug.SetSelected(it);
+                _rug.Point(it); // point only: the detail panel opens when the player clicks
                 return new JsonObject { ["shown"] = ItemText.Name(it) };
             }
             default:

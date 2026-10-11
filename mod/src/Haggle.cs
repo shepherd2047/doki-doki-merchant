@@ -179,6 +179,14 @@ internal sealed class Haggle
             AgreedPrices[it.Entry] = it.Agreed.Value;
             res["note"] = "Deal. The price on the rug now shows the agreed price; the customer buys it by picking it up.";
         }
+        if (verdict is "counter" or "final" && counter is { } c && c < (it.Agreed ?? list))
+        {
+            // His counter-offer is a price he'll take: it goes on the rug (list price struck through) and the
+            // customer can pick the item up at it, or keep haggling for less.
+            it.Agreed = c;
+            AgreedPrices[it.Entry] = c;
+            res["note"] = "The rug now shows your counter-offer as the price; the customer can pick it up at that price or keep haggling.";
+        }
         if (verdict == "insulted")
             res["note"] = Angry
                 ? "That's the third insult in a row. You snap: every price in your shop goes up by half for this greedy customer, and you won't haggle with them any more."

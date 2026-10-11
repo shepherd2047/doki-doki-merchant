@@ -250,6 +250,8 @@ void fragment() {
         private readonly Control _box, _hover, _point, _art, _hit, _tipAnchor;
         private readonly Panel _glowSel, _glowPoint, _glowSecret;
         private readonly Label _price, _strike;
+        private int? _shownCost;
+        private Tween? _priceTween;
         private readonly TextureRect? _sale;
         private readonly Control _stamp;
         private Control? _ribbon;
@@ -324,13 +326,13 @@ void fragment() {
                     MouseFilter = Control.MouseFilterEnum.Ignore,
                 });
             }
-            _strike = Theme.MakeLabel("", 24, Strike, bold: true, outline: 0);
+            _strike = Theme.MakeLabel("", 26, Strike, bold: true, outline: 0);
             _strike.VerticalAlignment = VerticalAlignment.Center;
             TextShadow(_strike, Colors.Black, 2, 3);
             _strike.Draw += () =>
             {
                 var s = _strike.Size;
-                _strike.DrawLine(new Vector2(0, s.Y * 0.52f), new Vector2(s.X, s.Y * 0.52f), Strike, 2.5f);
+                _strike.DrawLine(new Vector2(-2, s.Y * 0.55f), new Vector2(s.X + 2, s.Y * 0.45f), Theme.Red, 3.5f);
             };
             row.AddChild(_strike);
             _price = Theme.MakeLabel("", 27, Theme.Ink, bold: true, outline: 0);
@@ -630,6 +632,9 @@ void fragment() {
             _strike.Visible = struck;
             _strike.QueueRedraw();
             _price.Text = cost.ToString();
+            _price.AddThemeFontSizeOverride("font_size", struck ? 33 : 27);
+            if (!_sold && _shownCost is { } before && cost < before) PopPrice(); // haggled down: celebrate it
+            _shownCost = _sold ? null : cost;
             var color = Theme.Ink;
             if (!_sold && cost > gold) color = Theme.Red;
             else if (struck) color = deal ? Theme.Green : Theme.Red;
@@ -648,6 +653,15 @@ void fragment() {
         }
 
         public void SetSelected(bool on) => _glowSel.Visible = on && _box.Visible;
+
+        private void PopPrice()
+        {
+            _priceTween?.Kill();
+            _price.PivotOffset = _price.Size / 2;
+            _price.Scale = new Vector2(1.6f, 1.6f);
+            _priceTween = _price.CreateTween();
+            _priceTween.TweenProperty(_price, "scale", Vector2.One, 0.45).SetTrans(Tween.TransitionType.Back).SetEase(Tween.EaseType.Out);
+        }
 
         public void Point()
         {

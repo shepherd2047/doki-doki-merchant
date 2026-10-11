@@ -58,7 +58,8 @@ same folder, and fill in your keys.
 `scripts/make-key-installer.sh` writes `dist/key-installer/Doki-keys-windows.bat` and `Doki-keys-mac.command`,
 which carry your `DokiDokiMerchant.cfg` and install it next to the mod wherever Steam put it (Workshop or the
 game's `mods/` folder). Your friend subscribes on the Workshop, starts the game once, double-clicks the script
-and restarts. The scripts contain your keys: send them privately; never commit or upload them. The Workshop
+and restarts. On Windows, run `powershell -ExecutionPolicy Bypass -File scripts\make-key-installer.ps1` instead
+(makes the .bat only, with `language` reset to `auto`). The scripts contain your keys: send them privately; never commit or upload them. The Workshop
 package itself (`scripts/build.sh`) never contains keys.
 
 ## Play
